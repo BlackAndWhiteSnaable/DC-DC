@@ -42,3 +42,9 @@ Report/bib/mybib\.bib\.sav
 *.original
 
 */slprj/
+
+Simulations/Buckconverter01/LTSpice/Buckconverter\.raw
+
+*.net
+
+*.raw

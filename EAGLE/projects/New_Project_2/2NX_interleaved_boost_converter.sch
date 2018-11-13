@@ -598,9 +598,9 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/26-60-4050.pd
 <attribute name="NAME" x="11.43" y="138.43" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="11.43" y="135.89" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="Q2" gate="G$1" x="0" y="111.76" smashed="yes">
-<attribute name="NAME" x="11.43" y="115.57" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="11.43" y="113.03" size="1.778" layer="96" align="center-left"/>
+<instance part="Q2" gate="G$1" x="0" y="116.84" smashed="yes" rot="MR180">
+<attribute name="NAME" x="11.43" y="113.03" size="1.778" layer="95" rot="MR180" align="center-left"/>
+<attribute name="VALUE" x="11.43" y="115.57" size="1.778" layer="96" rot="MR180" align="center-left"/>
 </instance>
 <instance part="C1" gate="G$1" x="7.62" y="167.64" smashed="yes" rot="R90">
 <attribute name="NAME" x="1.27" y="166.37" size="1.778" layer="95" rot="R90" align="center-left"/>
@@ -678,9 +678,9 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/26-60-4050.pd
 <attribute name="NAME" x="72.39" y="17.78" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="72.39" y="15.24" size="1.778" layer="96" align="center-left"/>
 </instance>
-<instance part="J7" gate="G$1" x="-5.08" y="121.92" smashed="yes" rot="MR0">
-<attribute name="NAME" x="-16.51" y="116.84" size="1.778" layer="95" rot="MR0" align="center-left"/>
-<attribute name="VALUE" x="-13.97" y="111.76" size="1.778" layer="96" rot="MR0" align="center-left"/>
+<instance part="J7" gate="G$1" x="-5.08" y="111.76" smashed="yes" rot="R180">
+<attribute name="NAME" x="-16.51" y="116.84" size="1.778" layer="95" rot="R180" align="center-left"/>
+<attribute name="VALUE" x="-13.97" y="121.92" size="1.778" layer="96" rot="R180" align="center-left"/>
 </instance>
 <instance part="J1" gate="G$1" x="-5.08" y="144.78" smashed="yes" rot="MR0">
 <attribute name="NAME" x="-16.51" y="139.7" size="1.778" layer="95" rot="MR0" align="center-left"/>
@@ -739,17 +739,17 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/26-60-4050.pd
 <net name="N$5" class="0">
 <segment>
 <pinref part="L2" gate="G$1" pin="2"/>
-<pinref part="Q2" gate="G$1" pin="S"/>
 <wire x1="-10.16" y1="104.14" x2="7.62" y2="104.14" width="0.1524" layer="91"/>
 <pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="7.62" y1="106.68" x2="7.62" y2="104.14" width="0.1524" layer="91"/>
-<junction x="7.62" y="104.14"/>
 <wire x1="7.62" y1="104.14" x2="7.62" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="J7" gate="G$1" pin="5"/>
+<pinref part="J7" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="111.76" x2="-2.54" y2="111.76" width="0.1524" layer="91"/>
 <wire x1="-2.54" y1="111.76" x2="-2.54" y2="106.68" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="G$1" pin="D"/>
 <wire x1="-2.54" y1="106.68" x2="7.62" y2="106.68" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="106.68" x2="7.62" y2="104.14" width="0.1524" layer="91"/>
 <junction x="7.62" y="106.68"/>
+<junction x="7.62" y="104.14"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -861,21 +861,11 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/26-60-4050.pd
 <wire x1="35.56" y1="60.96" x2="35.56" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$11" class="0">
-<segment>
-<pinref part="J7" gate="G$1" pin="3"/>
-<pinref part="Q2" gate="G$1" pin="G"/>
-<wire x1="-5.08" y1="116.84" x2="0" y2="116.84" width="0.1524" layer="91"/>
-<wire x1="0" y1="116.84" x2="0" y2="111.76" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="GND" class="0">
 <segment>
-<pinref part="Q2" gate="G$1" pin="D"/>
 <pinref part="Q1" gate="G$1" pin="S"/>
 <wire x1="7.62" y1="129.54" x2="7.62" y2="127" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
-<wire x1="7.62" y1="127" x2="7.62" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="139.7" x2="60.96" y2="127" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="127" x2="35.56" y2="127" width="0.1524" layer="91"/>
 <pinref part="D4" gate="G$1" pin="K"/>
@@ -886,14 +876,16 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/26-60-4050.pd
 <junction x="7.62" y="127"/>
 <junction x="35.56" y="127"/>
 <junction x="60.96" y="127"/>
-<pinref part="J7" gate="G$1" pin="1"/>
-<wire x1="-5.08" y1="121.92" x2="7.62" y2="121.92" width="0.1524" layer="91"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="-2.54" y1="127" x2="7.62" y2="127" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="5"/>
 <wire x1="-5.08" y1="134.62" x2="-5.08" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="129.54" x2="7.62" y2="129.54" width="0.1524" layer="91"/>
 <junction x="7.62" y="129.54"/>
+<pinref part="J7" gate="G$1" pin="5"/>
+<wire x1="-5.08" y1="121.92" x2="7.62" y2="121.92" width="0.1524" layer="91"/>
+<wire x1="7.62" y1="121.92" x2="7.62" y2="127" width="0.1524" layer="91"/>
+<pinref part="Q2" gate="G$1" pin="S"/>
 <junction x="7.62" y="121.92"/>
 </segment>
 </net>
@@ -903,6 +895,13 @@ Source: &lt;a href="https://componentsearchengine.com/Datasheets/1/26-60-4050.pd
 <pinref part="Q1" gate="G$1" pin="G"/>
 <wire x1="-5.08" y1="139.7" x2="0" y2="139.7" width="0.1524" layer="91"/>
 <wire x1="0" y1="139.7" x2="0" y2="134.62" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$13" class="0">
+<segment>
+<pinref part="J7" gate="G$1" pin="3"/>
+<pinref part="Q2" gate="G$1" pin="G"/>
+<wire x1="-5.08" y1="116.84" x2="0" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

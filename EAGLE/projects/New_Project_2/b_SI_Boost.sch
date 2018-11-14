@@ -488,7 +488,6 @@ Source: &lt;a href="http://www.farnell.com/datasheets/1479998.pdf"&gt; Datasheet
 <part name="J7" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
 <part name="J8" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
 <part name="J10" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
-<part name="J5" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
 <part name="J2" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
 <part name="J11" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
 <part name="J12" library="SamacSys_Parts" deviceset="66.9040-22" device=""/>
@@ -567,10 +566,6 @@ Source: &lt;a href="http://www.farnell.com/datasheets/1479998.pdf"&gt; Datasheet
 <instance part="J10" gate="G$1" x="-33.02" y="-17.78" smashed="yes">
 <attribute name="NAME" x="-16.51" y="-10.16" size="1.778" layer="95" align="center-left"/>
 <attribute name="VALUE" x="-16.51" y="-12.7" size="1.778" layer="96" align="center-left"/>
-</instance>
-<instance part="J5" gate="G$1" x="78.74" y="-40.64" smashed="yes">
-<attribute name="NAME" x="95.25" y="-33.02" size="1.778" layer="95" align="center-left"/>
-<attribute name="VALUE" x="95.25" y="-35.56" size="1.778" layer="96" align="center-left"/>
 </instance>
 <instance part="J2" gate="G$1" x="50.8" y="33.02" smashed="yes" rot="R270">
 <attribute name="NAME" x="58.42" y="24.13" size="1.778" layer="95" rot="R270" align="center-left"/>
@@ -752,27 +747,6 @@ Source: &lt;a href="http://www.farnell.com/datasheets/1479998.pdf"&gt; Datasheet
 <junction x="162.56" y="7.62"/>
 </segment>
 </net>
-<net name="N$7" class="0">
-<segment>
-<pinref part="Q2" gate="G$1" pin="G"/>
-<pinref part="J5" gate="G$1" pin="2"/>
-<wire x1="99.06" y1="-40.64" x2="99.06" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="4"/>
-<wire x1="99.06" y1="-43.18" x2="99.06" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="99.06" y="-40.64"/>
-<junction x="99.06" y="-43.18"/>
-<pinref part="J5" gate="G$1" pin="5"/>
-<pinref part="J5" gate="G$1" pin="1"/>
-<wire x1="78.74" y1="-40.64" x2="78.74" y2="-43.18" width="0.1524" layer="91"/>
-<pinref part="J5" gate="G$1" pin="3"/>
-<junction x="78.74" y="-43.18"/>
-<wire x1="78.74" y1="-43.18" x2="78.74" y2="-45.72" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="-38.1" x2="78.74" y2="-38.1" width="0.1524" layer="91"/>
-<wire x1="78.74" y1="-38.1" x2="78.74" y2="-40.64" width="0.1524" layer="91"/>
-<junction x="78.74" y="-40.64"/>
-<junction x="99.06" y="-38.1"/>
-</segment>
-</net>
 <net name="N$8" class="0">
 <segment>
 <pinref part="D8" gate="G$1" pin="A"/>
@@ -938,6 +912,12 @@ Source: &lt;a href="http://www.farnell.com/datasheets/1479998.pdf"&gt; Datasheet
 <wire x1="106.68" y1="-17.78" x2="106.68" y2="-20.32" width="0.1524" layer="91"/>
 <junction x="106.68" y="-20.32"/>
 <junction x="127" y="-20.32"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="Q2" gate="G$1" pin="G"/>
+<wire x1="99.06" y1="-43.18" x2="99.06" y2="-38.1" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>

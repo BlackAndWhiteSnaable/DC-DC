@@ -19,12 +19,12 @@ A mathematical representation can be given by one of the two equations in Equati
 	 \label{eq:PID}
 \end{equation} \cite{Franklin2014}\\
 These equations can be visualised in block diagrams, as shown in Figure \ref{fig:twoPID}.
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/07controllerDesign/PID_explicit.pdf}
-    \caption{Comparison of two common PID designs}
-	\label{fig:twoPID}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=\textwidth]{figures/07controllerDesign/PID_explicit.pdf}
+%    \caption{Comparison of two common PID designs}
+%	\label{fig:twoPID}
+%\end{figure}
 
 Figure \ref{fig:twoPID} also shows the typical placement of a PID-controller,
 on the forward loop, behind the subtraction of the feedback and before the input to the plant.
@@ -63,22 +63,22 @@ needs to be analysed.
 The step response needs to be measured on the Open Loop (OL) system.
 A block diagram of an OL setup can be seen in Figure \ref{fig:OL}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{figures/07controllerDesign/OLblock.pdf}
-    \caption{OL block diagram of a system}
-\label{fig:OL}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=0.75\textwidth]{figures/07controllerDesign/OLblock.pdf}
+%    \caption{OL block diagram of a system}
+%	 \label{fig:OL}
+%\end{figure}
 
 The recorded output can be seen in Figure \ref{fig:stepin}.
 The figure also shows two red lines, approximating the slope and the final value.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/07controllerDesign/StepResponseLabeled.eps}
-    \caption{response to a step input with value 10}
-	\label{fig:stepin}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=\textwidth]{figures/07controllerDesign/StepResponseLabeled.eps}
+%    \caption{response to a step input with value 10}
+%	\label{fig:stepin}
+%\end{figure}
 
 From this graph we can approximate the slope $R$ and the Lag $L=t_d$.\\
 Because we are scaling the $\omega P$ down by a factor of 10, so we can directly input a percentage,
@@ -129,14 +129,14 @@ We expect this to be caused by the scaling factor before the input to the pumps,
 as discussed in Subsection \ref{sub:quadec}.
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/07controllerDesign/Ptest.eps}
-    \includegraphics[width=\textwidth]{figures/07controllerDesign/PItest.eps}
-    \includegraphics[width=\textwidth]{figures/07controllerDesign/PIDtest.eps}
-    \caption{Results from testing a P, PI and PID controller with ZN tuning}
-	\label{fig:PIDtest}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=\textwidth]{figures/07controllerDesign/Ptest.eps}
+%    \includegraphics[width=\textwidth]{figures/07controllerDesign/PItest.eps}
+%    \includegraphics[width=\textwidth]{figures/07controllerDesign/PIDtest.eps}
+%    \caption{Results from testing a P, PI and PID controller with ZN tuning}
+%	\label{fig:PIDtest}
+%\end{figure}
 
 As was expected, the P-controller settles the fastest,
 at approximately 4 seconds,
@@ -162,12 +162,12 @@ we can see, that this will not affect the relations between the coefficients.
 \subsubsection{Results}
 The results of the manual tuning can be seen in Figure \ref{fig:manualPID}.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{figures/07controllerDesign/manualPID.eps}
-    \caption{Results from ZN PID with $k_P = 0.2$}
-	\label{fig:manualPID}
-\end{figure}
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[width=\textwidth]{figures/07controllerDesign/manualPID.eps}
+%    \caption{Results from ZN PID with $k_P = 0.2$}
+%	\label{fig:manualPID}
+%\end{figure}
 Interesting to notice here is,
 that the controller has a deadtime of approximately 4 seconds,
 before its output affects the system.

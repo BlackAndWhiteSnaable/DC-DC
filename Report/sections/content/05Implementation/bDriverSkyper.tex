@@ -1,2 +1,7 @@
 \chapter{Driver}\label{ch:driver}
 
+To control the MOSFETs the Semikron SKYPER 32 R driver board has been chosen. It can run two MOSFETs or IGBTs potential free with up to 1200V over the device. It supports an output of 15V PWM with peak currents to 15A at frequencies up to 50kHz.
+The board also comes with additional protection logic that was not used as failure detection and shut down input.
+
+The input to the board are two PWM signals coming from the controller with Voltages of 0 to 15V. To function the SKYPER board needs an external power supply, some decoupling capacitors and capacitors to filter high frequency pulses. These components are on the adaptor board also from Semikron. 
+On the secondary side of the board the two potential free PWM signals with 0 to 15V are given out. To adjust the switching properties of the device the output can be configured 

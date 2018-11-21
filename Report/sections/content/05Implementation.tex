@@ -1,0 +1,64 @@
+\chapter{Implementation}\label{ch:implement}
+
+\include{aComponentSpecs.tex}
+\include{bDriverSkyper.tex}
+\include{cPCBdesign.tex}
+%
+%\section{Static Modelling}\label{sec:statmod}
+%
+%\subsubsection{Single Pump Model}
+%
+%\begin{equation}
+%	H = \bar{a_{2}} \cdot Q^2 + \bar{a_{1}} \cdot Q + \bar{a_{0}}
+%	\label{eq:pumpHeadModel}
+%\end{equation}
+%\begin{equation}
+%	P = \bar{b_{3}} \cdot Q^3 + \bar{b_{2}} \cdot Q^2 + \bar{b_{1}} \cdot Q + \bar{b_{0}}
+%	\label{eq:pumpPowerModel}
+%\end{equation}
+%
+%\begin{align*}
+%	\left(\frac{\omega_1}{\omega_2}\right)^1 = \frac{Q_1}{Q_2} && 
+%	\left(\frac{\omega_1}{\omega_2}\right)^2 = \frac{H_1}{H_2} &&
+%	\left(\frac{\omega_1}{\omega_2}\right)^3 = \frac{P_1}{P_2}		
+%\end{align*}\cite{Volk2014}.
+%
+%\begin{equation}
+%	H(\omega) = a_0 \cdot \omega^2 + a_1 \cdot \omega \cdot Q(\omega) + a_2 \cdot Q(\omega)^2
+%	\label{eq:pumpHeadModel2}
+%\end{equation}
+%\begin{equation}
+%	P(\omega) = b_0 \cdot \omega^3 + b_1 \cdot \omega^2 \cdot Q(\omega) + b_2 \cdot \omega \cdot Q(\omega)^2 + b_3 \cdot Q(\omega)^3
+%	\label{eq:pumpPowerModel2}
+%\end{equation}
+%
+%\begin{align*}
+%	a_0 = \frac{\bar{a_0}}{\bar{\omega_0^2}} && a_1 = \frac{\bar{a_1}}{\bar{\omega_0}} && a_2 = \bar{a_2} \\
+%	b_0 = \frac{\bar{b_0}}{\bar{\omega_0^3}} && b_1 = \frac{\bar{b_1}}{\bar{\omega_0^2}} && b_2 = \frac{\bar{b_2}}{\omega_0} && b_3 = \bar{b_3}
+%\end{align*}
+%\cite{Yang2010}
+%
+%%\begin{figure}[ht]
+%%	\centering
+%%	\includegraphics[width=1\textwidth]{figures/05mathematicalModelling/flowVsPowerRun34.eps}
+%%	\caption{Data Points for Flow vs. Power Consumption}
+%%	\label{fig:flowVsPowerConsumption}
+%%\end{figure}
+%
+%\begin{align*}
+%	a_0 = -0.03044 && a_1 = 0.07635  && a_2 = 1.688  \\
+%	b_0 = -0.2825 && b_1 = -0.7147 && b_2 = 54.39 && b_3 = 163.7 \\
+%\end{align*}
+%
+%\section{Dynamic Modelling}\label{sec:dynMod}
+%
+%\begin{equation}
+%	\frac{Y(s)}{U(s)} = \frac{A \cdot e^{-st_d}}{\tau \cdot s + 1}
+%	\label{eq:plantTransferFunction}
+%\end{equation}
+%
+%\begin{itemize}
+%	\item A = final value the step response settles at
+%	\item $t_{d}$ = time delay
+%	\item $\tau$ = time it takes from 0.1 of final value to 0.9 final value
+%\end{itemize}

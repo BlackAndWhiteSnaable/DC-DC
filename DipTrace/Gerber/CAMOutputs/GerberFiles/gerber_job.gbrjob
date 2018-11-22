@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2018-11-22T10:18:05Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.2.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "2nx_interleaved_DANIEL_EDIT_dip2eagle"
+        },
+        "Owner": "Daniel Busemann <dbusem16@student.aau.dk>",
+        "Size": {
+            "X": 171.45,
+            "Y": 349.25
+        }
+    }
+}

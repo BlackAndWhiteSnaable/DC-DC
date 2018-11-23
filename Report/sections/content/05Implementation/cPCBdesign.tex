@@ -3,19 +3,15 @@
 
 To be able to test the proposed topology,
 a Printed Circuit Board (PCB) had to be made.
-We got some guidance in this process by Sagar Mahajal,\todo[color=c05c]{reference him?}.
-a Ph.D. student working on the same project.
-
-Because this circuit is designed for power electronics,
-some different precautions had to be made from conventional PCB design.
-The copper traces had to be wide enough to accommodate the currents going through
-and spaced apart enough to prevent the potential difference from creating sparks between them.
+We started out designing a simple two stage layout,
+and ended up manufacturing a multi stage version.
 
 \subsection{Two Stage PCB}
 To get familiar with designing power electronics PCBs,
 we started out designing a two stage version of the proposed topology.
 Because we already had some familiarities with EAGLE from previous projects,
 we used EAGLE for the first design attempts.
+The finished design can be seen in Figure \ref{fig:2nxeagle}.
 
 \begin{figure}[H]
 	\begin{center}
@@ -25,10 +21,6 @@ we used EAGLE for the first design attempts.
 	\label{fig:2nxeagle}
 \end{figure}
 
-The most noticeable differences between logic PCBs and power PCBs for us were
-the increased trace width and the size of the individual components.
-
-The finished design can be seen in Figure \ref{fig:2nxeagle}.
 The red traces are logical signals,
 located on the top layer of the PCB,
 blue are power traces located on the bottom layer.
@@ -52,9 +44,25 @@ A detailed view of this can be seen in Figure \ref{fig:2nxeagledetail}.
 	\label{fig:2nxeagledetail}
 \end{figure}
 
-\subsection{Three Stage PCB}\label{sub:3sPCB}
-To lessen our workload our supervisor put us into contact with Sagar Mahajan \todo[color=c05c]{cite to his linkedin?}
-Because there already existed layouts for a three stage version of the proposed topology,
-which were given to us by our supervisor,
-we decided to continue working based on the already existing files.
+\subsection{Multi Stage PCB}\label{sub:3sPCB}
+To lessen our workload our supervisor put us into contact with Sagar Mahajan \todo[color=c05c]{cite to his linkedin?},
+who already created a layout for the multilevel converter.
+We touched up a little bit on the layout to make it producible with the university's equipment,
+but the main layouting was not done by us.
+The PCB layout can be seen in Figure \ref{fig:2nxDiptrace}.
+
+\begin{figure}[H]
+	\begin{center}
+	\includegraphics[height=0.6\textwidth,angle=90]{"figures/05cPCBdesign/DipTrace PCB - 2NX_interleaved_DANIEL_EDIT"}
+	\end{center}
+	\caption{PCB Layout for a multi stage 2NX Interleaved Boost Converter}
+	\label{fig:2nxDiptrace}
+\end{figure}
+
+As this layout was done in DipTrace,
+the colours used differ from the colours used by EAGLE.
+Here light red are the copper traces on the bottom layer.
+No traces exist on the top layer,
+and therefore no layer separation between power and logic is made.
+
 \todo[color=c05c,inline]{something about diptrace, and collaboration with Sagar}

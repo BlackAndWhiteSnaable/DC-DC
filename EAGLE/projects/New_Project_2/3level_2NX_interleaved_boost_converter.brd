@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.5" altunitdist="mm" altunit="mm"/>
+<grid distance="0.3" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.5" altunitdist="mm" altunit="mm"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -34,8 +34,8 @@
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
@@ -50,13 +50,13 @@
 <layer number="40" name="bKeepout" color="1" fill="11" visible="yes" active="yes"/>
 <layer number="41" name="tRestrict" color="4" fill="10" visible="yes" active="yes"/>
 <layer number="42" name="bRestrict" color="1" fill="10" visible="yes" active="yes"/>
-<layer number="43" name="vRestrict" color="2" fill="10" visible="yes" active="yes"/>
+<layer number="43" name="vRestrict" color="2" fill="10" visible="no" active="yes"/>
 <layer number="44" name="Drills" color="7" fill="1" visible="no" active="yes"/>
 <layer number="45" name="Holes" color="7" fill="1" visible="no" active="yes"/>
 <layer number="46" name="Milling" color="3" fill="1" visible="no" active="yes"/>
 <layer number="47" name="Measures" color="7" fill="1" visible="no" active="yes"/>
-<layer number="48" name="Document" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="49" name="Reference" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="48" name="Document" color="7" fill="1" visible="no" active="yes"/>
+<layer number="49" name="Reference" color="7" fill="1" visible="no" active="yes"/>
 <layer number="51" name="tDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="52" name="bDocu" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="88" name="SimResults" color="9" fill="1" visible="no" active="no"/>
@@ -70,6 +70,7 @@
 <layer number="96" name="Values" color="7" fill="1" visible="no" active="no"/>
 <layer number="97" name="Info" color="7" fill="1" visible="no" active="no"/>
 <layer number="98" name="Guide" color="6" fill="1" visible="no" active="no"/>
+<layer number="200" name="200bmp" color="1" fill="10" visible="yes" active="yes"/>
 </layers>
 <board>
 <plain>
@@ -77,32 +78,380 @@
 <wire x1="180" y1="0" x2="180" y2="280" width="0" layer="20"/>
 <wire x1="180" y1="280" x2="0" y2="280" width="0" layer="20"/>
 <wire x1="0" y1="280" x2="0" y2="0" width="0" layer="20"/>
+<text x="12" y="140" size="6.4516" layer="25" rot="R90" align="bottom-center">Vin</text>
+<text x="10" y="170" size="6.4516" layer="25" rot="R90" align="bottom-center">Ltop</text>
+<text x="19" y="194" size="6.4516" layer="25" align="center">Ltop</text>
+<text x="20" y="86" size="6.4516" layer="25" align="center">Lbot</text>
+<text x="10" y="110" size="6.4516" layer="25" rot="R90" align="bottom-center">Lbot</text>
+<wire x1="73" y1="0" x2="73" y2="280" width="0.2" layer="47"/>
+<wire x1="89" y1="0" x2="89" y2="280" width="0.2" layer="47"/>
+<text x="29.6" y="252" size="3.81" layer="16" font="vector" ratio="10" rot="MR0" align="bottom-center">P5 project by ED5-3-F18:
+Daniel Busemann
+Ilian Haralampiev
+Ivan Kulin
+Simon Thies</text>
+<rectangle x1="20.55" y1="210.45" x2="25.65" y2="210.75" layer="16"/>
+<rectangle x1="19.05" y1="210.75" x2="25.35" y2="211.05" layer="16"/>
+<rectangle x1="17.85" y1="211.05" x2="25.05" y2="211.35" layer="16"/>
+<rectangle x1="16.95" y1="211.35" x2="25.05" y2="211.65" layer="16"/>
+<rectangle x1="16.05" y1="211.65" x2="24.75" y2="211.95" layer="16"/>
+<rectangle x1="15.45" y1="211.95" x2="24.75" y2="212.25" layer="16"/>
+<rectangle x1="14.55" y1="212.25" x2="24.45" y2="212.55" layer="16"/>
+<rectangle x1="13.95" y1="212.55" x2="24.15" y2="212.85" layer="16"/>
+<rectangle x1="13.95" y1="212.85" x2="24.15" y2="213.15" layer="16"/>
+<rectangle x1="32.85" y1="212.85" x2="33.75" y2="213.15" layer="16"/>
+<rectangle x1="13.65" y1="213.15" x2="23.85" y2="213.45" layer="16"/>
+<rectangle x1="32.55" y1="213.15" x2="34.35" y2="213.45" layer="16"/>
+<rectangle x1="13.65" y1="213.45" x2="23.85" y2="213.75" layer="16"/>
+<rectangle x1="32.25" y1="213.45" x2="34.95" y2="213.75" layer="16"/>
+<rectangle x1="13.65" y1="213.75" x2="23.55" y2="214.05" layer="16"/>
+<rectangle x1="31.95" y1="213.75" x2="35.25" y2="214.05" layer="16"/>
+<rectangle x1="13.65" y1="214.05" x2="23.55" y2="214.35" layer="16"/>
+<rectangle x1="31.65" y1="214.05" x2="35.85" y2="214.35" layer="16"/>
+<rectangle x1="13.35" y1="214.35" x2="23.25" y2="214.65" layer="16"/>
+<rectangle x1="31.35" y1="214.35" x2="36.15" y2="214.65" layer="16"/>
+<rectangle x1="13.35" y1="214.65" x2="23.25" y2="214.95" layer="16"/>
+<rectangle x1="31.05" y1="214.65" x2="36.45" y2="214.95" layer="16"/>
+<rectangle x1="13.35" y1="214.95" x2="22.95" y2="215.25" layer="16"/>
+<rectangle x1="30.75" y1="214.95" x2="37.05" y2="215.25" layer="16"/>
+<rectangle x1="13.35" y1="215.25" x2="22.95" y2="215.55" layer="16"/>
+<rectangle x1="30.45" y1="215.25" x2="37.35" y2="215.55" layer="16"/>
+<rectangle x1="13.05" y1="215.55" x2="22.65" y2="215.85" layer="16"/>
+<rectangle x1="30.15" y1="215.55" x2="37.65" y2="215.85" layer="16"/>
+<rectangle x1="13.05" y1="215.85" x2="22.65" y2="216.15" layer="16"/>
+<rectangle x1="29.85" y1="215.85" x2="37.95" y2="216.15" layer="16"/>
+<rectangle x1="13.05" y1="216.15" x2="22.65" y2="216.45" layer="16"/>
+<rectangle x1="29.85" y1="216.15" x2="38.25" y2="216.45" layer="16"/>
+<rectangle x1="13.05" y1="216.45" x2="22.35" y2="216.75" layer="16"/>
+<rectangle x1="29.55" y1="216.45" x2="38.55" y2="216.75" layer="16"/>
+<rectangle x1="12.75" y1="216.75" x2="22.35" y2="217.05" layer="16"/>
+<rectangle x1="29.25" y1="216.75" x2="38.85" y2="217.05" layer="16"/>
+<rectangle x1="12.75" y1="217.05" x2="22.05" y2="217.35" layer="16"/>
+<rectangle x1="28.95" y1="217.05" x2="39.15" y2="217.35" layer="16"/>
+<rectangle x1="12.75" y1="217.35" x2="22.05" y2="217.65" layer="16"/>
+<rectangle x1="28.95" y1="217.35" x2="39.45" y2="217.65" layer="16"/>
+<rectangle x1="12.75" y1="217.65" x2="22.05" y2="217.95" layer="16"/>
+<rectangle x1="28.65" y1="217.65" x2="39.75" y2="217.95" layer="16"/>
+<rectangle x1="12.75" y1="217.95" x2="21.75" y2="218.25" layer="16"/>
+<rectangle x1="28.65" y1="217.95" x2="40.05" y2="218.25" layer="16"/>
+<rectangle x1="12.75" y1="218.25" x2="21.75" y2="218.55" layer="16"/>
+<rectangle x1="28.35" y1="218.25" x2="40.35" y2="218.55" layer="16"/>
+<rectangle x1="6.75" y1="218.55" x2="7.05" y2="218.85" layer="16"/>
+<rectangle x1="12.75" y1="218.55" x2="21.75" y2="218.85" layer="16"/>
+<rectangle x1="28.35" y1="218.55" x2="40.35" y2="218.85" layer="16"/>
+<rectangle x1="6.45" y1="218.85" x2="7.05" y2="219.15" layer="16"/>
+<rectangle x1="12.75" y1="218.85" x2="21.45" y2="219.15" layer="16"/>
+<rectangle x1="28.05" y1="218.85" x2="40.65" y2="219.15" layer="16"/>
+<rectangle x1="6.45" y1="219.15" x2="7.05" y2="219.45" layer="16"/>
+<rectangle x1="12.75" y1="219.15" x2="21.45" y2="219.45" layer="16"/>
+<rectangle x1="28.05" y1="219.15" x2="40.95" y2="219.45" layer="16"/>
+<rectangle x1="6.15" y1="219.45" x2="7.05" y2="219.75" layer="16"/>
+<rectangle x1="12.45" y1="219.45" x2="21.45" y2="219.75" layer="16"/>
+<rectangle x1="27.75" y1="219.45" x2="40.35" y2="219.75" layer="16"/>
+<rectangle x1="5.85" y1="219.75" x2="7.05" y2="220.05" layer="16"/>
+<rectangle x1="12.45" y1="219.75" x2="21.45" y2="220.05" layer="16"/>
+<rectangle x1="27.75" y1="219.75" x2="39.45" y2="220.05" layer="16"/>
+<rectangle x1="5.85" y1="220.05" x2="7.05" y2="220.35" layer="16"/>
+<rectangle x1="12.45" y1="220.05" x2="21.15" y2="220.35" layer="16"/>
+<rectangle x1="27.45" y1="220.05" x2="38.85" y2="220.35" layer="16"/>
+<rectangle x1="5.55" y1="220.35" x2="7.05" y2="220.65" layer="16"/>
+<rectangle x1="12.45" y1="220.35" x2="21.15" y2="220.65" layer="16"/>
+<rectangle x1="27.45" y1="220.35" x2="38.25" y2="220.65" layer="16"/>
+<rectangle x1="5.25" y1="220.65" x2="7.05" y2="220.95" layer="16"/>
+<rectangle x1="12.45" y1="220.65" x2="21.15" y2="220.95" layer="16"/>
+<rectangle x1="27.45" y1="220.65" x2="37.65" y2="220.95" layer="16"/>
+<rectangle x1="5.25" y1="220.95" x2="7.05" y2="221.25" layer="16"/>
+<rectangle x1="12.45" y1="220.95" x2="21.15" y2="221.25" layer="16"/>
+<rectangle x1="27.15" y1="220.95" x2="37.35" y2="221.25" layer="16"/>
+<rectangle x1="4.95" y1="221.25" x2="7.05" y2="221.55" layer="16"/>
+<rectangle x1="12.45" y1="221.25" x2="21.15" y2="221.55" layer="16"/>
+<rectangle x1="27.15" y1="221.25" x2="36.75" y2="221.55" layer="16"/>
+<rectangle x1="4.95" y1="221.55" x2="7.05" y2="221.85" layer="16"/>
+<rectangle x1="12.45" y1="221.55" x2="21.15" y2="221.85" layer="16"/>
+<rectangle x1="27.15" y1="221.55" x2="36.45" y2="221.85" layer="16"/>
+<rectangle x1="4.65" y1="221.85" x2="7.05" y2="222.15" layer="16"/>
+<rectangle x1="12.45" y1="221.85" x2="20.85" y2="222.15" layer="16"/>
+<rectangle x1="26.85" y1="221.85" x2="35.85" y2="222.15" layer="16"/>
+<rectangle x1="4.65" y1="222.15" x2="7.05" y2="222.45" layer="16"/>
+<rectangle x1="12.45" y1="222.15" x2="20.85" y2="222.45" layer="16"/>
+<rectangle x1="26.85" y1="222.15" x2="35.55" y2="222.45" layer="16"/>
+<rectangle x1="4.35" y1="222.45" x2="7.05" y2="222.75" layer="16"/>
+<rectangle x1="12.75" y1="222.45" x2="20.85" y2="222.75" layer="16"/>
+<rectangle x1="26.85" y1="222.45" x2="35.25" y2="222.75" layer="16"/>
+<rectangle x1="4.35" y1="222.75" x2="7.05" y2="223.05" layer="16"/>
+<rectangle x1="12.75" y1="222.75" x2="20.85" y2="223.05" layer="16"/>
+<rectangle x1="26.85" y1="222.75" x2="34.95" y2="223.05" layer="16"/>
+<rectangle x1="4.05" y1="223.05" x2="7.05" y2="223.35" layer="16"/>
+<rectangle x1="12.75" y1="223.05" x2="20.85" y2="223.35" layer="16"/>
+<rectangle x1="26.55" y1="223.05" x2="34.35" y2="223.35" layer="16"/>
+<rectangle x1="4.05" y1="223.35" x2="7.05" y2="223.65" layer="16"/>
+<rectangle x1="12.75" y1="223.35" x2="20.85" y2="223.65" layer="16"/>
+<rectangle x1="26.55" y1="223.35" x2="34.35" y2="223.65" layer="16"/>
+<rectangle x1="3.75" y1="223.65" x2="7.35" y2="223.95" layer="16"/>
+<rectangle x1="12.75" y1="223.65" x2="20.85" y2="223.95" layer="16"/>
+<rectangle x1="26.55" y1="223.65" x2="34.05" y2="223.95" layer="16"/>
+<rectangle x1="3.75" y1="223.95" x2="7.35" y2="224.25" layer="16"/>
+<rectangle x1="12.75" y1="223.95" x2="20.85" y2="224.25" layer="16"/>
+<rectangle x1="26.55" y1="223.95" x2="33.75" y2="224.25" layer="16"/>
+<rectangle x1="3.75" y1="224.25" x2="7.35" y2="224.55" layer="16"/>
+<rectangle x1="12.75" y1="224.25" x2="20.85" y2="224.55" layer="16"/>
+<rectangle x1="26.55" y1="224.25" x2="33.45" y2="224.55" layer="16"/>
+<rectangle x1="3.45" y1="224.55" x2="7.35" y2="224.85" layer="16"/>
+<rectangle x1="12.75" y1="224.55" x2="20.85" y2="224.85" layer="16"/>
+<rectangle x1="26.55" y1="224.55" x2="33.15" y2="224.85" layer="16"/>
+<rectangle x1="3.45" y1="224.85" x2="7.35" y2="225.15" layer="16"/>
+<rectangle x1="13.05" y1="224.85" x2="20.85" y2="225.15" layer="16"/>
+<rectangle x1="26.55" y1="224.85" x2="33.15" y2="225.15" layer="16"/>
+<rectangle x1="3.45" y1="225.15" x2="7.35" y2="225.45" layer="16"/>
+<rectangle x1="13.05" y1="225.15" x2="20.85" y2="225.45" layer="16"/>
+<rectangle x1="26.55" y1="225.15" x2="32.85" y2="225.45" layer="16"/>
+<rectangle x1="3.15" y1="225.45" x2="7.65" y2="225.75" layer="16"/>
+<rectangle x1="13.05" y1="225.45" x2="20.85" y2="225.75" layer="16"/>
+<rectangle x1="26.55" y1="225.45" x2="32.85" y2="225.75" layer="16"/>
+<rectangle x1="3.15" y1="225.75" x2="7.65" y2="226.05" layer="16"/>
+<rectangle x1="13.05" y1="225.75" x2="21.15" y2="226.05" layer="16"/>
+<rectangle x1="26.55" y1="225.75" x2="32.55" y2="226.05" layer="16"/>
+<rectangle x1="3.15" y1="226.05" x2="7.65" y2="226.35" layer="16"/>
+<rectangle x1="13.35" y1="226.05" x2="21.15" y2="226.35" layer="16"/>
+<rectangle x1="26.55" y1="226.05" x2="32.55" y2="226.35" layer="16"/>
+<rectangle x1="2.85" y1="226.35" x2="7.65" y2="226.65" layer="16"/>
+<rectangle x1="13.35" y1="226.35" x2="21.15" y2="226.65" layer="16"/>
+<rectangle x1="26.55" y1="226.35" x2="32.55" y2="226.65" layer="16"/>
+<rectangle x1="2.85" y1="226.65" x2="7.65" y2="226.95" layer="16"/>
+<rectangle x1="13.35" y1="226.65" x2="21.15" y2="226.95" layer="16"/>
+<rectangle x1="26.55" y1="226.65" x2="32.25" y2="226.95" layer="16"/>
+<rectangle x1="2.85" y1="226.95" x2="7.95" y2="227.25" layer="16"/>
+<rectangle x1="13.35" y1="226.95" x2="21.15" y2="227.25" layer="16"/>
+<rectangle x1="26.55" y1="226.95" x2="32.25" y2="227.25" layer="16"/>
+<rectangle x1="2.85" y1="227.25" x2="7.95" y2="227.55" layer="16"/>
+<rectangle x1="13.65" y1="227.25" x2="21.15" y2="227.55" layer="16"/>
+<rectangle x1="26.55" y1="227.25" x2="32.25" y2="227.55" layer="16"/>
+<rectangle x1="2.85" y1="227.55" x2="7.95" y2="227.85" layer="16"/>
+<rectangle x1="13.65" y1="227.55" x2="21.45" y2="227.85" layer="16"/>
+<rectangle x1="26.55" y1="227.55" x2="31.95" y2="227.85" layer="16"/>
+<rectangle x1="2.55" y1="227.85" x2="8.25" y2="228.15" layer="16"/>
+<rectangle x1="13.95" y1="227.85" x2="21.45" y2="228.15" layer="16"/>
+<rectangle x1="26.55" y1="227.85" x2="31.95" y2="228.15" layer="16"/>
+<rectangle x1="2.55" y1="228.15" x2="8.25" y2="228.45" layer="16"/>
+<rectangle x1="13.95" y1="228.15" x2="21.45" y2="228.45" layer="16"/>
+<rectangle x1="26.55" y1="228.15" x2="31.95" y2="228.45" layer="16"/>
+<rectangle x1="2.55" y1="228.45" x2="8.25" y2="228.75" layer="16"/>
+<rectangle x1="13.95" y1="228.45" x2="21.45" y2="228.75" layer="16"/>
+<rectangle x1="26.85" y1="228.45" x2="31.95" y2="228.75" layer="16"/>
+<rectangle x1="2.55" y1="228.75" x2="8.55" y2="229.05" layer="16"/>
+<rectangle x1="14.25" y1="228.75" x2="21.75" y2="229.05" layer="16"/>
+<rectangle x1="26.85" y1="228.75" x2="31.95" y2="229.05" layer="16"/>
+<rectangle x1="2.55" y1="229.05" x2="8.55" y2="229.35" layer="16"/>
+<rectangle x1="14.25" y1="229.05" x2="21.75" y2="229.35" layer="16"/>
+<rectangle x1="26.85" y1="229.05" x2="31.95" y2="229.35" layer="16"/>
+<rectangle x1="2.55" y1="229.35" x2="8.55" y2="229.65" layer="16"/>
+<rectangle x1="14.55" y1="229.35" x2="22.05" y2="229.65" layer="16"/>
+<rectangle x1="26.85" y1="229.35" x2="31.95" y2="229.65" layer="16"/>
+<rectangle x1="2.55" y1="229.65" x2="8.85" y2="229.95" layer="16"/>
+<rectangle x1="14.55" y1="229.65" x2="22.05" y2="229.95" layer="16"/>
+<rectangle x1="27.15" y1="229.65" x2="31.95" y2="229.95" layer="16"/>
+<rectangle x1="2.55" y1="229.95" x2="8.85" y2="230.25" layer="16"/>
+<rectangle x1="14.85" y1="229.95" x2="22.05" y2="230.25" layer="16"/>
+<rectangle x1="27.15" y1="229.95" x2="31.95" y2="230.25" layer="16"/>
+<rectangle x1="2.25" y1="230.25" x2="9.15" y2="230.55" layer="16"/>
+<rectangle x1="14.85" y1="230.25" x2="22.35" y2="230.55" layer="16"/>
+<rectangle x1="27.15" y1="230.25" x2="31.95" y2="230.55" layer="16"/>
+<rectangle x1="2.25" y1="230.55" x2="9.15" y2="230.85" layer="16"/>
+<rectangle x1="15.15" y1="230.55" x2="22.35" y2="230.85" layer="16"/>
+<rectangle x1="27.15" y1="230.55" x2="31.95" y2="230.85" layer="16"/>
+<rectangle x1="2.25" y1="230.85" x2="9.45" y2="231.15" layer="16"/>
+<rectangle x1="15.45" y1="230.85" x2="22.65" y2="231.15" layer="16"/>
+<rectangle x1="27.45" y1="230.85" x2="31.95" y2="231.15" layer="16"/>
+<rectangle x1="2.25" y1="231.15" x2="9.45" y2="231.45" layer="16"/>
+<rectangle x1="15.45" y1="231.15" x2="22.65" y2="231.45" layer="16"/>
+<rectangle x1="27.45" y1="231.15" x2="31.95" y2="231.45" layer="16"/>
+<rectangle x1="2.25" y1="231.45" x2="9.75" y2="231.75" layer="16"/>
+<rectangle x1="15.75" y1="231.45" x2="22.95" y2="231.75" layer="16"/>
+<rectangle x1="27.45" y1="231.45" x2="31.95" y2="231.75" layer="16"/>
+<rectangle x1="2.25" y1="231.75" x2="9.75" y2="232.05" layer="16"/>
+<rectangle x1="16.05" y1="231.75" x2="22.95" y2="232.05" layer="16"/>
+<rectangle x1="27.75" y1="231.75" x2="31.95" y2="232.05" layer="16"/>
+<rectangle x1="2.25" y1="232.05" x2="10.05" y2="232.35" layer="16"/>
+<rectangle x1="16.05" y1="232.05" x2="23.25" y2="232.35" layer="16"/>
+<rectangle x1="27.75" y1="232.05" x2="31.95" y2="232.35" layer="16"/>
+<rectangle x1="2.25" y1="232.35" x2="10.35" y2="232.65" layer="16"/>
+<rectangle x1="16.35" y1="232.35" x2="23.25" y2="232.65" layer="16"/>
+<rectangle x1="28.05" y1="232.35" x2="31.95" y2="232.65" layer="16"/>
+<rectangle x1="2.25" y1="232.65" x2="10.35" y2="232.95" layer="16"/>
+<rectangle x1="16.65" y1="232.65" x2="23.55" y2="232.95" layer="16"/>
+<rectangle x1="28.05" y1="232.65" x2="32.25" y2="232.95" layer="16"/>
+<rectangle x1="2.25" y1="232.95" x2="10.65" y2="233.25" layer="16"/>
+<rectangle x1="16.95" y1="232.95" x2="23.85" y2="233.25" layer="16"/>
+<rectangle x1="28.35" y1="232.95" x2="32.25" y2="233.25" layer="16"/>
+<rectangle x1="2.55" y1="233.25" x2="10.95" y2="233.55" layer="16"/>
+<rectangle x1="17.25" y1="233.25" x2="23.85" y2="233.55" layer="16"/>
+<rectangle x1="28.35" y1="233.25" x2="32.25" y2="233.55" layer="16"/>
+<rectangle x1="2.55" y1="233.55" x2="11.25" y2="233.85" layer="16"/>
+<rectangle x1="17.55" y1="233.55" x2="24.15" y2="233.85" layer="16"/>
+<rectangle x1="28.65" y1="233.55" x2="32.25" y2="233.85" layer="16"/>
+<rectangle x1="2.55" y1="233.85" x2="11.25" y2="234.15" layer="16"/>
+<rectangle x1="17.85" y1="233.85" x2="24.45" y2="234.15" layer="16"/>
+<rectangle x1="28.65" y1="233.85" x2="32.25" y2="234.15" layer="16"/>
+<rectangle x1="2.55" y1="234.15" x2="11.55" y2="234.45" layer="16"/>
+<rectangle x1="18.15" y1="234.15" x2="24.45" y2="234.45" layer="16"/>
+<rectangle x1="28.95" y1="234.15" x2="32.55" y2="234.45" layer="16"/>
+<rectangle x1="2.55" y1="234.45" x2="11.85" y2="234.75" layer="16"/>
+<rectangle x1="18.45" y1="234.45" x2="24.75" y2="234.75" layer="16"/>
+<rectangle x1="28.95" y1="234.45" x2="32.55" y2="234.75" layer="16"/>
+<rectangle x1="2.55" y1="234.75" x2="12.15" y2="235.05" layer="16"/>
+<rectangle x1="18.75" y1="234.75" x2="25.05" y2="235.05" layer="16"/>
+<rectangle x1="29.25" y1="234.75" x2="32.55" y2="235.05" layer="16"/>
+<rectangle x1="2.55" y1="235.05" x2="12.45" y2="235.35" layer="16"/>
+<rectangle x1="19.05" y1="235.05" x2="25.35" y2="235.35" layer="16"/>
+<rectangle x1="29.25" y1="235.05" x2="32.55" y2="235.35" layer="16"/>
+<rectangle x1="2.85" y1="235.35" x2="12.75" y2="235.65" layer="16"/>
+<rectangle x1="19.35" y1="235.35" x2="25.35" y2="235.65" layer="16"/>
+<rectangle x1="29.55" y1="235.35" x2="32.85" y2="235.65" layer="16"/>
+<rectangle x1="2.85" y1="235.65" x2="13.05" y2="235.95" layer="16"/>
+<rectangle x1="19.95" y1="235.65" x2="25.65" y2="235.95" layer="16"/>
+<rectangle x1="29.85" y1="235.65" x2="32.85" y2="235.95" layer="16"/>
+<rectangle x1="3.15" y1="235.95" x2="13.35" y2="236.25" layer="16"/>
+<rectangle x1="20.25" y1="235.95" x2="25.95" y2="236.25" layer="16"/>
+<rectangle x1="29.85" y1="235.95" x2="32.85" y2="236.25" layer="16"/>
+<rectangle x1="3.45" y1="236.25" x2="13.95" y2="236.55" layer="16"/>
+<rectangle x1="20.85" y1="236.25" x2="26.25" y2="236.55" layer="16"/>
+<rectangle x1="30.15" y1="236.25" x2="33.15" y2="236.55" layer="16"/>
+<rectangle x1="3.75" y1="236.55" x2="14.25" y2="236.85" layer="16"/>
+<rectangle x1="21.15" y1="236.55" x2="26.55" y2="236.85" layer="16"/>
+<rectangle x1="30.15" y1="236.55" x2="33.15" y2="236.85" layer="16"/>
+<rectangle x1="3.75" y1="236.85" x2="14.55" y2="237.15" layer="16"/>
+<rectangle x1="21.75" y1="236.85" x2="26.85" y2="237.15" layer="16"/>
+<rectangle x1="30.45" y1="236.85" x2="33.15" y2="237.15" layer="16"/>
+<rectangle x1="4.05" y1="237.15" x2="15.15" y2="237.45" layer="16"/>
+<rectangle x1="22.05" y1="237.15" x2="26.85" y2="237.45" layer="16"/>
+<rectangle x1="30.75" y1="237.15" x2="33.45" y2="237.45" layer="16"/>
+<rectangle x1="4.35" y1="237.45" x2="15.45" y2="237.75" layer="16"/>
+<rectangle x1="22.65" y1="237.45" x2="27.15" y2="237.75" layer="16"/>
+<rectangle x1="30.75" y1="237.45" x2="33.45" y2="237.75" layer="16"/>
+<rectangle x1="4.65" y1="237.75" x2="16.05" y2="238.05" layer="16"/>
+<rectangle x1="22.95" y1="237.75" x2="27.45" y2="238.05" layer="16"/>
+<rectangle x1="31.05" y1="237.75" x2="33.45" y2="238.05" layer="16"/>
+<rectangle x1="4.95" y1="238.05" x2="16.35" y2="238.35" layer="16"/>
+<rectangle x1="23.55" y1="238.05" x2="27.75" y2="238.35" layer="16"/>
+<rectangle x1="31.35" y1="238.05" x2="33.75" y2="238.35" layer="16"/>
+<rectangle x1="5.25" y1="238.35" x2="16.95" y2="238.65" layer="16"/>
+<rectangle x1="23.85" y1="238.35" x2="28.05" y2="238.65" layer="16"/>
+<rectangle x1="31.35" y1="238.35" x2="33.75" y2="238.65" layer="16"/>
+<rectangle x1="5.55" y1="238.65" x2="17.55" y2="238.95" layer="16"/>
+<rectangle x1="24.15" y1="238.65" x2="28.35" y2="238.95" layer="16"/>
+<rectangle x1="31.65" y1="238.65" x2="33.75" y2="238.95" layer="16"/>
+<rectangle x1="5.85" y1="238.95" x2="18.15" y2="239.25" layer="16"/>
+<rectangle x1="24.75" y1="238.95" x2="28.35" y2="239.25" layer="16"/>
+<rectangle x1="31.65" y1="238.95" x2="34.05" y2="239.25" layer="16"/>
+<rectangle x1="6.45" y1="239.25" x2="18.75" y2="239.55" layer="16"/>
+<rectangle x1="25.05" y1="239.25" x2="28.65" y2="239.55" layer="16"/>
+<rectangle x1="31.95" y1="239.25" x2="34.05" y2="239.55" layer="16"/>
+<rectangle x1="6.75" y1="239.55" x2="19.35" y2="239.85" layer="16"/>
+<rectangle x1="25.65" y1="239.55" x2="28.95" y2="239.85" layer="16"/>
+<rectangle x1="31.95" y1="239.55" x2="34.05" y2="239.85" layer="16"/>
+<rectangle x1="7.05" y1="239.85" x2="19.95" y2="240.15" layer="16"/>
+<rectangle x1="25.95" y1="239.85" x2="29.25" y2="240.15" layer="16"/>
+<rectangle x1="32.25" y1="239.85" x2="34.35" y2="240.15" layer="16"/>
+<rectangle x1="7.65" y1="240.15" x2="20.85" y2="240.45" layer="16"/>
+<rectangle x1="26.25" y1="240.15" x2="29.25" y2="240.45" layer="16"/>
+<rectangle x1="32.55" y1="240.15" x2="34.35" y2="240.45" layer="16"/>
+<rectangle x1="7.95" y1="240.45" x2="21.45" y2="240.75" layer="16"/>
+<rectangle x1="26.85" y1="240.45" x2="29.55" y2="240.75" layer="16"/>
+<rectangle x1="32.55" y1="240.45" x2="34.35" y2="240.75" layer="16"/>
+<rectangle x1="8.55" y1="240.75" x2="22.05" y2="241.05" layer="16"/>
+<rectangle x1="27.15" y1="240.75" x2="29.85" y2="241.05" layer="16"/>
+<rectangle x1="32.85" y1="240.75" x2="34.35" y2="241.05" layer="16"/>
+<rectangle x1="8.85" y1="241.05" x2="22.65" y2="241.35" layer="16"/>
+<rectangle x1="27.45" y1="241.05" x2="30.15" y2="241.35" layer="16"/>
+<rectangle x1="32.85" y1="241.05" x2="34.65" y2="241.35" layer="16"/>
+<rectangle x1="9.45" y1="241.35" x2="23.55" y2="241.65" layer="16"/>
+<rectangle x1="27.75" y1="241.35" x2="30.15" y2="241.65" layer="16"/>
+<rectangle x1="33.15" y1="241.35" x2="34.65" y2="241.65" layer="16"/>
+<rectangle x1="10.05" y1="241.65" x2="24.15" y2="241.95" layer="16"/>
+<rectangle x1="28.05" y1="241.65" x2="30.45" y2="241.95" layer="16"/>
+<rectangle x1="33.15" y1="241.65" x2="34.65" y2="241.95" layer="16"/>
+<rectangle x1="10.95" y1="241.95" x2="24.45" y2="242.25" layer="16"/>
+<rectangle x1="28.65" y1="241.95" x2="30.75" y2="242.25" layer="16"/>
+<rectangle x1="33.45" y1="241.95" x2="34.65" y2="242.25" layer="16"/>
+<rectangle x1="11.55" y1="242.25" x2="25.05" y2="242.55" layer="16"/>
+<rectangle x1="28.95" y1="242.25" x2="31.05" y2="242.55" layer="16"/>
+<rectangle x1="33.45" y1="242.25" x2="34.95" y2="242.55" layer="16"/>
+<rectangle x1="12.75" y1="242.55" x2="25.65" y2="242.85" layer="16"/>
+<rectangle x1="29.25" y1="242.55" x2="31.05" y2="242.85" layer="16"/>
+<rectangle x1="33.75" y1="242.55" x2="34.95" y2="242.85" layer="16"/>
+<rectangle x1="13.95" y1="242.85" x2="25.95" y2="243.15" layer="16"/>
+<rectangle x1="29.55" y1="242.85" x2="31.35" y2="243.15" layer="16"/>
+<rectangle x1="33.75" y1="242.85" x2="34.95" y2="243.15" layer="16"/>
+<rectangle x1="15.75" y1="243.15" x2="26.55" y2="243.45" layer="16"/>
+<rectangle x1="29.85" y1="243.15" x2="31.35" y2="243.45" layer="16"/>
+<rectangle x1="33.75" y1="243.15" x2="34.95" y2="243.45" layer="16"/>
+<rectangle x1="17.85" y1="243.45" x2="26.85" y2="243.75" layer="16"/>
+<rectangle x1="30.15" y1="243.45" x2="31.65" y2="243.75" layer="16"/>
+<rectangle x1="34.05" y1="243.45" x2="34.95" y2="243.75" layer="16"/>
+<rectangle x1="19.95" y1="243.75" x2="27.45" y2="244.05" layer="16"/>
+<rectangle x1="30.45" y1="243.75" x2="31.95" y2="244.05" layer="16"/>
+<rectangle x1="34.05" y1="243.75" x2="35.25" y2="244.05" layer="16"/>
+<rectangle x1="21.45" y1="244.05" x2="27.75" y2="244.35" layer="16"/>
+<rectangle x1="30.75" y1="244.05" x2="31.95" y2="244.35" layer="16"/>
+<rectangle x1="34.35" y1="244.05" x2="35.25" y2="244.35" layer="16"/>
+<rectangle x1="22.95" y1="244.35" x2="28.05" y2="244.65" layer="16"/>
+<rectangle x1="31.05" y1="244.35" x2="32.25" y2="244.65" layer="16"/>
+<rectangle x1="34.35" y1="244.35" x2="35.25" y2="244.65" layer="16"/>
+<rectangle x1="24.15" y1="244.65" x2="28.35" y2="244.95" layer="16"/>
+<rectangle x1="31.05" y1="244.65" x2="32.25" y2="244.95" layer="16"/>
+<rectangle x1="34.35" y1="244.65" x2="35.25" y2="244.95" layer="16"/>
+<rectangle x1="25.35" y1="244.95" x2="28.65" y2="245.25" layer="16"/>
+<rectangle x1="31.35" y1="244.95" x2="32.55" y2="245.25" layer="16"/>
+<rectangle x1="34.65" y1="244.95" x2="35.25" y2="245.25" layer="16"/>
+<rectangle x1="25.95" y1="245.25" x2="28.95" y2="245.55" layer="16"/>
+<rectangle x1="31.65" y1="245.25" x2="32.55" y2="245.55" layer="16"/>
+<rectangle x1="34.65" y1="245.25" x2="35.25" y2="245.55" layer="16"/>
+<rectangle x1="26.85" y1="245.55" x2="29.25" y2="245.85" layer="16"/>
+<rectangle x1="31.95" y1="245.55" x2="32.85" y2="245.85" layer="16"/>
+<rectangle x1="34.65" y1="245.55" x2="35.25" y2="245.85" layer="16"/>
+<rectangle x1="27.45" y1="245.85" x2="29.55" y2="246.15" layer="16"/>
+<rectangle x1="31.95" y1="245.85" x2="32.85" y2="246.15" layer="16"/>
+<rectangle x1="34.65" y1="245.85" x2="35.25" y2="246.15" layer="16"/>
+<rectangle x1="28.05" y1="246.15" x2="29.85" y2="246.45" layer="16"/>
+<rectangle x1="32.25" y1="246.15" x2="33.15" y2="246.45" layer="16"/>
+<rectangle x1="34.95" y1="246.15" x2="35.25" y2="246.45" layer="16"/>
+<rectangle x1="28.65" y1="246.45" x2="30.15" y2="246.75" layer="16"/>
+<rectangle x1="32.55" y1="246.45" x2="33.15" y2="246.75" layer="16"/>
+<rectangle x1="34.95" y1="246.45" x2="35.25" y2="246.75" layer="16"/>
+<rectangle x1="28.95" y1="246.75" x2="30.45" y2="247.05" layer="16"/>
+<rectangle x1="32.55" y1="246.75" x2="33.15" y2="247.05" layer="16"/>
+<rectangle x1="34.95" y1="246.75" x2="35.55" y2="247.05" layer="16"/>
+<rectangle x1="29.55" y1="247.05" x2="30.75" y2="247.35" layer="16"/>
+<rectangle x1="32.85" y1="247.05" x2="33.45" y2="247.35" layer="16"/>
+<rectangle x1="34.95" y1="247.05" x2="35.55" y2="247.35" layer="16"/>
+<rectangle x1="29.85" y1="247.35" x2="30.75" y2="247.65" layer="16"/>
+<rectangle x1="32.85" y1="247.35" x2="33.45" y2="247.65" layer="16"/>
+<rectangle x1="34.95" y1="247.35" x2="35.55" y2="247.65" layer="16"/>
+<rectangle x1="30.15" y1="247.65" x2="31.05" y2="247.95" layer="16"/>
+<rectangle x1="33.15" y1="247.65" x2="33.45" y2="247.95" layer="16"/>
+<rectangle x1="35.25" y1="247.65" x2="35.55" y2="247.95" layer="16"/>
+<rectangle x1="30.45" y1="247.95" x2="31.35" y2="248.25" layer="16"/>
+<rectangle x1="33.15" y1="247.95" x2="33.45" y2="248.25" layer="16"/>
+<rectangle x1="35.25" y1="247.95" x2="35.55" y2="248.25" layer="16"/>
+<rectangle x1="30.75" y1="248.25" x2="31.35" y2="248.55" layer="16"/>
+<rectangle x1="33.15" y1="248.25" x2="33.75" y2="248.55" layer="16"/>
+<rectangle x1="31.05" y1="248.55" x2="31.65" y2="248.85" layer="16"/>
+<rectangle x1="33.45" y1="248.55" x2="33.75" y2="248.85" layer="16"/>
+<rectangle x1="31.35" y1="248.85" x2="31.65" y2="249.15" layer="16"/>
+<rectangle x1="33.45" y1="248.85" x2="33.75" y2="249.15" layer="16"/>
+<rectangle x1="31.65" y1="249.15" x2="31.95" y2="249.45" layer="16"/>
+<rectangle x1="33.45" y1="249.15" x2="33.75" y2="249.45" layer="16"/>
+<rectangle x1="31.65" y1="249.45" x2="31.95" y2="249.75" layer="16"/>
+<rectangle x1="31.95" y1="249.75" x2="32.25" y2="250.05" layer="16"/>
+<rectangle x1="33.75" y1="250.05" x2="34.05" y2="250.35" layer="16"/>
+<rectangle x1="32.25" y1="250.35" x2="32.55" y2="250.65" layer="16"/>
+<text x="35.4" y="35.4" size="30" layer="16" font="vector" ratio="10" distance="250" rot="MR270" align="bottom-center">AAU</text>
 </plain>
 <libraries>
 <library name="SamacSys_Parts">
 <description>&lt;b&gt;https://componentsearchengine.com&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by SamacSys&lt;/author&gt;</description>
 <packages>
-<package name="B32774D4505K000">
-<description>&lt;b&gt;B32774D (31.5 x 11)&lt;/b&gt;&lt;br&gt;
-</description>
-<pad name="1" x="0" y="0" drill="1.05" diameter="1.575"/>
-<pad name="2" x="27.5" y="0" drill="1.05" diameter="1.575"/>
-<text x="13.75" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="13.75" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-2" y1="5.5" x2="29.5" y2="5.5" width="0.2" layer="51"/>
-<wire x1="29.5" y1="5.5" x2="29.5" y2="-5.5" width="0.2" layer="51"/>
-<wire x1="29.5" y1="-5.5" x2="-2" y2="-5.5" width="0.2" layer="51"/>
-<wire x1="-2" y1="-5.5" x2="-2" y2="5.5" width="0.2" layer="51"/>
-<wire x1="-2" y1="5.5" x2="29.5" y2="5.5" width="0.1" layer="21"/>
-<wire x1="29.5" y1="5.5" x2="29.5" y2="-5.5" width="0.1" layer="21"/>
-<wire x1="29.5" y1="-5.5" x2="-2" y2="-5.5" width="0.1" layer="21"/>
-<wire x1="-2" y1="-5.5" x2="-2" y2="5.5" width="0.1" layer="21"/>
-<wire x1="-3" y1="6.5" x2="30.5" y2="6.5" width="0.1" layer="51"/>
-<wire x1="30.5" y1="6.5" x2="30.5" y2="-6.5" width="0.1" layer="51"/>
-<wire x1="30.5" y1="-6.5" x2="-3" y2="-6.5" width="0.1" layer="51"/>
-<wire x1="-3" y1="-6.5" x2="-3" y2="6.5" width="0.1" layer="51"/>
-</package>
 <package name="TO1090P515X1560X2445-2P">
 <description>&lt;b&gt;DO-247&lt;/b&gt;&lt;br&gt;
 </description>
@@ -146,51 +495,6 @@
 <wire x1="-17.755" y1="5.16" x2="2.155" y2="5.16" width="0.2" layer="21"/>
 <wire x1="2.155" y1="5.16" x2="2.155" y2="0" width="0.2" layer="21"/>
 </package>
-<package name="66904022">
-<description>&lt;b&gt;66.9040-22&lt;/b&gt;&lt;br&gt;
-</description>
-<pad name="1" x="-5.08" y="-14.66" drill="1.33" diameter="1.995"/>
-<pad name="2" x="5.08" y="-14.66" drill="1.33" diameter="1.995"/>
-<pad name="3" x="5.08" y="-4.5" drill="1.33" diameter="1.995"/>
-<pad name="4" x="-5.08" y="-4.5" drill="1.33" diameter="1.995"/>
-<pad name="5" x="0" y="-10.86" drill="2.2" diameter="3.3"/>
-<text x="0" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="0" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-6" y1="16.5" x2="6" y2="16.5" width="0.2" layer="51"/>
-<wire x1="6" y1="16.5" x2="6" y2="-16.5" width="0.2" layer="51"/>
-<wire x1="6" y1="-16.5" x2="-6" y2="-16.5" width="0.2" layer="51"/>
-<wire x1="-6" y1="-16.5" x2="-6" y2="16.5" width="0.2" layer="51"/>
-<wire x1="-7.078" y1="17.5" x2="7.078" y2="17.5" width="0.1" layer="51"/>
-<wire x1="7.078" y1="17.5" x2="7.078" y2="-17.5" width="0.1" layer="51"/>
-<wire x1="7.078" y1="-17.5" x2="-7.078" y2="-17.5" width="0.1" layer="51"/>
-<wire x1="-7.078" y1="-17.5" x2="-7.078" y2="17.5" width="0.1" layer="51"/>
-<wire x1="-6" y1="-3.5" x2="-6" y2="16.5" width="0.1" layer="21"/>
-<wire x1="-6" y1="16.5" x2="6" y2="16.5" width="0.1" layer="21"/>
-<wire x1="6" y1="16.5" x2="6" y2="-3.5" width="0.1" layer="21"/>
-<wire x1="-6" y1="-5.5" x2="-6" y2="-13.5" width="0.1" layer="21"/>
-<wire x1="6" y1="-5.5" x2="6" y2="-13.5" width="0.1" layer="21"/>
-<wire x1="-6" y1="-16.5" x2="6" y2="-16.5" width="0.1" layer="21"/>
-</package>
-<package name="CTX1001052LPR">
-<description>&lt;b&gt;CTX100-10-52LPR-3&lt;/b&gt;&lt;br&gt;
-</description>
-<pad name="1" x="0" y="0" drill="2.45" diameter="3.675"/>
-<pad name="2" x="50.6" y="0" drill="2.45" diameter="3.675"/>
-<text x="25.3" y="0" size="1.27" layer="25" align="center">&gt;NAME</text>
-<text x="25.3" y="0" size="1.27" layer="27" align="center">&gt;VALUE</text>
-<wire x1="-4.2" y1="29.5" x2="54.8" y2="29.5" width="0.1" layer="51"/>
-<wire x1="54.8" y1="29.5" x2="54.8" y2="-29.5" width="0.1" layer="51"/>
-<wire x1="54.8" y1="-29.5" x2="-4.2" y2="-29.5" width="0.1" layer="51"/>
-<wire x1="-4.2" y1="-29.5" x2="-4.2" y2="29.5" width="0.1" layer="51"/>
-<wire x1="-3.2" y1="0" x2="-3.2" y2="0" width="0.2" layer="51"/>
-<wire x1="-3.2" y1="0" x2="53.8" y2="0" width="0.2" layer="51" curve="-180"/>
-<wire x1="53.8" y1="0" x2="53.8" y2="0" width="0.2" layer="51"/>
-<wire x1="53.8" y1="0" x2="-3.2" y2="0" width="0.2" layer="51" curve="-180"/>
-<wire x1="-3.2" y1="0" x2="-3.2" y2="0" width="0.1" layer="21"/>
-<wire x1="-3.2" y1="0" x2="53.8" y2="0" width="0.1" layer="21" curve="-180"/>
-<wire x1="53.8" y1="0" x2="53.8" y2="0" width="0.1" layer="21"/>
-<wire x1="53.8" y1="0" x2="-3.2" y2="0" width="0.1" layer="21" curve="-180"/>
-</package>
 <package name="TO544P521X1594X2550-3P">
 <description>&lt;b&gt;TO-247-3&lt;/b&gt;&lt;br&gt;
 </description>
@@ -213,6 +517,164 @@
 <wire x1="-2.625" y1="2.88" x2="-2.625" y2="0" width="0.2" layer="21"/>
 </package>
 </packages>
+</library>
+<library name="placeholders">
+<packages>
+<package name="ECA2WHG2R2">
+<pad name="PLUS" x="0" y="0" drill="0.6" diameter="1.016" shape="square"/>
+<pad name="MINUS" x="5" y="0" drill="0.6"/>
+<circle x="2.5" y="0" radius="5" width="0.127" layer="21"/>
+<text x="-1.27" y="5.08" size="1.27" layer="25">&gt;NAME</text>
+<text x="-1.27" y="6.35" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+<package name="BOBBIN">
+<pad name="10" x="0" y="0" drill="0.6"/>
+<pad name="11" x="0" y="-5" drill="0.6"/>
+<pad name="12" x="0" y="-10" drill="0.6"/>
+<pad name="13" x="0" y="-15" drill="0.6"/>
+<pad name="14" x="0" y="-20" drill="0.6"/>
+<pad name="15" x="0" y="-25" drill="0.6"/>
+<pad name="16" x="0" y="-30" drill="0.6"/>
+<pad name="17" x="0" y="-35" drill="0.6"/>
+<pad name="18" x="27.5" y="-35" drill="0.6"/>
+<pad name="19" x="27.5" y="-30" drill="0.6"/>
+<pad name="110" x="27.5" y="-25" drill="0.6"/>
+<pad name="111" x="27.5" y="-20" drill="0.6"/>
+<pad name="112" x="27.5" y="-15" drill="0.6"/>
+<pad name="113" x="27.5" y="-10" drill="0.6"/>
+<pad name="114" x="27.5" y="-5" drill="0.6"/>
+<pad name="115" x="27.5" y="0" drill="0.6"/>
+<wire x1="-1.108" y1="1.108" x2="28.608" y2="1.108" width="0.127" layer="21"/>
+<wire x1="28.608" y1="1.108" x2="28.608" y2="-36.108" width="0.127" layer="21"/>
+<wire x1="28.608" y1="-36.108" x2="-1.108" y2="-36.108" width="0.127" layer="21"/>
+<wire x1="-1.108" y1="-36.108" x2="-1.108" y2="1.108" width="0.127" layer="21"/>
+<text x="-1.108" y="1.319665625" size="1.27" layer="25">&gt;NAME</text>
+</package>
+</packages>
+</library>
+<library name="holes" urn="urn:adsk.eagle:library:237">
+<description>&lt;b&gt;Mounting Holes and Pads&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="5,0-PAD" urn="urn:adsk.eagle:footprint:14258/1" library_version="1">
+<description>&lt;b&gt;MOUNTING PAD&lt;/b&gt; 5.0 mm, round</description>
+<wire x1="-2.54" y1="0" x2="0" y2="-2.54" width="3.9116" layer="51" curve="90" cap="flat"/>
+<wire x1="0" y1="2.54" x2="2.54" y2="0" width="3.9116" layer="51" curve="-90" cap="flat"/>
+<circle x="0" y="0" radius="4.4958" width="0.1524" layer="51"/>
+<circle x="0" y="0" radius="0.762" width="0.4572" layer="51"/>
+<circle x="0" y="0" radius="5.588" width="2" layer="43"/>
+<circle x="0" y="0" radius="5.588" width="2" layer="39"/>
+<circle x="0" y="0" radius="5.588" width="2" layer="40"/>
+<circle x="0" y="0" radius="2.6" width="0.1524" layer="21"/>
+<pad name="B5" x="0" y="0" drill="5" diameter="9"/>
+</package>
+</packages>
+<packages3d>
+<package3d name="5,0-PAD" urn="urn:adsk.eagle:package:14288/1" type="box" library_version="1">
+<description>MOUNTING PAD 5.0 mm, round</description>
+<packageinstances>
+<packageinstance name="5,0-PAD"/>
+</packageinstances>
+</package3d>
+</packages3d>
+</library>
+<library name="heatsink" urn="urn:adsk.eagle:library:236">
+<description>&lt;b&gt;Heatsinks&lt;/b&gt;&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="SK104-PAD" urn="urn:adsk.eagle:footprint:14165/1" library_version="1">
+<description>&lt;b&gt;HEATSINK&lt;/b&gt;&lt;p&gt; manufacturer Fischer/distributor Buerklin</description>
+<wire x1="-13.589" y1="-0.127" x2="-13.589" y2="-1.397" width="0.1524" layer="51" curve="-288.924644"/>
+<wire x1="13.589" y1="-0.127" x2="13.6089" y2="-1.3679" width="0.1524" layer="51" curve="290.773581"/>
+<wire x1="8.255" y1="4.953" x2="9.525" y2="4.953" width="0.1524" layer="21" curve="-180"/>
+<wire x1="16.383" y1="5.08" x2="17.399" y2="4.318" width="0.1524" layer="21" curve="-180"/>
+<wire x1="11.938" y1="5.1562" x2="13.2474" y2="4.7898" width="0.1524" layer="21" curve="-167.67321"/>
+<wire x1="16.637" y1="2.286" x2="17.1547" y2="1.1217" width="0.1524" layer="21" curve="-179.045338"/>
+<wire x1="8.255" y1="4.953" x2="8.001" y2="0" width="0.1524" layer="21"/>
+<wire x1="13.2588" y1="4.826" x2="12.6746" y2="2.6924" width="0.1524" layer="21"/>
+<wire x1="9.9822" y1="0.9398" x2="9.525" y2="5.0292" width="0.1524" layer="21"/>
+<wire x1="14.8844" y1="1.8542" x2="16.637" y2="2.286" width="0.1524" layer="21"/>
+<wire x1="9.9822" y1="0.9398" x2="10.2616" y2="0.9398" width="0.1524" layer="21"/>
+<wire x1="10.2616" y1="0.9398" x2="11.938" y2="5.1562" width="0.1524" layer="21"/>
+<wire x1="12.6746" y1="2.6924" x2="12.8778" y2="2.5908" width="0.1524" layer="21"/>
+<wire x1="12.8778" y1="2.5908" x2="16.4846" y2="5.1816" width="0.1524" layer="21"/>
+<wire x1="14.8844" y1="1.8542" x2="14.7574" y2="2.032" width="0.1524" layer="21"/>
+<wire x1="14.7574" y1="2.032" x2="17.399" y2="4.318" width="0.1524" layer="21"/>
+<wire x1="-9.525" y1="-6.477" x2="-8.255" y2="-6.477" width="0.1524" layer="21" curve="180"/>
+<wire x1="-17.399" y1="-5.842" x2="-16.383" y2="-6.604" width="0.1524" layer="21" curve="180"/>
+<wire x1="-13.2476" y1="-6.3138" x2="-11.9378" y2="-6.6803" width="0.1524" layer="21" curve="167.668298"/>
+<wire x1="-17.1546" y1="-2.6459" x2="-16.6371" y2="-3.8098" width="0.1524" layer="21" curve="179.04501"/>
+<wire x1="-8.255" y1="-6.477" x2="-8.001" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="-13.2588" y1="-6.35" x2="-12.6746" y2="-4.2164" width="0.1524" layer="21"/>
+<wire x1="-9.9822" y1="-2.4638" x2="-9.525" y2="-6.5278" width="0.1524" layer="21"/>
+<wire x1="-15.1384" y1="-3.6322" x2="-16.637" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="-9.9822" y1="-2.4638" x2="-10.2616" y2="-2.4638" width="0.1524" layer="21"/>
+<wire x1="-10.2616" y1="-2.4638" x2="-11.938" y2="-6.6802" width="0.1524" layer="21"/>
+<wire x1="-12.6746" y1="-4.2164" x2="-12.8778" y2="-4.1148" width="0.1524" layer="21"/>
+<wire x1="-12.8778" y1="-4.1148" x2="-16.4846" y2="-6.7056" width="0.1524" layer="21"/>
+<wire x1="-15.1384" y1="-3.6322" x2="-15.0114" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="-15.0114" y1="-3.81" x2="-17.399" y2="-5.842" width="0.1524" layer="21"/>
+<wire x1="8.255" y1="-6.477" x2="9.525" y2="-6.477" width="0.1524" layer="21" curve="180"/>
+<wire x1="16.383" y1="-6.604" x2="17.399" y2="-5.842" width="0.1524" layer="21" curve="180"/>
+<wire x1="11.938" y1="-6.6802" x2="13.2474" y2="-6.3138" width="0.1524" layer="21" curve="167.67321"/>
+<wire x1="16.637" y1="-3.81" x2="17.1547" y2="-2.6457" width="0.1524" layer="21" curve="179.045338"/>
+<wire x1="8.255" y1="-6.477" x2="8.001" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="13.2588" y1="-6.35" x2="12.6746" y2="-4.0894" width="0.1524" layer="21"/>
+<wire x1="9.9822" y1="-2.4638" x2="9.525" y2="-6.5024" width="0.1524" layer="21"/>
+<wire x1="14.8844" y1="-3.3782" x2="16.637" y2="-3.81" width="0.1524" layer="21"/>
+<wire x1="9.9822" y1="-2.4638" x2="10.2616" y2="-2.4638" width="0.1524" layer="21"/>
+<wire x1="10.2616" y1="-2.4638" x2="11.938" y2="-6.6802" width="0.1524" layer="21"/>
+<wire x1="12.6746" y1="-4.0894" x2="12.8778" y2="-3.9878" width="0.1524" layer="21"/>
+<wire x1="12.8778" y1="-3.9878" x2="16.4846" y2="-6.7056" width="0.1524" layer="21"/>
+<wire x1="14.8844" y1="-3.3782" x2="14.7574" y2="-3.556" width="0.1524" layer="21"/>
+<wire x1="14.7574" y1="-3.556" x2="17.399" y2="-5.842" width="0.1524" layer="21"/>
+<wire x1="-9.525" y1="4.953" x2="-8.255" y2="4.953" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-17.399" y1="4.318" x2="-16.383" y2="5.08" width="0.1524" layer="21" curve="-180"/>
+<wire x1="-13.2476" y1="4.7898" x2="-11.9378" y2="5.1563" width="0.1524" layer="21" curve="-167.668298"/>
+<wire x1="-17.1546" y1="1.1219" x2="-16.6371" y2="2.2858" width="0.1524" layer="21" curve="-179.04501"/>
+<wire x1="-8.255" y1="4.953" x2="-8.001" y2="0" width="0.1524" layer="21"/>
+<wire x1="-13.2588" y1="4.826" x2="-12.6746" y2="2.6924" width="0.1524" layer="21"/>
+<wire x1="-9.9822" y1="0.9398" x2="-9.525" y2="5.0038" width="0.1524" layer="21"/>
+<wire x1="-15.1384" y1="1.9812" x2="-16.637" y2="2.286" width="0.1524" layer="21"/>
+<wire x1="-9.9822" y1="0.9398" x2="-10.2616" y2="0.9398" width="0.1524" layer="21"/>
+<wire x1="-10.2616" y1="0.9398" x2="-11.938" y2="5.1562" width="0.1524" layer="21"/>
+<wire x1="-12.6746" y1="2.6924" x2="-12.8778" y2="2.5908" width="0.1524" layer="21"/>
+<wire x1="-12.8778" y1="2.5908" x2="-16.4846" y2="5.1816" width="0.1524" layer="21"/>
+<wire x1="-15.1384" y1="1.9812" x2="-15.0114" y2="2.159" width="0.1524" layer="21"/>
+<wire x1="-15.0114" y1="2.159" x2="-17.399" y2="4.318" width="0.1524" layer="21"/>
+<wire x1="-8.001" y1="0" x2="8.001" y2="0" width="0.1524" layer="21"/>
+<wire x1="-8.001" y1="-1.524" x2="8.001" y2="-1.524" width="0.1524" layer="21"/>
+<wire x1="13.589" y1="-0.127" x2="15.113" y2="0.381" width="0.1524" layer="51"/>
+<wire x1="15.113" y1="0.381" x2="17.1704" y2="1.143" width="0.1524" layer="21"/>
+<wire x1="13.589" y1="-1.397" x2="15.113" y2="-1.905" width="0.1524" layer="51"/>
+<wire x1="15.113" y1="-1.905" x2="17.1958" y2="-2.667" width="0.1524" layer="21"/>
+<wire x1="-13.589" y1="-0.127" x2="-15.113" y2="0.381" width="0.1524" layer="51"/>
+<wire x1="-15.113" y1="0.381" x2="-17.1958" y2="1.143" width="0.1524" layer="21"/>
+<wire x1="-13.589" y1="-1.397" x2="-15.113" y2="-1.905" width="0.1524" layer="51"/>
+<wire x1="-15.113" y1="-1.905" x2="-17.1958" y2="-2.667" width="0.1524" layer="21"/>
+<wire x1="-7.366" y1="1.778" x2="-7.366" y2="0.254" width="0.1524" layer="21"/>
+<wire x1="-7.366" y1="0.127" x2="-7.62" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.112" y1="0.635" x2="-7.366" y2="0.127" width="0.1524" layer="21"/>
+<wire x1="-7.366" y1="0.127" x2="-7.239" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.239" y1="0.635" x2="-7.112" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.62" y1="0.635" x2="-7.493" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.493" y1="0.635" x2="-7.239" y2="0.635" width="0.1524" layer="21"/>
+<wire x1="-7.493" y1="0.635" x2="-7.366" y2="0.254" width="0.1524" layer="21"/>
+<wire x1="-7.366" y1="0.254" x2="-7.366" y2="0.127" width="0.1524" layer="21"/>
+<pad name="K1" x="-12.7" y="-0.762" drill="2.54" diameter="3.81"/>
+<pad name="K2" x="12.7" y="-0.762" drill="2.54" diameter="3.81"/>
+<text x="-6.604" y="-4.318" size="1.778" layer="25" ratio="10">&gt;NAME</text>
+<text x="-6.604" y="-6.477" size="1.778" layer="27" ratio="10">&gt;VALUE</text>
+</package>
+</packages>
+<packages3d>
+<package3d name="SK104-PAD" urn="urn:adsk.eagle:package:14201/1" type="box" library_version="1">
+<description>HEATSINK manufacturer Fischer/distributor Buerklin</description>
+<packageinstances>
+<packageinstance name="SK104-PAD"/>
+</packageinstances>
+</package3d>
+</packages3d>
 </library>
 </libraries>
 <attributes>
@@ -407,593 +869,606 @@ design rules under a new name.</description>
 </pass>
 </autorouter>
 <elements>
-<element name="C1" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="68.69" y="179.86" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="68.69" y="193.61" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="136" y="284" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="66.69" y="193.61" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C1" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="50" y="185" smashed="yes" rot="R270">
+<attribute name="NAME" x="50" y="171.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="52" y="171.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C10" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="109.19" y="113.26" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="109.19" y="127.01" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="240" y="192" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="109.19" y="127.01" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C10" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="97" y="110" smashed="yes" rot="R270">
+<attribute name="NAME" x="97" y="96.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="97" y="96.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C11" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="67.19" y="44.97" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="67.19" y="58.72" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="198" y="158" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="67.19" y="58.72" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C11" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="50" y="30" smashed="yes" rot="R270">
+<attribute name="NAME" x="50" y="12.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="50" y="12.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C2" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="68.69" y="115.57" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="68.69" y="129.32" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="136" y="254" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="68.69" y="129.32" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C2" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="50" y="100" smashed="yes" rot="R270">
+<attribute name="NAME" x="50" y="83.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="50" y="83.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C3" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="109.13" y="154.55" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="109.13" y="168.3" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="212" y="199" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="109.13" y="168.3" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C3" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="97" y="175" smashed="yes" rot="R270">
+<attribute name="NAME" x="97" y="161.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="97" y="161.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C4" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="67.13" y="80.26" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="67.13" y="94.01" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="170" y="159" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="67.13" y="94.01" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C4" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="50" y="65" smashed="yes" rot="R270">
+<attribute name="NAME" x="50" y="46.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="50" y="46.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C5" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="108.13" y="70.97" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="108.13" y="84.72" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="211" y="184" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="108.13" y="84.72" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C5" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="97" y="75" smashed="yes" rot="R270">
+<attribute name="NAME" x="97" y="61.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="97" y="61.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C6" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="109.16" y="193.55" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="109.16" y="207.3" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="226" y="238" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="109.16" y="207.3" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C6" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="97" y="210" smashed="yes" rot="R270">
+<attribute name="NAME" x="97" y="196.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="97" y="196.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C7" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="109.16" y="32.26" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="109.16" y="46.01" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="226" y="111" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="109.16" y="46.01" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C7" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="97" y="40" smashed="yes" rot="R270">
+<attribute name="NAME" x="97" y="26.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="97" y="26.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C8" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="69.16" y="213.97" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="69.16" y="227.72" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="186" y="327" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="69.16" y="227.72" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C8" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="50" y="220" smashed="yes" rot="R270">
+<attribute name="NAME" x="50" y="206.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="50" y="206.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="C9" library="SamacSys_Parts" package="B32774D4505K000" value="B32774D4505K000" x="109.19" y="229.55" smashed="yes" rot="R90">
-<attribute name="ARROW_PART_NUMBER" value="B32774D4505K000" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/b32774d4505k000/epcos-tdk" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="Epcos B32774D 5F Polypropylene Film Capacitor 450 V dc 10%" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="21mm" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="EPCOS" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="B32774D4505K000" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="109.19" y="243.3" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1726009" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1726009" x="240" y="274" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="109.19" y="243.3" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="C9" library="placeholders" package="ECA2WHG2R2" value="SANJEECAP" x="97" y="245" smashed="yes" rot="R270">
+<attribute name="NAME" x="97" y="231.25" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="97" y="231.25" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D1" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="80.97" y="190.53" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.97" y="187.53" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-60" y="141" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.97" y="187.53" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D1" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="62.5" y="189" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="62.5" y="186" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-78.47" y="139.47" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="64.5" y="186" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D10" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="80.4" y="107.95" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.4" y="104.95" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-72" y="0" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.4" y="104.95" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D10" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="62.5" y="102" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="62.5" y="99" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-89.9" y="-5.95" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="64.5" y="99" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D11" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="81.4" y="150.27" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.4" y="145.27" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-71" y="22" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.4" y="144.27" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D11" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="78.5" y="127" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="77.5" y="122" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-73.9" y="-1.27" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="79.5" y="121" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D2" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="80.97" y="207.85" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.97" y="204.85" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-60" y="138" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.97" y="204.85" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D2" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="78.5" y="201.5" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="78.5" y="198.5" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-62.47" y="131.65" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="80.5" y="198.5" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D3" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="80.97" y="55.17" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.97" y="52.17" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-60" y="-35" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.97" y="52.17" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D3" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="78.5" y="51.5" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="78.5" y="48.5" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-62.47" y="-38.67" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="80.5" y="48.5" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D4" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="79.97" y="90.49" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="79.97" y="87.49" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-61" y="-20" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="81.97" y="87.49" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D4" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="78.5" y="89.5" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="78.5" y="86.5" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-62.47" y="-20.99" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="80.5" y="86.5" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D5" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="79.97" y="72.81" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="79.97" y="69.81" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-61" y="-58" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="81.97" y="69.81" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D5" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="62.5" y="64" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="62.5" y="61" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-78.47" y="-66.81" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="64.5" y="61" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D6" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="81.4" y="226.67" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="81.4" y="223.67" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-71" y="200" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="83.4" y="223.67" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D6" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="62.5" y="227" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="62.5" y="224" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-89.9" y="200.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="64.5" y="224" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D7" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="80.4" y="36.99" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.4" y="33.99" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-72" y="-10" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.4" y="33.99" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D7" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="62.4" y="25.49" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="62.4" y="22.49" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-90" y="-21.5" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="64.4" y="22.49" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D8" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="80.4" y="246.31" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="80.4" y="243.31" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-72" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="82.4" y="243.31" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D8" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="78.5" y="239.5" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="78.5" y="236.5" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-73.9" y="172.19" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="80.5" y="236.5" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="D9" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="81.4" y="266.63" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70014108" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="5.15mm" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="81.4" y="263.63" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="6870818" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-71" y="179" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="83.4" y="263.63" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="D9" library="SamacSys_Parts" package="TO1090P515X1560X2445-2P" value="STTH6012W" x="62.5" y="265" smashed="yes" rot="R270">
+<attribute name="ALLIED_NUMBER" value="70014108" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ALLIED_PRICE-STOCK" value="http://www.alliedelec.com/stmicroelectronics-stth6012w/70014108/" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PART_NUMBER" value="STTH6012W" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="https://www.arrow.com/en/products/stth6012w/stmicroelectronics" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="STTH6012W, Fast Recovery Rectifier Diode,  Switching 60A max, 1200V 125ns, 2-Pin, DO-247" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.15mm" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="STMicroelectronics" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="STTH6012W" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="62.5" y="262" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="6870818" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/rectifier-schottky-diodes/6870818/?source=DS" x="-89.9" y="177.37" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="64.5" y="262" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="J1" library="SamacSys_Parts" package="SHDR5W155P0X396_1X5_1966X1001X" value="26-60-4050" x="43.08" y="169.54" smashed="yes">
-<attribute name="DESCRIPTION" value="Molex KK 396 Series, Series Number 41791, 3.96mm Pitch 5 Way 1 Row Straight PCB Header, Solder Termination, 7A" x="165" y="40" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="14.78mm" x="165" y="40" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Molex" x="165" y="40" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="26-60-4050" x="165" y="40" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="538-26-60-4050" x="165" y="40" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="41.08" y="172.54" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="37.08" y="166.54" size="1.27" layer="27" align="center"/>
+<element name="J1" library="SamacSys_Parts" package="SHDR5W155P0X396_1X5_1966X1001X" value="26-60-4050" x="35.5" y="159" smashed="yes" rot="R90">
+<attribute name="DESCRIPTION" value="Molex KK 396 Series, Series Number 41791, 3.96mm Pitch 5 Way 1 Row Straight PCB Header, Solder Termination, 7A" x="165.04" y="280.92" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="HEIGHT" value="14.78mm" x="165.04" y="280.92" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Molex" x="165.04" y="280.92" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="26-60-4050" x="165.04" y="280.92" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="538-26-60-4050" x="165.04" y="280.92" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="32.5" y="157" size="1.27" layer="25" rot="R90" align="center"/>
+<attribute name="VALUE" x="38.5" y="153" size="1.27" layer="27" rot="R90" align="center"/>
 </element>
-<element name="J3" library="SamacSys_Parts" package="66904022" value="66.9040-22" x="137.74" y="272.32" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70749834" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="https://www.alliedelec.com/staubli-66-9040-22/70749834/" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="66.9040-22" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STAUBLI - 66.9040-22 - SOCKET, PCB, 4MM, R/A, RED" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="11mm" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STAUBLI" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="66.9040-22" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="132.74" y="272.32" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="" x="59" y="252" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="135.74" y="272.32" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="J7" library="SamacSys_Parts" package="SHDR5W155P0X396_1X5_1966X1001X" value="26-60-4050" x="35.5" y="121" smashed="yes" rot="R270">
+<attribute name="DESCRIPTION" value="Molex KK 396 Series, Series Number 41791, 3.96mm Pitch 5 Way 1 Row Straight PCB Header, Solder Termination, 7A" x="-108.01" y="103.22" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="14.78mm" x="-108.01" y="103.22" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Molex" x="-108.01" y="103.22" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="26-60-4050" x="-108.01" y="103.22" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MOUSER_PART_NUMBER" value="538-26-60-4050" x="-108.01" y="103.22" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="31.5" y="121" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="VALUE" x="33.5" y="121" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="J4" library="SamacSys_Parts" package="66904022" value="66.9040-22" x="180.74" y="37.56" smashed="yes" rot="R270">
-<attribute name="ALLIED_NUMBER" value="70749834" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="https://www.alliedelec.com/staubli-66-9040-22/70749834/" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="66.9040-22" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="DESCRIPTION" value="STAUBLI - 66.9040-22 - SOCKET, PCB, 4MM, R/A, RED" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="HEIGHT" value="11mm" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STAUBLI" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="66.9040-22" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="NAME" x="175.74" y="37.56" size="1.27" layer="25" rot="R270" align="center"/>
-<attribute name="RS_PART_NUMBER" value="" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="" x="102" y="2" size="1.778" layer="27" rot="R270" display="off"/>
-<attribute name="VALUE" x="177.74" y="37.56" size="1.27" layer="27" rot="R270" align="center"/>
+<element name="Q1" library="SamacSys_Parts" package="TO544P521X1594X2550-3P" value="C2M0160120D" x="47" y="164" smashed="yes" rot="R270">
+<attribute name="ARROW_PART_NUMBER" value="C2M0160120D" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="DESCRIPTION" value="Wolfspeed C2M0160120D N-channel SiC MOSFET Transistor, 19 A, 1200 V, 3-Pin TO-247" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="HEIGHT" value="5.21mm" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Wolfspeed" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="C2M0160120D" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="NAME" x="47" y="161" size="1.27" layer="25" rot="R270" align="center"/>
+<attribute name="RS_PART_NUMBER" value="1629709" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="-111.75" y="137.33" size="1.778" layer="27" rot="R270" display="off"/>
+<attribute name="VALUE" x="49" y="159" size="1.27" layer="27" rot="R270" align="center"/>
 </element>
-<element name="J5" library="SamacSys_Parts" package="66904022" value="66.9040-22" x="1.26" y="169.2" smashed="yes" rot="R90">
-<attribute name="ALLIED_NUMBER" value="70749834" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="https://www.alliedelec.com/staubli-66-9040-22/70749834/" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="66.9040-22" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="STAUBLI - 66.9040-22 - SOCKET, PCB, 4MM, R/A, RED" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="11mm" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STAUBLI" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="66.9040-22" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="6.26" y="169.2" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="3.26" y="169.2" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="Q2" library="SamacSys_Parts" package="TO544P521X1594X2550-3P" value="C2M0160120D" x="47" y="116" smashed="yes" rot="R90">
+<attribute name="ARROW_PART_NUMBER" value="C2M0160120D" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="ARROW_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="DESCRIPTION" value="Wolfspeed C2M0160120D N-channel SiC MOSFET Transistor, 19 A, 1200 V, 3-Pin TO-247" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="HEIGHT" value="5.21mm" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_NAME" value="Wolfspeed" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="MANUFACTURER_PART_NUMBER" value="C2M0160120D" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="NAME" x="47" y="119" size="1.27" layer="25" rot="R90" align="center"/>
+<attribute name="RS_PART_NUMBER" value="1629709" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="SPICEPREFIX" value="Q" x="205.75" y="162.99" size="1.778" layer="27" rot="R90" display="off"/>
+<attribute name="VALUE" x="45" y="121" size="1.27" layer="27" rot="R90" align="center"/>
 </element>
-<element name="J6" library="SamacSys_Parts" package="66904022" value="66.9040-22" x="1.26" y="153.96" smashed="yes" rot="R90">
-<attribute name="ALLIED_NUMBER" value="70749834" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ALLIED_PRICE-STOCK" value="https://www.alliedelec.com/staubli-66-9040-22/70749834/" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PART_NUMBER" value="66.9040-22" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="DESCRIPTION" value="STAUBLI - 66.9040-22 - SOCKET, PCB, 4MM, R/A, RED" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="HEIGHT" value="11mm" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="STAUBLI" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="66.9040-22" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="NAME" x="6.26" y="153.96" size="1.27" layer="25" rot="R90" align="center"/>
-<attribute name="RS_PART_NUMBER" value="" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="" x="80" y="220" size="1.778" layer="27" rot="R90" display="off"/>
-<attribute name="VALUE" x="3.26" y="153.96" size="1.27" layer="27" rot="R90" align="center"/>
+<element name="U$1" library="placeholders" package="BOBBIN" value="JELL" x="2" y="180" smashed="yes" rot="R90">
+<attribute name="NAME" x="-0.319665625" y="179.892" size="1.27" layer="25" rot="R90"/>
 </element>
-<element name="J7" library="SamacSys_Parts" package="SHDR5W155P0X396_1X5_1966X1001X" value="26-60-4050" x="43.22" y="151.51" smashed="yes">
-<attribute name="DESCRIPTION" value="Molex KK 396 Series, Series Number 41791, 3.96mm Pitch 5 Way 1 Row Straight PCB Header, Solder Termination, 7A" x="61" y="8" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="14.78mm" x="61" y="8" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Molex" x="61" y="8" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="26-60-4050" x="61" y="8" size="1.778" layer="27" display="off"/>
-<attribute name="MOUSER_PART_NUMBER" value="538-26-60-4050" x="61" y="8" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="43.22" y="147.51" size="1.27" layer="25" align="center"/>
-<attribute name="VALUE" x="43.22" y="149.51" size="1.27" layer="27" align="center"/>
+<element name="U$2" library="placeholders" package="BOBBIN" value="JELL" x="3" y="72" smashed="yes" rot="R90">
+<attribute name="NAME" x="3.680334375" y="75.892" size="1.27" layer="25" rot="R90"/>
 </element>
-<element name="L1" library="SamacSys_Parts" package="CTX1001052LPR" value="CTX100-10-52LPR" x="5.42" y="207.48" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="CTX100-10-52LPR" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="Fixed Inductors 100uH 13A" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="27.5mm" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Eaton" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="CTX100-10-52LPR" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="30.72" y="207.48" size="1.27" layer="25" align="center"/>
-<attribute name="RS_PART_NUMBER" value="" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="" x="74" y="177" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="30.72" y="207.48" size="1.27" layer="27" align="center"/>
+<element name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="18" y="150" smashed="yes"/>
+<element name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="35" y="110" smashed="yes"/>
+<element name="H3" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="18" y="170" smashed="yes"/>
+<element name="H4" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="35" y="170" smashed="yes"/>
+<element name="H5" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="260" smashed="yes"/>
+<element name="H6" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="20" smashed="yes"/>
+<element name="H7" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="18" y="110" smashed="yes"/>
+<element name="H8" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="18" y="130" smashed="yes"/>
+<element name="KK1" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="50" y="121.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="54.318" y="114.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="56.477" y="114.896" size="1.778" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="L2" library="SamacSys_Parts" package="CTX1001052LPR" value="CTX100-10-52LPR" x="4.73" y="115.48" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="CTX100-10-52LPR" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="Fixed Inductors 100uH 13A" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="27.5mm" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Eaton" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="CTX100-10-52LPR" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="30.03" y="115.48" size="1.27" layer="25" align="center"/>
-<attribute name="RS_PART_NUMBER" value="" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="" x="133" y="85" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="30.03" y="115.48" size="1.27" layer="27" align="center"/>
+<element name="KK2" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="50" y="158.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="54.318" y="151.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="56.477" y="151.896" size="1.778" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="Q1" library="SamacSys_Parts" package="TO544P521X1594X2550-3P" value="C2M0160120D" x="54.33" y="168.75" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="C2M0160120D" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="Wolfspeed C2M0160120D N-channel SiC MOSFET Transistor, 19 A, 1200 V, 3-Pin TO-247" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="5.21mm" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Wolfspeed" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="C2M0160120D" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="57.33" y="168.75" size="1.27" layer="25" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1629709" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="81" y="10" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="59.33" y="170.75" size="1.27" layer="27" align="center"/>
+<element name="KK3" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="82" y="122" smashed="yes" rot="R90">
+<attribute name="NAME" x="86.318" y="115.396" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="88.477" y="115.396" size="1.778" layer="27" ratio="10" rot="R90"/>
 </element>
-<element name="Q2" library="SamacSys_Parts" package="TO544P521X1594X2550-3P" value="C2M0160120D" x="55.01" y="150.75" smashed="yes">
-<attribute name="ARROW_PART_NUMBER" value="C2M0160120D" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="ARROW_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="DESCRIPTION" value="Wolfspeed C2M0160120D N-channel SiC MOSFET Transistor, 19 A, 1200 V, 3-Pin TO-247" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="HEIGHT" value="5.21mm" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_NAME" value="Wolfspeed" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="MANUFACTURER_PART_NUMBER" value="C2M0160120D" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="58.01" y="150.75" size="1.27" layer="25" align="center"/>
-<attribute name="RS_PART_NUMBER" value="1629709" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="RS_PRICE-STOCK" value="http://uk.rs-online.com/web/p/products/1629709" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="SPICEPREFIX" value="Q" x="102" y="-8" size="1.778" layer="27" display="off"/>
-<attribute name="VALUE" x="60.01" y="152.75" size="1.27" layer="27" align="center"/>
+<element name="KK4" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="66" y="183.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.318" y="176.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="72.477" y="176.896" size="1.778" layer="27" ratio="10" rot="R90"/>
 </element>
+<element name="KK5" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="82" y="196" smashed="yes" rot="R90">
+<attribute name="NAME" x="86.318" y="189.396" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="88.477" y="189.396" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK6" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="66" y="221.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.318" y="214.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="72.477" y="214.896" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK7" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="82" y="234" smashed="yes" rot="R90">
+<attribute name="NAME" x="86.318" y="227.396" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="88.477" y="227.396" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK8" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="66" y="259.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.318" y="252.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="72.477" y="252.896" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK9" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="66" y="96.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.318" y="89.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="72.477" y="89.896" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK10" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="82" y="84" smashed="yes" rot="R90">
+<attribute name="NAME" x="86.318" y="77.396" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="88.477" y="77.396" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK11" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="66" y="58.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.318" y="51.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="72.477" y="51.896" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK12" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="82" y="46" smashed="yes" rot="R90">
+<attribute name="NAME" x="86.318" y="39.396" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="88.477" y="31.396" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="KK13" library="heatsink" library_urn="urn:adsk.eagle:library:236" package="SK104-PAD" package3d_urn="urn:adsk.eagle:package:14201/1" value="SK104-PAD" x="66" y="20.5" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.318" y="13.896" size="1.778" layer="25" ratio="10" rot="R90"/>
+<attribute name="VALUE" x="72.477" y="13.896" size="1.778" layer="27" ratio="10" rot="R90"/>
+</element>
+<element name="H9" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="54.5" smashed="yes"/>
+<element name="H10" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="90" smashed="yes"/>
+<element name="H11" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="140" smashed="yes"/>
+<element name="H12" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="190" smashed="yes"/>
+<element name="H13" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="97" y="225" smashed="yes"/>
+<element name="H14" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="50" y="235" smashed="yes"/>
+<element name="H15" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="50" y="200" smashed="yes"/>
+<element name="H16" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="50" y="80" smashed="yes"/>
+<element name="H17" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="50" y="45" smashed="yes"/>
+<element name="H18" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="50" y="10" smashed="yes"/>
 </elements>
 <signals>
 <signal name="VCC">
-<contactref element="L1" pad="1"/>
-<contactref element="L2" pad="1"/>
-<contactref element="J5" pad="5"/>
-<contactref element="J5" pad="1"/>
-<contactref element="J5" pad="4"/>
-<contactref element="J5" pad="3"/>
-<contactref element="J5" pad="2"/>
-<wire x1="5.76" y1="174.28" x2="5.42" y2="207.48" width="0" layer="19" extent="1-1"/>
-<wire x1="12.12" y1="169.2" x2="5.76" y2="174.28" width="0" layer="19" extent="1-1"/>
-<wire x1="15.92" y1="174.28" x2="12.12" y2="169.2" width="0" layer="19" extent="1-1"/>
-<wire x1="15.92" y1="164.12" x2="12.12" y2="169.2" width="0" layer="19" extent="1-1"/>
-<wire x1="5.76" y1="164.12" x2="12.12" y2="169.2" width="0" layer="19" extent="1-1"/>
-<wire x1="4.73" y1="115.48" x2="5.76" y2="164.12" width="0" layer="19" extent="1-1"/>
+<contactref element="H7" pad="B5"/>
+<contactref element="H3" pad="B5"/>
+<contactref element="H1" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="9.5" y="144.5"/>
+<vertex x="20.5" y="144.5"/>
+<vertex x="25.5" y="149.5"/>
+<vertex x="25.5" y="177.5"/>
+<vertex x="0.5" y="177.5"/>
+<vertex x="0.5" y="103.5"/>
+<vertex x="25.5" y="103.5"/>
+<vertex x="25.5" y="117"/>
+<vertex x="9.5" y="117"/>
+</polygon>
 </signal>
 <signal name="N$2">
 <contactref element="Q1" pad="2"/>
-<contactref element="C1" pad="1"/>
-<contactref element="L1" pad="2"/>
+<contactref element="C1" pad="MINUS"/>
 <contactref element="D1" pad="2"/>
 <contactref element="J1" pad="1"/>
-<wire x1="80.97" y1="179.63" x2="68.69" y2="179.86" width="0" layer="19" extent="1-1"/>
-<wire x1="59.77" y1="168.75" x2="68.69" y2="179.86" width="0" layer="19" extent="1-1"/>
-<wire x1="43.08" y1="169.54" x2="59.77" y2="168.75" width="0" layer="19" extent="1-1"/>
-<wire x1="56.02" y1="207.48" x2="68.69" y2="179.86" width="0" layer="19" extent="1-1"/>
+<contactref element="H4" pad="B5"/>
+<wire x1="62.5" y1="178.1" x2="60.6" y2="180" width="4" layer="16"/>
+<wire x1="60.6" y1="180" x2="50" y2="180" width="4" layer="16"/>
+<wire x1="50" y1="180" x2="45" y2="180" width="4" layer="16"/>
+<wire x1="45" y1="180" x2="35" y2="170" width="4" layer="16"/>
+<wire x1="35" y1="170" x2="35" y2="163" width="4" layer="16"/>
+<wire x1="35" y1="163" x2="35.5" y2="162.5" width="4" layer="16"/>
+<wire x1="35.5" y1="162.5" x2="35.5" y2="159" width="4" layer="16"/>
+<wire x1="47" y1="158.56" x2="49.56" y2="158.56" width="4" layer="16"/>
+<wire x1="62.5" y1="171.5" x2="62.5" y2="178.1" width="4" layer="16"/>
+<wire x1="49.56" y1="158.56" x2="62.5" y2="171.5" width="4" layer="16"/>
 </signal>
 <signal name="N$5">
-<contactref element="L2" pad="2"/>
-<contactref element="C2" pad="2"/>
+<contactref element="C2" pad="PLUS"/>
 <contactref element="J7" pad="1"/>
 <contactref element="Q2" pad="2"/>
-<wire x1="60.45" y1="150.75" x2="68.69" y2="143.07" width="0" layer="19" extent="1-1"/>
-<wire x1="43.22" y1="151.51" x2="60.45" y2="150.75" width="0" layer="19" extent="1-1"/>
-<wire x1="55.33" y1="115.48" x2="68.69" y2="143.07" width="0" layer="19" extent="1-1"/>
+<contactref element="H2" pad="B5"/>
+<wire x1="47" y1="121.44" x2="49.56" y2="121.44" width="4" layer="16"/>
+<wire x1="49.56" y1="121.44" x2="56" y2="115" width="4" layer="16"/>
+<wire x1="56" y1="115" x2="56" y2="106" width="4" layer="16"/>
+<wire x1="56" y1="106" x2="50" y2="100" width="4" layer="16"/>
+<wire x1="50" y1="100" x2="45" y2="100" width="4" layer="16"/>
+<wire x1="45" y1="100" x2="35" y2="110" width="4" layer="16"/>
+<wire x1="35" y1="110" x2="35" y2="120.5" width="4" layer="16"/>
+<wire x1="35" y1="120.5" x2="35.5" y2="121" width="4" layer="16"/>
 </signal>
 <signal name="N$4">
-<contactref element="C8" pad="2"/>
+<contactref element="C8" pad="PLUS"/>
 <contactref element="D8" pad="1"/>
 <contactref element="D9" pad="2"/>
-<wire x1="80.4" y1="246.31" x2="81.4" y2="255.73" width="0" layer="19" extent="1-1"/>
-<wire x1="69.16" y1="241.47" x2="80.4" y2="246.31" width="0" layer="19" extent="1-1"/>
+<contactref element="H14" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="82.5" y="235.5"/>
+<vertex x="55.5" y="235.5"/>
+<vertex x="55.5" y="219"/>
+<vertex x="44" y="219"/>
+<vertex x="44" y="258"/>
+<vertex x="82.5" y="258"/>
+</polygon>
 </signal>
 <signal name="N$6">
 <contactref element="D9" pad="1"/>
-<contactref element="C9" pad="2"/>
-<contactref element="J3" pad="1"/>
-<contactref element="J3" pad="5"/>
-<contactref element="J3" pad="4"/>
-<contactref element="J3" pad="3"/>
-<contactref element="J3" pad="2"/>
-<wire x1="126.88" y1="272.32" x2="133.24" y2="277.4" width="0" layer="19" extent="1-1"/>
-<wire x1="123.08" y1="277.4" x2="126.88" y2="272.32" width="0" layer="19" extent="1-1"/>
-<wire x1="123.08" y1="267.24" x2="126.88" y2="272.32" width="0" layer="19" extent="1-1"/>
-<wire x1="133.24" y1="267.24" x2="126.88" y2="272.32" width="0" layer="19" extent="1-1"/>
-<wire x1="109.19" y1="257.05" x2="123.08" y2="267.24" width="0" layer="19" extent="1-1"/>
-<wire x1="81.4" y1="266.63" x2="109.19" y2="257.05" width="0" layer="19" extent="1-1"/>
+<contactref element="C9" pad="PLUS"/>
+<contactref element="H5" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="90.5" y="244"/>
+<vertex x="103.5" y="244"/>
+<vertex x="103.5" y="269.5"/>
+<vertex x="58.5" y="269.5"/>
+<vertex x="58.5" y="261"/>
+<vertex x="90.5" y="261"/>
+</polygon>
 </signal>
 <signal name="N$3">
 <contactref element="D1" pad="1"/>
 <contactref element="D2" pad="2"/>
-<contactref element="C3" pad="2"/>
-<contactref element="C6" pad="1"/>
-<wire x1="109.13" y1="182.05" x2="109.16" y2="193.55" width="0" layer="19" extent="1-1"/>
-<wire x1="80.97" y1="190.53" x2="109.16" y2="193.55" width="0" layer="19" extent="1-1"/>
-<wire x1="80.97" y1="196.95" x2="80.97" y2="190.53" width="0" layer="19" extent="1-1"/>
+<contactref element="C3" pad="PLUS"/>
+<contactref element="C6" pad="MINUS"/>
+<contactref element="H12" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="90.5" y="206"/>
+<vertex x="103.5" y="206"/>
+<vertex x="103.5" y="174"/>
+<vertex x="90.5" y="174"/>
+<vertex x="90.5" y="184.5"/>
+<vertex x="58.5" y="184.5"/>
+<vertex x="58.5" y="195"/>
+<vertex x="90.5" y="195"/>
+</polygon>
 </signal>
 <signal name="N$1">
 <contactref element="D2" pad="1"/>
-<contactref element="C1" pad="2"/>
-<contactref element="C8" pad="1"/>
+<contactref element="C1" pad="PLUS"/>
+<contactref element="C8" pad="MINUS"/>
 <contactref element="D6" pad="2"/>
-<wire x1="80.97" y1="207.85" x2="81.4" y2="215.77" width="0" layer="19" extent="1-1"/>
-<wire x1="68.69" y1="207.36" x2="80.97" y2="207.85" width="0" layer="19" extent="1-1"/>
-<wire x1="69.16" y1="213.97" x2="68.69" y2="207.36" width="0" layer="19" extent="1-1"/>
+<contactref element="H15" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="44" y="184"/>
+<vertex x="55.5" y="184"/>
+<vertex x="55.5" y="200"/>
+<vertex x="82" y="200"/>
+<vertex x="82" y="216.5"/>
+<vertex x="67" y="216.5"/>
+<vertex x="67" y="219.5"/>
+<vertex x="58.5" y="219.5"/>
+<vertex x="58.5" y="216"/>
+<vertex x="44" y="216"/>
+</polygon>
 </signal>
-<signal name="GND">
+<signal name="GND" airwireshidden="yes">
 <contactref element="Q1" pad="3"/>
-<contactref element="C3" pad="1"/>
+<contactref element="C3" pad="MINUS"/>
 <contactref element="J1" pad="5"/>
-<contactref element="C10" pad="2"/>
+<contactref element="C10" pad="PLUS"/>
 <contactref element="D11" pad="1"/>
 <contactref element="Q2" pad="3"/>
 <contactref element="J7" pad="5"/>
-<contactref element="J6" pad="5"/>
-<contactref element="J6" pad="2"/>
-<contactref element="J6" pad="1"/>
-<contactref element="J6" pad="3"/>
-<contactref element="J6" pad="4"/>
-<wire x1="109.13" y1="154.55" x2="109.19" y2="140.76" width="0" layer="19" extent="1-1"/>
-<wire x1="81.4" y1="150.27" x2="109.13" y2="154.55" width="0" layer="19" extent="1-1"/>
-<wire x1="65.89" y1="150.75" x2="81.4" y2="150.27" width="0" layer="19" extent="1-1"/>
-<wire x1="65.21" y1="168.75" x2="65.89" y2="150.75" width="0" layer="19" extent="1-1"/>
-<wire x1="27.24" y1="169.54" x2="65.21" y2="168.75" width="0" layer="19" extent="1-1"/>
-<wire x1="15.92" y1="159.04" x2="27.24" y2="169.54" width="0" layer="19" extent="1-1"/>
-<wire x1="12.12" y1="153.96" x2="15.92" y2="159.04" width="0" layer="19" extent="1-1"/>
-<wire x1="15.92" y1="148.88" x2="12.12" y2="153.96" width="0" layer="19" extent="1-1"/>
-<wire x1="5.76" y1="159.04" x2="12.12" y2="153.96" width="0" layer="19" extent="1-1"/>
-<wire x1="5.76" y1="148.88" x2="12.12" y2="153.96" width="0" layer="19" extent="1-1"/>
-<wire x1="27.38" y1="151.51" x2="15.92" y2="148.88" width="0" layer="19" extent="1-1"/>
+<contactref element="H8" pad="B5"/>
+<contactref element="H11" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="12.5" y="141.5"/>
+<vertex x="12.5" y="120.5"/>
+<vertex x="29.5" y="120.5"/>
+<vertex x="29.5" y="133.5"/>
+<vertex x="45.5" y="133.5"/>
+<vertex x="45.5" y="125.5"/>
+<vertex x="91" y="125.5"/>
+<vertex x="91" y="109"/>
+<vertex x="103.5" y="109"/>
+<vertex x="103.5" y="171"/>
+<vertex x="90.5" y="171"/>
+<vertex x="90.5" y="146.5"/>
+<vertex x="27.5" y="146.5"/>
+<vertex x="22.5" y="141.5"/>
+</polygon>
+<wire x1="47" y1="153.12" x2="43" y2="149.12" width="4" layer="16"/>
+<wire x1="43" y1="149.12" x2="43" y2="145" width="4" layer="16"/>
 </signal>
 <signal name="N$12">
 <contactref element="J1" pad="3"/>
 <contactref element="Q1" pad="1"/>
-<wire x1="35.16" y1="169.54" x2="54.33" y2="168.75" width="0" layer="19" extent="1-1"/>
+<wire x1="35.5" y1="151.08" x2="37.08" y2="151.08" width="4" layer="16"/>
+<wire x1="41" y1="155" x2="41" y2="160" width="4" layer="16"/>
+<wire x1="41" y1="160" x2="45" y2="164" width="4" layer="16"/>
+<wire x1="45" y1="164" x2="47" y2="164" width="4" layer="16"/>
+<wire x1="37.08" y1="151.08" x2="41" y2="155" width="4" layer="16"/>
 </signal>
 <signal name="N$13">
 <contactref element="J7" pad="3"/>
 <contactref element="Q2" pad="1"/>
-<wire x1="35.3" y1="151.51" x2="55.01" y2="150.75" width="0" layer="19" extent="1-1"/>
+<wire x1="35.5" y1="128.92" x2="35.9951" y2="128.4249" width="4" layer="16"/>
+<wire x1="35.9951" y1="128.4249" x2="36.9352125" y2="128.4249" width="4" layer="16"/>
+<wire x1="36.9352125" y1="128.4249" x2="41" y2="124.3601125" width="4" layer="16"/>
+<wire x1="41" y1="124.3601125" x2="41" y2="119" width="4" layer="16"/>
+<wire x1="41" y1="119" x2="44" y2="116" width="4" layer="16"/>
+<wire x1="44" y1="116" x2="47" y2="116" width="4" layer="16"/>
 </signal>
 <signal name="N$11">
 <contactref element="D6" pad="1"/>
 <contactref element="D8" pad="2"/>
-<contactref element="C6" pad="2"/>
-<contactref element="C9" pad="1"/>
-<wire x1="109.16" y1="221.05" x2="109.19" y2="229.55" width="0" layer="19" extent="1-1"/>
-<wire x1="81.4" y1="226.67" x2="109.19" y2="229.55" width="0" layer="19" extent="1-1"/>
-<wire x1="80.4" y1="235.41" x2="81.4" y2="226.67" width="0" layer="19" extent="1-1"/>
+<contactref element="C6" pad="PLUS"/>
+<contactref element="C9" pad="MINUS"/>
+<contactref element="H13" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="58.5" y="222.5"/>
+<vertex x="58.5" y="231.5"/>
+<vertex x="90.5" y="231.5"/>
+<vertex x="90.5" y="241"/>
+<vertex x="103.5" y="241"/>
+<vertex x="103.5" y="209"/>
+<vertex x="90.5" y="209"/>
+<vertex x="90.5" y="224.5"/>
+<vertex x="74.5" y="224.5"/>
+<vertex x="74.5" y="222.5"/>
+</polygon>
 </signal>
 <signal name="N$8">
 <contactref element="D7" pad="2"/>
-<contactref element="C7" pad="1"/>
-<contactref element="J4" pad="2"/>
-<contactref element="J4" pad="4"/>
-<contactref element="J4" pad="1"/>
-<contactref element="J4" pad="3"/>
-<contactref element="J4" pad="5"/>
-<wire x1="169.88" y1="37.56" x2="176.24" y2="42.64" width="0" layer="19" extent="1-1"/>
-<wire x1="166.08" y1="42.64" x2="169.88" y2="37.56" width="0" layer="19" extent="1-1"/>
-<wire x1="166.08" y1="32.48" x2="169.88" y2="37.56" width="0" layer="19" extent="1-1"/>
-<wire x1="176.24" y1="32.48" x2="169.88" y2="37.56" width="0" layer="19" extent="1-1"/>
-<wire x1="109.16" y1="32.26" x2="166.08" y2="32.48" width="0" layer="19" extent="1-1"/>
-<wire x1="80.4" y1="26.09" x2="109.16" y2="32.26" width="0" layer="19" extent="1-1"/>
+<contactref element="C7" pad="MINUS"/>
+<contactref element="H6" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="59" y="18"/>
+<vertex x="59" y="10.5"/>
+<vertex x="103.5" y="10.5"/>
+<vertex x="103.5" y="36"/>
+<vertex x="91" y="36"/>
+<vertex x="91" y="18"/>
+</polygon>
 </signal>
 <signal name="N$17">
-<contactref element="C4" pad="1"/>
-<contactref element="C11" pad="2"/>
+<contactref element="C4" pad="MINUS"/>
+<contactref element="C11" pad="PLUS"/>
 <contactref element="D4" pad="2"/>
 <contactref element="D5" pad="1"/>
-<wire x1="79.97" y1="72.81" x2="79.97" y2="79.59" width="0" layer="19" extent="1-1"/>
-<wire x1="67.19" y1="72.47" x2="79.97" y2="72.81" width="0" layer="19" extent="1-1"/>
-<wire x1="67.13" y1="80.26" x2="67.19" y2="72.47" width="0" layer="19" extent="1-1"/>
+<contactref element="H17" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="43.5" y="29"/>
+<vertex x="58" y="29"/>
+<vertex x="58" y="59"/>
+<vertex x="88" y="59"/>
+<vertex x="88" y="85"/>
+<vertex x="60.5" y="85"/>
+<vertex x="60.5" y="67.5"/>
+<vertex x="54" y="61"/>
+<vertex x="43.5" y="61"/>
+</polygon>
 </signal>
 <signal name="N$9">
-<contactref element="C2" pad="1"/>
-<contactref element="C4" pad="2"/>
+<contactref element="C2" pad="MINUS"/>
+<contactref element="C4" pad="PLUS"/>
 <contactref element="D10" pad="1"/>
 <contactref element="D11" pad="2"/>
-<wire x1="68.69" y1="115.57" x2="81.4" y2="139.37" width="0" layer="19" extent="1-1"/>
-<wire x1="67.13" y1="107.76" x2="68.69" y2="115.57" width="0" layer="19" extent="1-1"/>
-<wire x1="80.4" y1="107.95" x2="67.13" y2="107.76" width="0" layer="19" extent="1-1"/>
+<contactref element="H16" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="52.5" y="96.5"/>
+<vertex x="59.5" y="103.5"/>
+<vertex x="59.5" y="122.5"/>
+<vertex x="88" y="122.5"/>
+<vertex x="88" y="96"/>
+<vertex x="58" y="96"/>
+<vertex x="53" y="91"/>
+<vertex x="53" y="96"/>
+</polygon>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="43.5" y="64"/>
+<vertex x="52.5" y="64"/>
+<vertex x="57.5" y="69"/>
+<vertex x="57.5" y="96"/>
+<vertex x="43.5" y="96"/>
+</polygon>
 </signal>
 <signal name="N$10">
-<contactref element="C5" pad="2"/>
-<contactref element="C10" pad="1"/>
+<contactref element="C5" pad="PLUS"/>
+<contactref element="C10" pad="MINUS"/>
 <contactref element="D10" pad="2"/>
 <contactref element="D4" pad="1"/>
-<wire x1="108.13" y1="98.47" x2="109.19" y2="113.26" width="0" layer="19" extent="1-1"/>
-<wire x1="80.4" y1="97.05" x2="108.13" y2="98.47" width="0" layer="19" extent="1-1"/>
-<wire x1="79.97" y1="90.49" x2="80.4" y2="97.05" width="0" layer="19" extent="1-1"/>
+<contactref element="H10" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="91" y="106"/>
+<vertex x="103.5" y="106"/>
+<vertex x="103.5" y="74"/>
+<vertex x="91" y="74"/>
+<vertex x="91" y="88"/>
+<vertex x="61" y="88"/>
+<vertex x="61" y="93"/>
+<vertex x="91" y="93"/>
+</polygon>
 </signal>
 <signal name="N$7">
 <contactref element="D7" pad="1"/>
 <contactref element="D3" pad="2"/>
-<contactref element="C11" pad="1"/>
-<wire x1="80.4" y1="36.99" x2="80.97" y2="44.27" width="0" layer="19" extent="1-1"/>
-<wire x1="67.19" y1="44.97" x2="80.97" y2="44.27" width="0" layer="19" extent="1-1"/>
+<contactref element="C11" pad="MINUS"/>
+<contactref element="H18" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="56" y="21"/>
+<vertex x="56" y="3.5"/>
+<vertex x="43.5" y="3.5"/>
+<vertex x="43.5" y="26"/>
+<vertex x="61" y="26"/>
+<vertex x="61" y="47"/>
+<vertex x="88" y="47"/>
+<vertex x="88" y="21"/>
+</polygon>
 </signal>
 <signal name="N$18">
 <contactref element="D5" pad="2"/>
 <contactref element="D3" pad="1"/>
-<contactref element="C7" pad="2"/>
-<contactref element="C5" pad="1"/>
-<wire x1="109.16" y1="59.76" x2="108.13" y2="70.97" width="0" layer="19" extent="1-1"/>
-<wire x1="80.97" y1="55.17" x2="109.16" y2="59.76" width="0" layer="19" extent="1-1"/>
-<wire x1="79.97" y1="61.91" x2="80.97" y2="55.17" width="0" layer="19" extent="1-1"/>
+<contactref element="C7" pad="PLUS"/>
+<contactref element="C5" pad="MINUS"/>
+<contactref element="H9" pad="B5"/>
+<polygon width="1" layer="16" spacing="0.254" isolate="1" thermals="no">
+<vertex x="91" y="56"/>
+<vertex x="91" y="71"/>
+<vertex x="103.5" y="71"/>
+<vertex x="103.5" y="39"/>
+<vertex x="91" y="39"/>
+<vertex x="91" y="50"/>
+<vertex x="61" y="50"/>
+<vertex x="61" y="56"/>
+</polygon>
 </signal>
 </signals>
 <mfgpreviewcolors>
@@ -1006,6 +1481,25 @@ design rules under a new name.</description>
 </board>
 </drawing>
 <compatibility>
+<note version="6.3" minversion="6.2.2" severity="warning">
+Since Version 6.2.2 text objects can contain more than one line,
+which will not be processed correctly with this version.
+</note>
+<note version="8.2" severity="warning">
+Since Version 8.2, EAGLE supports online libraries. The ids
+of those online libraries will not be understood (or retained)
+with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports URNs for individual library
+assets (packages, symbols, and devices). The URNs of those assets
+will not be understood (or retained) with this version.
+</note>
+<note version="8.3" severity="warning">
+Since Version 8.3, EAGLE supports the association of 3D packages
+with devices in libraries, schematics, and board files. Those 3D
+packages will not be understood (or retained) with this version.
+</note>
 <note version="8.5" severity="warning">
 Since Version 8.5, EAGLE supports locking for holes, vias, wires and polygons. 
 The locking property on all objects of these types will not be understood in this version. 

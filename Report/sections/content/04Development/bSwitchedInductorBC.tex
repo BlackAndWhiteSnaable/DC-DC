@@ -1,41 +1,79 @@
-\subsection{Switched Inductor}\label{ch:SIBC}
-\todo[color=c04b,inline]{testing the colors}
+
+\section{Switched Inductor}\label{ch:SIBC}
 The Switched Inductor Boost Converter (SIBC) is a small alternation to the Conventional Boost Converter mentioned in Chapter \ref{ch:CBC}.
 It only adds passive components to an already known topology,
 which means the same switching scheme can be used.
-\subsubsection{Additions from Conventional BC}
+\subsection{Additions from Conventional BC}
 In the SIBC,
 the single inductor from the Conventional BC gets replaced by two inductors and three diodes,
-connected as shown in Figure \ref{fig:SI}.
+connected as shown in Figure \ref{fig:SwitchedInductor}.
 
-\missingfigure{switched Inductor} \label{fig:SI}
+\begin{figure}
+   \centering
+   \includegraphics[width=\textwidth]{figures/bSwitchedInductor/switched_inductor.pdf}
+    \caption{Switched inductor boost converter circuit}
+	\label{fig:SwitchedInductor}
+\end{figure}
+
 
 With this configuration,
-both inductors get charged up during the on stage
-and can discharge into the output capacitor during the off stage.
-The diodes prevent the current to run back into the DC link \todo[color=c04b]{maybe rewrite this}
-thus preventing damage.
+the inductors form two different topologies during the ON and OFF states. By reversing the biasing of the diodes the inductors are connected in parallel during ON state and series during OFF state.  \todo[color=c04b]{refer to figure maybe} 
 
 
-\subsubsection{Switching States}
+\subsection{Switching States}
 The same switching scheme as for the Conventional BC can be used,
 as mentioned earlier.
-The equivalent circuits during the on and off stage are shown in Figure \ref{fig:OnOffSIBC}.
+The equivalent circuits during the on and off stage are shown in Figure \ref{fig:SI_States}.
 
-\missingfigure{On and off stage equivalents of the SIBC}\label{fig:OnOffSIBC}
+\begin{figure}[H]%
+    \centering
+    \subfloat[Switch ON\label{SI_ON}]
+    {{\includegraphics[width=6.5cm]{figures/bSwitchedInductor/switched_inductorON.pdf} }}%
+    \qquad
+    \subfloat[Switch OFF\label{SI_OFF}]{{\includegraphics[width=6.5cm]{figures/bSwitchedInductor/switched_inductorOFF.pdf} }}%  
+    \caption{Switching states of the SIBC}%
+     \label{fig:SI_States}% 
+\end{figure}
 
-some text
-\todo[color=c04b,inline]{calculations}
-some text
-\todo[color=c04b,inline]{simulations}
-some text
+\subsubsection{ON State}
+While the switch is ON, diodes D\textsubscript{1} and D\textsubscript{2} are forward biased and diode ? is reverse biased.
+This constructs a parallel conection between the inductors, as seen in Figure \ref{SI_ON}.
+\\*
+In this case, we can use KVL to build the eqation: 
 
-As you can see in Chapter \ref{ch:dataAcq}
+\begin{equation}
+	V_L=V_{in}
+	\label{eq:SI_KVL_ON}
+\end{equation}
 
-If you want to write a paragraph on something,
-this will still be the same line.
-I will make this paragraph a little bittle longer,
-so that it actually uses more than one line.
-I think it does now.
+\subsubsection{OFF State}
+While the switch is OFF, the complete opposite happens, where only D\textsubscript{2} remains forward biased and forms a series connections between the inductors (shown on Figure \ref{SI_OFF}).
+In a configuration like this we can assume equal split of the pottential across the inductors and using KVL construct the equation:
+\begin{equation}
+	V_{in}-2V_L-V_o=0
+	\label{eq:SI_KVL_OFF}
+\end{equation}
+Subsequetially reformed as:
+\begin{equation}
+	V_L=\frac{V_{in} - V_o}{2}
+	\label{eq:SI_KVL_OFF2}
+\end{equation}
+ \\*
+Reforming the Inductor voltage-second balance(Explained in Sections \ref{sec:convertionRatio} for the current topology, we get the following relationship:
 
-New paragraphs start with a proceeding empty line in the editor.
+\begin{equation}
+	V_{L(ON)}D+V_{L(OFF)}(1-D)=0
+	\label{eq:SI_IVSB}
+\end{equation}
+Substituting the already derived expressions for V\textsubscript{L}:
+\begin{equation}
+	V_{in}D+\frac{V_{in} - V_o}{2}(1-D)=0
+	\label{eq:SI_IVSB2}
+\end{equation}
+Subsequenlty the input/output relationship can be stated as:
+
+\begin{equation}
+	\frac{V_o}{V_{in}} = \frac{1+D}{1-D}
+	\label{eq:pumpHeadMode5}
+\end{equation}
+

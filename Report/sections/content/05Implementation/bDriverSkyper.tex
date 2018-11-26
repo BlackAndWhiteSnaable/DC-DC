@@ -22,3 +22,16 @@ To adjust the switching properties of the device the output can be configured by
 They limit the current when switching in the state, so the device will switch slower.
 Additionally external decoupling capacitors are needed. They are also on the adaptor board.
 The failure detection logic was not used for testing.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/Skyperboard/Skyper32out.pdf}
+    \caption{Circuit on the output of the SKYPER 32R}
+	\label{fig:ConventionalBoostONN}
+\end{figure}
+
+As the SKYPER Board needs an input signal of 15V a circuit is needed to convert the 5V signal from the low power logic.
+Therefore a small comparator circuit was constructed.
+It compares the input signal to XXX Volts, so every input above will result in a high output,
+all inputs below as low.
+This also allows to run it from a logic that only outputs 3V signals.

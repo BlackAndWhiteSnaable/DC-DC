@@ -2,12 +2,11 @@
 \section{Conventional Boost Converter}\label{ch:CBC}
 \todo[color=c04a,inline]{Conventional Boost Converter}
 =======
-\chapter{Conventional Boost Converter}\label{ch:CBC}
-\todo[color=c01]{move this chapter to a section in physical setup}
->>>>>>> Stashed changes
+
+\subsection{Principle of operation}\label{sec:SON}
 
 The conventional boost converter uses one inductor,
-one switch and one capacitor. It steps up the voltage when
+one switch and one capacitor. When the switch is closed, the inductor current rises and energy is stored in the inductor L. When the switch is open, the inductor discharges through diode D and the inductor current falls. It steps up the voltage when
 the switch is in OFF state. The two modes of operation will be discussed in this chapter. The circuit can be observed on figure..
 
 
@@ -18,7 +17,7 @@ the switch is in OFF state. The two modes of operation will be discussed in this
 	\label{fig:ConventionalBoost}
 \end{figure}
 
-\section{Operation Modes}\label{sec:SON}
+\subsection{Operation Modes}\label{sec:SON}
 
 Switch ON:
 
@@ -35,6 +34,11 @@ the inductor is being charged and the capacitor discharges over the load resisto
 In this case we have:
 \begin{equation}
 	V_L = V_{in}
+	\label{eq:pumpHeadModel}
+\end{equation}
+where
+\begin{equation}
+	V_L = L \frac{di}{dt}
 	\label{eq:pumpHeadModel}
 \end{equation}
 and
@@ -79,10 +83,12 @@ In this case we have:
 	\label{fig:ConventionalBoostOFF}
 \end{figure}
 
+\subsection{Convertion ratio}\label{sec:SON}
+
 Based on inductor volt-second balance, the convertion ratio can be calculated:
 
 \begin{equation}
-	V_{in}D + (V_{in}-V{out})(1-D) = 0
+	V_{in}D + (V_{in}-V_{out})(1-D) = 0
 	\label{eq:pumpHeadModel}
 \end{equation}
 
@@ -90,3 +96,39 @@ Based on inductor volt-second balance, the convertion ratio can be calculated:
 	\frac{V_o}{V_{in}} = \frac{1}{1-D}
 	\label{eq:pumpHeadMode5}
 \end{equation}
+
+\subsection{Inductor current ripple}\label{sec:SON}
+
+The inductor current slope for the interval from 0 to DTs can be found as:
+
+\begin{equation}
+	\frac{di_{L}(t)}{dt} = \frac{v_{L}(t)}{L} = \frac{V_{in}}{L}
+	\label{eq:pumpHeadMode5}
+\end{equation}
+
+and the current slope for the interval 1 - DTs:
+
+\begin{equation}
+	\frac{di_{L}(t)}{dt} = \frac{v_{L}(t)}{L} = \frac{V_{in} - V}{L}
+	\label{eq:pumpHeadMode5}
+\end{equation}
+
+The change of inductor current during the subinterval is:
+
+\begin{equation}
+	2\Delta i_L = \frac{V_{in}}{L}DT_s \Rightarrow
+  \Delta i_L = \frac{V_{in}}{2L}DT_s
+	\label{eq:pumpHeadMode5}
+\end{equation}
+
+The inductor should be chosen such that a desired ripple magnitude is optained.
+
+\subsection{Capacitor voltage ripple}\label{sec:SON}
+
+
+
+\begin{equation}
+	V_{in}D + (V_{in}-V_{out})(1-D) = 0
+	\label{eq:pumpHeadModel}
+\end{equation}
+

@@ -3,7 +3,7 @@
 \todo[color=c04a,inline]{Conventional Boost Converter}
 =======
 
-\subsection{Principle of operation}\label{sec:SON}
+\subsection{Principle of operation}\label{sec:POC}
 
 The conventional boost converter uses one inductor,
 one switch and one capacitor. When the switch is closed, the inductor current rises and energy is stored in the inductor L. When the switch is open, the inductor discharges through diode D and the inductor current falls. It steps up the voltage when
@@ -17,7 +17,7 @@ the switch is in OFF state. The two modes of operation will be discussed in this
 	\label{fig:ConventionalBoost}
 \end{figure}
 
-\subsection{Operation Modes}\label{sec:SON}
+\subsection{Operation Modes}\label{sec:OP}
 
 Switch ON:
 
@@ -28,28 +28,28 @@ the inductor is being charged and the capacitor discharges over the load resisto
    \centering
    \includegraphics[width=\textwidth]{figures/aConventionalBoost/ConventionalBoostConverterON.pdf}
     \caption{Conventional Boost Converter Switch ON}
-	\label{fig:ConventionalBoostONN}
+	\label{fig:ConventionalBoostON}
 \end{figure}
 
 In this case we have:
 \begin{equation}
 	V_L = V_{in}
-	\label{eq:pumpHeadModel}
+	\label{eq:CBC_SWON1}
 \end{equation}
 where
 \begin{equation}
 	V_L = L \frac{di}{dt}
-	\label{eq:pumpHeadModel}
+	\label{eq:CBC_SWON2}
 \end{equation}
 and
 \begin{equation}
 	V_C = V_R
-	\label{eq:pumpHeadMode2}
+	\label{eq:CBC_SWON3}
 \end{equation}
 The capacitor current discharges over the resistor:
 \begin{equation}
 	i_C = -\frac{V_o}{R}
-	\label{eq:pumpHeadMode3}
+	\label{eq:CBC_SWON4}
 \end{equation}
 
 
@@ -68,12 +68,12 @@ the capacitor is being charged and this is the mode when the boosting happens.
 In this case we have:
 \begin{equation}
 	V_L = V_{in} - V_o
-	\label{eq:pumpHeadModel}
+	\label{eq:CBC_SWOFF1}
 \end{equation}
 
 \begin{equation}
 	i_C = i_L -\frac{V_o}{R}
-	\label{eq:pumpHeadModel}
+	\label{eq:CBC_SWOFF2}
 \end{equation}
 
 \begin{figure}[H]
@@ -83,18 +83,18 @@ In this case we have:
 	\label{fig:ConventionalBoostOFF}
 \end{figure}
 
-\subsection{Convertion ratio}\label{sec:SON}
+\subsection{Convertion ratio}\label{sec:convertionRatio}
 
 Based on inductor volt-second balance, the convertion ratio can be calculated:
 
 \begin{equation}
-	V_{in}D + (V_{in}-V_{out})(1-D) = 0
-	\label{eq:pumpHeadModel}
+	\int_{0}^{T_s} v_L(t)dt = V_{in}D + (V_{in}-V_{out})(1-D) = 0
+	\label{eq:CBC_VISB}
 \end{equation}
 
 \begin{equation}
 	\frac{V_o}{V_{in}} = \frac{1}{1-D}
-	\label{eq:pumpHeadMode5}
+	\label{eq:CBC_CR}
 \end{equation}
 
 \subsection{Inductor current ripple}\label{sec:SON}
@@ -103,32 +103,55 @@ The inductor current slope for the interval from 0 to DTs can be found as:
 
 \begin{equation}
 	\frac{di_{L}(t)}{dt} = \frac{v_{L}(t)}{L} = \frac{V_{in}}{L}
-	\label{eq:pumpHeadMode5}
+	\label{eq:CBC_ICR1}
 \end{equation}
 
 and the current slope for the interval 1 - DTs:
 
 \begin{equation}
 	\frac{di_{L}(t)}{dt} = \frac{v_{L}(t)}{L} = \frac{V_{in} - V}{L}
-	\label{eq:pumpHeadMode5}
+	\label{eq:CBC_ICR2}
 \end{equation}
 
-The change of inductor current during the subinterval is:
+The change of inductor current during the first subinterval is:
 
 \begin{equation}
 	2\Delta i_L = \frac{V_{in}}{L}DT_s \Rightarrow
   \Delta i_L = \frac{V_{in}}{2L}DT_s
-	\label{eq:pumpHeadMode5}
+	\label{eq:CBC_ICR3}
 \end{equation}
 
 The inductor should be chosen such that a desired ripple magnitude is optained.
 
 \subsection{Capacitor voltage ripple}\label{sec:SON}
 
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/aConventionalBoost/CapacitorVoltage.pdf}
+    \caption{Capacitor Voltage Ripple}
+	\label{fig:CBC_CVR}
+\end{figure}
 
+The capacitor voltage slope for the interval from 0 to DTs can be found as:
 
 \begin{equation}
-	V_{in}D + (V_{in}-V_{out})(1-D) = 0
-	\label{eq:pumpHeadModel}
+	\frac{dv_{c}(t)}{dt} = \frac{i_{c}(t)}{C} = \frac{-V}{RC}
+	\label{eq:CBC_CVR1}
 \end{equation}
 
+and the voltage slope for the interval 1 - DTs:
+
+\begin{equation}
+	\frac{dv_c(t)}{dt} = \frac{i_c(t)}{C} = \frac{I}{C} - \frac{V}{RC}
+	\label{eq:CBC_CVR2}
+\end{equation}
+
+The change of capacitor voltage during the first subinterval is:
+
+\begin{equation}
+	-2\Delta v = \frac{-V}{RC}DT_s \Rightarrow
+  \Delta v = \frac{V}{2RC}DT_s
+	\label{eq:CBC_CVR3}
+\end{equation}
+
+The capacitor should be chosen according to the desired voltage ripple.

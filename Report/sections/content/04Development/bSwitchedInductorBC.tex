@@ -1,3 +1,4 @@
+
 \subsection{Switched Inductor}\label{ch:SIBC}
 \todo[color=c04b,inline]{testing the colors}
 The Switched Inductor Boost Converter (SIBC) is a small alternation to the Conventional Boost Converter mentioned in Chapter \ref{ch:CBC}.
@@ -8,13 +9,16 @@ In the SIBC,
 the single inductor from the Conventional BC gets replaced by two inductors and three diodes,
 connected as shown in Figure \ref{fig:SI}.
 
-\missingfigure{switched Inductor} \label{fig:SI}
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/bSwitchedInductor/switched_inductor.pdf}
+    \caption{Switched inductor boost converter circuit}
+	\label{fig:SwitchedInductor}
+\end{figure}
+
 
 With this configuration,
-both inductors get charged up during the on stage
-and can discharge into the output capacitor during the off stage.
-The diodes prevent the current to run back into the DC link \todo[color=c04b]{maybe rewrite this}
-thus preventing damage.
+the inductors form two different topologies during the ON and OFF states. By reversing the biasing of the diodes the inductors are connected in parallel during ON state and series during OFF state.  \todo[color=c04b]{refer to figure maybe} 
 
 
 \subsubsection{Switching States}
@@ -22,7 +26,14 @@ The same switching scheme as for the Conventional BC can be used,
 as mentioned earlier.
 The equivalent circuits during the on and off stage are shown in Figure \ref{fig:OnOffSIBC}.
 
-\missingfigure{On and off stage equivalents of the SIBC}\label{fig:OnOffSIBC}
+\begin{figure}%
+    \centering
+    \subfloat[Switch ON]{{\includegraphics[width=6.5cm]{figures/bSwitchedInductor/switched_inductorON.pdf} }}%
+    \qquad
+    \subfloat[Switch OFF]{{\includegraphics[width=6.5cm]{figures/bSwitchedInductor/switched_inductorOFF.pdf} }}%
+    \caption{Switching states of the SIBC}%
+    \label{fig:example}%
+\end{figure}
 
 some text
 \todo[color=c04b,inline]{calculations}

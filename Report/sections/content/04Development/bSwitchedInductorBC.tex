@@ -9,7 +9,7 @@ connected as shown in Figure \ref{fig:SwitchedInductor}.
 
 \begin{figure} [H]
    \centering
-   \includegraphics[width=\textwidth]{figures/bSwitchedInductor/switched_inductor.pdf}
+   \includegraphics[width=0.6\textwidth]{figures/bSwitchedInductor/switched_inductor.pdf}
     \caption{Switched inductor boost converter circuit}
 	\label{fig:SwitchedInductor}
 \end{figure}
@@ -21,15 +21,15 @@ the inductors form two different topologies during the ON and OFF states. By rev
 
 \subsection{Switching States}
 The same switching scheme as for the Conventional BC can be used,
-as mentioned earlier.
-The equivalent circuits during the on and off stage are shown in Figure \ref{fig:SI_States}.
+as mentioned earlier. We assume the sizes of all capacitors is equal.
+The equivalent circuits during the on and off stages are shown in Figure \ref{fig:SI_States}.
 
 \begin{figure}[H]%
     \centering
     \subfloat[Switch ON\label{SI_ON}]
-    {{\includegraphics[width=6.5cm]{figures/bSwitchedInductor/switched_inductorON.pdf} }}%
+    {{\includegraphics[width=0.45\textwidth]{figures/bSwitchedInductor/switched_inductorON.pdf} }}%
     \qquad
-    \subfloat[Switch OFF\label{SI_OFF}]{{\includegraphics[width=6.5cm]{figures/bSwitchedInductor/switched_inductorOFF.pdf} }}%  
+    \subfloat[Switch OFF\label{SI_OFF}]{{\includegraphics[width=0.45\textwidth]{figures/bSwitchedInductor/switched_inductorOFF.pdf} }}%  
     \caption{Switching states of the SIBC}%
      \label{fig:SI_States}% 
 \end{figure}
@@ -78,3 +78,9 @@ Subsequenlty the input/output relationship can be stated as:
 This shows the superior boost ration of the SIBC over the conventional boost converter. 
 
 \todo[color=c04,inline]{Add simulation results}
+\begin{figure} [H]
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/bSwitchedInductor/Simulation_SI.eps}
+    \caption{Switched inductor boost converter circuit}
+	\label{fig:SwitchedInductor}
+\end{figure}

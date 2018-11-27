@@ -8,21 +8,21 @@ another inductor capacitor pair is added, as well as two additional diodes, conn
 
 \begin{figure} [H]
    \centering
-   \includegraphics[width=\textwidth]{figures/cSingleSwitchQuadraticBC/Quadratic_boost.pdf}
+   \includegraphics[width=0.6\textwidth]{figures/cSingleSwitchQuadraticBC/Quadratic_boost.pdf}
     \caption{Single Switch Quadratic Boost Converter circuit}
 	\label{fig:SSQBC}
 \end{figure}
 \subsection{Switching States}
 The same switching scheme as for the Conventional BC can be used,
-as mentioned earlier.
-The equivalent circuits during the on and off stage are shown in Figure \ref{fig:SSQBC_States}.
+as mentioned earlier. We assume the sizes of all inductors and capacitors is equal.
+The equivalent circuits during the on and off stages are shown in Figure \ref{fig:SSQBC_States}.
 
 \begin{figure}[H]%
     \centering
     \subfloat[Switch ON\label{SSQBC_ON}]
-    {{\includegraphics[width=6.5cm]{figures/cSingleSwitchQuadraticBC/Quadratic_boostON.pdf} }}%
+    {{\includegraphics[width=0.45\textwidth]{figures/cSingleSwitchQuadraticBC/Quadratic_boostON.pdf} }}%
     \qquad
-    \subfloat[Switch OFF\label{SSQBC_OFF}]{{\includegraphics[width=6.5cm]{figures/cSingleSwitchQuadraticBC/Quadratic_boostOFF.pdf} }}%  
+    \subfloat[Switch OFF\label{SSQBC_OFF}]{{\includegraphics[width=0.45\textwidth]{figures/cSingleSwitchQuadraticBC/Quadratic_boostOFF.pdf} }}%  
     \caption{Switching states of the SIBC}%
      \label{fig:SSQBC_States}% 
 \end{figure}
@@ -45,7 +45,7 @@ In this case, we can use KVL to build the eqations for inductor voltages:
 
 \subsubsection{OFF State}
 While the switch is OFF, the complete opposite happens, where only D\textsubscript{2} remains reverse biased, as seen on Figure \ref{SSQBC_OFF}).
-In a configuration like this two loop are formed on the two sides of C\textsubscript{1}. Again using KVL the following eqations are formed for the inductor voltages:
+In a configuration like this two loop are formed on the two sides of C\textsubscript{1}. Again using KVL the following eqations areas seen on Figure \ref{SSQBC_OFF}). formed for the inductor voltages:
 
 \begin{equation}
 	V_{L_1}=V_{in}-V_{C_1}
@@ -98,3 +98,9 @@ Now substituting from Eq. \ref{eq:SSQBC_IVSB_V_C}, we get the following input ou
 As shown in Eq. \ref{eq:SSQBC_VO_VIN}, the output-input relationship is exacly the one of a conventional BC squared. 
 
 \todo[color=c04,inline]{Add simulation results}
+\begin{figure} [H]
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/cSingleSwitchQuadraticBC/Simulation_SSQBC.eps}
+    \caption{Single Switch Quadratic Boost Converter circuit}
+	\label{fig:SSQBC}
+\end{figure}

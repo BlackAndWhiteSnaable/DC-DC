@@ -4,7 +4,7 @@
 To be able to test the proposed topology,
 a Printed Circuit Board (PCB) had to be made.
 We started out designing a simple two stage layout,
-and ended up manufacturing a multi stage version.
+and ended up manufacturing a three stage version.
 
 \subsection{Two Stage PCB}
 To get familiar with designing power electronics PCBs,
@@ -40,29 +40,46 @@ A detailed view of this can be seen in Figure \ref{fig:2nxeagledetail}.
 	\begin{center}
 	\includegraphics[width=0.6\textwidth]{figures/05cPCBdesign/2NX_interleaved_boost_converter_EAGLE_BY_DANIEL_DETAIL.pdf}
 	\end{center}
-	\caption{Detailed view of PCB Layout}
+	\caption{Detailed view of copper traces with obtuse angles}
 	\label{fig:2nxeagledetail}
 \end{figure}
 
-\subsection{Multi Stage PCB}\label{sub:3sPCB}
-To lessen our workload our supervisor put us into contact with Sagar Mahajan \todo[color=c05c]{cite to his linkedin?},
-who already created a layout for the multilevel converter.
-We touched up a little bit on the layout to make it producible with the university's equipment,
-but the main layouting was not done by us.
-The PCB layout can be seen in Figure \ref{fig:2nxDiptrace}.
+\subsection{Three Stage PCB}\label{sub:3sPCB}
+For the actual testing,
+we decided on a three stage variant with our supervisor.
+The PCB was again designed by us,
+using feedback on the first design.
+The power and logic traces are now on the same layer,
+as it is not necessary to separate them as much.
+The tracks generally are wider
+and the spacing between is consistently kept at 2 mm.
+The final PCB layout can be seen in Figure \ref{fig:multi2nxEAGLE}.
 
 \begin{figure}[H]
 	\begin{center}
-	\includegraphics[height=0.6\textwidth,angle=90]{"figures/05cPCBdesign/DipTrace PCB - 2NX_interleaved_DANIEL_EDIT"}
+	\includegraphics[height=0.6\textwidth,angle=270]{"figures/05cPCBdesign/FULL_3level_2NX_interleaved_boost_converter"}
 	\end{center}
 	\caption{PCB Layout for a multi stage 2NX Interleaved Boost Converter}
-	\label{fig:2nxDiptrace}
+	\label{fig:multi2nxEAGLE}
 \end{figure}
 
-As this layout was done in DipTrace,
-the colours used differ from the colours used by EAGLE.
-Here light red are the copper traces on the bottom layer.
-No traces exist on the top layer,
-and therefore no layer separation between power and logic is made.
+The inductors and capacitors are different to the previous design,
+because the new design reflects the components available to us.
+To be able to connect the board to power and measurements,
+banana plugs were suggested by our supervisor.
 
-\todo[color=c05c,inline]{something about diptrace, and collaboration with Sagar}
+The inductor is not connected directly by soldering,
+but through jumper cables.
+This allows for easier access to the core and to fine tune the windings after testing.
+This also makes measuring of voltage and current easier.
+
+A detailed view showing the connectors for the top inductor can be seen in Figure \ref{fig:multi2nxDetail}.\\
+The banana plugs for connecting the inductor are shown in red.
+
+\begin{figure}[H]
+	\begin{center}
+	\includegraphics[width=0.6\textwidth]{"figures/05cPCBdesign/DETAiL_3level_2NX_interleaved_boost_converter"}
+	\end{center}
+	\caption{Detailed view of the inductor connection}
+	\label{fig:multi2nxDetail}
+\end{figure}

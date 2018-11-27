@@ -1,4 +1,3 @@
-
 \section{Switched Inductor}\label{ch:SIBC}
 The Switched Inductor Boost Converter (SIBC) is a small alternation to the Conventional Boost Converter mentioned in Chapter \ref{ch:CBC}.
 It only adds passive components to an already known topology,
@@ -8,7 +7,7 @@ In the SIBC,
 the single inductor from the Conventional BC gets replaced by two inductors and three diodes,
 connected as shown in Figure \ref{fig:SwitchedInductor}.
 
-\begin{figure}
+\begin{figure} [H]
    \centering
    \includegraphics[width=\textwidth]{figures/bSwitchedInductor/switched_inductor.pdf}
     \caption{Switched inductor boost converter circuit}
@@ -36,7 +35,7 @@ The equivalent circuits during the on and off stage are shown in Figure \ref{fig
 \end{figure}
 
 \subsubsection{ON State}
-While the switch is ON, diodes D\textsubscript{1} and D\textsubscript{2} are forward biased and diode ? is reverse biased.
+While the switch is ON, diodes D\textsubscript{1} and D\textsubscript{2} are forward biased and diode D\textsubscript{3} is reverse biased.
 This constructs a parallel conection between the inductors, as seen in Figure \ref{SI_ON}.
 \\*
 In this case, we can use KVL to build the eqation: 
@@ -52,20 +51,20 @@ In a configuration like this we can assume equal split of the pottential across 
 \begin{equation}
 	V_{in}-2V_L-V_o=0
 	\label{eq:SI_KVL_OFF}
-\end{equation}
+\end{equation}\\
 Subsequetially reformed as:
 \begin{equation}
 	V_L=\frac{V_{in} - V_o}{2}
 	\label{eq:SI_KVL_OFF2}
 \end{equation}
- \\*
-Reforming the Inductor voltage-second balance(Explained in Sections \ref{sec:convertionRatio} for the current topology, we get the following relationship:
+Reforming the Inductor voltage-second balance (Explained in Sections \ref{sec:convertionRatio} for the current topology, we get the following relationship:
 
 \begin{equation}
 	V_{L(ON)}D+V_{L(OFF)}(1-D)=0
 	\label{eq:SI_IVSB}
 \end{equation}
 Substituting the already derived expressions for V\textsubscript{L}:
+
 \begin{equation}
 	V_{in}D+\frac{V_{in} - V_o}{2}(1-D)=0
 	\label{eq:SI_IVSB2}
@@ -74,6 +73,8 @@ Subsequenlty the input/output relationship can be stated as:
 
 \begin{equation}
 	\frac{V_o}{V_{in}} = \frac{1+D}{1-D}
-	\label{eq:pumpHeadMode5}
+	\label{eq:SI_VO_VIN}
 \end{equation}
+This shows the superior boost ration of the SIBC over the conventional boost converter. 
 
+\todo[color=c04,inline]{Add simulation results}

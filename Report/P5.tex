@@ -23,7 +23,6 @@
 \pagestyle{empty} %disable headers and footers
 \pagenumbering{roman} %use roman page numbering in the frontmatter
 \input{sections/frontpage.tex}
-%\input{sections/no_logo_frontpage.tex}
 \input{sections/colophon.tex}
 \input{sections/titlepages.tex}
 \cleardoublepage
@@ -32,6 +31,7 @@
 \pdfbookmark[0]{Contents}{label:contents}
 \pagestyle{fancy} %enable headers and footers again
 \tableofcontents
+\listoffigures
 \listoftodos
 \cleardoublepage
 %mainmatter
@@ -41,14 +41,14 @@
 \input{sections/content/02problemDescription.tex}
 \input{sections/content/03problemDefinition.tex}
 \input{sections/content/04Development.tex}
+\input{sections/content/05Implementation.tex}
 %
 %
 %
-%\input{sections/content/05Implementation.tex}
-%\input{sections/content/06Testing.tex}
-%\input{sections/content/07Discussion.tex}
-%\input{sections/content/08Conclusion.tex}
-%\input{sections/content/09Perspective.tex}
+\input{sections/content/06Testing.tex}
+\input{sections/content/07Discussion.tex}
+\input{sections/content/08Conclusion.tex}
+\input{sections/content/09Perspective.tex}
 
 
 \printbibliography[heading=bibintoc]

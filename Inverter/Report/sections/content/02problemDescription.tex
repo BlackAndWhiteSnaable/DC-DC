@@ -1,0 +1,20 @@
+\chapter{Problem Description}\label{ch:probdesc}
+\todo[color=c02,inline]{Problem Description}
+Boosting DC power
+cheap
+size
+
+\section{Solar and Stuff}
+While plants using fossil fuels or nuclear power are outputting high voltage AC directly into the grid the renewable sources need to raised to high voltage before they can feed their energy into the grid.
+Especially Solar panels produce very low power DC-voltage. \todo[color=c01]{ref}
+% https://panasonic.net/ecosolutions/solar/product/product_detail/index.html
+
+\section{Problem Description}
+To output the power to the grid the voltage of the solar panels needs to be increased. 
+A typical output of a solar panel is up to 60V DC while the low voltage grid is already 400V AC.
+By connecting more panels in series a higher output voltage can be archived but the power of individual panels can't be used as efficient.
+Using boost converters is the better solution but the standard boost converter topology is not suitable for this case. 
+The maximum conversion ratio of the standard converter is limited to a ratio 7.7, at least cascaded converters are needed to reach the higher internal voltage before going to an inverter and then into the grid.
+But they still have to always run on high duty cycles to reach the demanded conversion ratios.
+Advanced topologies have higher conversion ratios that may be useful for connecting solar panels to the grid.
+In general new topologies for boost converters can have advantages over the conventional boost converters when it comes to compactness, efficiency and durability.

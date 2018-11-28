@@ -5,7 +5,7 @@
 
 The conventional boost converter uses one inductor,
 one switch and one capacitor. When the switch is closed, the inductor current rises and energy is stored in the inductor L. When the switch is open, the inductor discharges through diode D and the inductor current falls. It steps up the voltage when
-the switch is in OFF state. The two modes of operation will be discussed in this chapter. The circuit can be observed on figure~\ref{fig:CBC}.
+the switch is in OFF state. The two modes of operation will be discussed in this chapter. The circuit can be observed on figure ~\ref{fig:CBC}.
 
 
 \begin{figure}[H]
@@ -17,7 +17,7 @@ the switch is in OFF state. The two modes of operation will be discussed in this
 
 \subsection{Operation Modes}\label{sec:CBC_OP}
 
-Switch ON (Figure~\ref{fig:CBC_ON}):
+Switch ON (Figure ~\ref{fig:CBC_ON}):
 
 When the switch is ON,
 the inductor is being charged and the capacitor discharges over the load resistor.
@@ -243,15 +243,3 @@ C_{min} = \frac{D}{R(\Delta V_o/V)f} = \frac{0.6}{40\cdot 0.01\cdot 25000 } = 60
 A capacitor of 80 $\mu$ F was chosen to provide a satisfactory margin.
 
 To validate the results, the converter was built on SIMULINK with the appropriate components and using an ideal switch as the active device. The results from the simulation are presented on figure.. and it can be observed that they match with the calculations. 
-
-
-
-\begin{figure}[H]%
-    \centering
-    %\subfloat[Switch ON\label{SI_ON}]
-    {{\includegraphics[width=0.8\textwidth]{figures/aConventionalBoost/CBC_V_LtoI_D.eps} }}%
-    \qquad
-    \subfloat{{\includegraphics[width=0.8\textwidth]{figures/aConventionalBoost/CBC_I_CtoI_out.eps} }}%  
-    \caption{Simulation results}%
-     \label{fig:SI_States}% 
-\end{figure}

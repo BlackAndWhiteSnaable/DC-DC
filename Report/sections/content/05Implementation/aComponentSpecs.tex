@@ -1,2 +1,22 @@
 \section{Component Specifications}\label{ch:compSpec}
 \todo[color=c05a,inline]{testing the colors}
+
+\subsection{MOSFETs}
+For the circuit the MOSFET C2M0160120D from Wolfspeed/Cree was chosen. 
+It features a high blocking voltage, low on-resistance and low capacity.
+That means it is able to work efficiently in high frequency power applications with small losses in switching, making it very suitable for converters.
+
+The MOSFET is rated for switching voltages up to 1200V with a maximum current of 19A.
+For switching a gate voltage of 14V is required and a negative input of -5V to -10V as a low input is recommended for fast switching.
+
+\subsection{Diodes}
+The used diode is the STTH6012 from STMicroelectronics.
+The ultra fast soft recovery characteristics make it very efficient in high frequency pulse operation.
+With a rating of 1200V repetitive peak reverse voltage and a maximum forward current of 60A the diode seems oversized but for experimental work they were used.
+
+\subsection{Capacitors}
+The chosen capacitors are standard sizes of $2.2 \mu F$ capacity with a voltage rating to 450V.
+
+\subsection{Inductors}
+%The inductor was winded by hand over a
+\todo[color=c05a,inline]{missing}

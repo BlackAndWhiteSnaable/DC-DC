@@ -77,10 +77,47 @@ Subsequenlty the input/output relationship can be stated as:
 \end{equation}
 This shows the superior boost ration of the SIBC over the conventional boost converter. 
 
-\todo[color=c04,inline]{Add simulation results}
+\subsection{Simulation results}
+
+To confirm the calculations, the circuit was simulated in SIMULINK, using the following parameters: 
+
+\begin{table}[H]
+\begin{center}
+\caption {Simulation parameters for SIBC} \label{tab:SI} 
+\begin{tabular}{|l|l|}
+\cline{1-2}
+\textbf{Parameter} & \textbf{Value}  \\ \cline{1-2}
+Input Voltage $V_{in}$          &      10V   \\ \cline{1-2}
+Load(R)   & 225$\Omega$           \\ \cline{1-2}
+Capacitance(C)          &       220$\mu$F     \\ \cline{1-2}
+Inductance(L)          &      150$\mu$F      \\ \cline{1-2}
+Duty cycle(D)          &     0.6       \\ \cline{1-2}
+Switching Frequency($F_S$)          &      50KhZ      \\ \cline{1-2}
+\end{tabular}
+\end{center}
+\end{table}
+
+The whole topology was modelled within the software, with the listed values (Model can be seen on Figure.\ref{fig:Model_SI}). Components were assumed ideal, internal resistance and voltage drops are neglected during the simulation. 
+
+\begin{figure} [H]
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/bSwitchedInductor/Model_SI.pdf}
+    \caption{Switched inductor boost converter SIMULINK Model}
+	\label{fig:Model_SI}
+\end{figure}
+
+Expected output voltage $V_O$ is calculated using Eq. \ref{eq:SI_VO_VIN} to calculate the gain and multiplying it by $V_in$: 
+\begin{equation}
+	{V_o}= \frac{1+0.6}{1-0.6}10=40V
+	\label{eq:Simulation_SI}
+\end{equation}
+
+The simulation results show the system output is as expected, as observed on Figure. \ref{fig:Simulation_SI}. Voltage levels converge at 40 V. The overshoot and ripple can be improved on, but this is not within the scope of this project. 
+
+
 \begin{figure} [H]
    \centering
    \includegraphics[width=0.8\textwidth]{figures/bSwitchedInductor/Simulation_SI.eps}
-    \caption{Switched inductor boost converter circuit}
-	\label{fig:SwitchedInductor}
+    \caption{Switched inductor boost output voltage}
+	\label{fig:Simulation_SI}
 \end{figure}

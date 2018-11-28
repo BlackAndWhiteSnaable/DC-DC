@@ -97,7 +97,43 @@ Now substituting from Eq. \ref{eq:SSQBC_IVSB_V_C}, we get the following input ou
 \end{equation}
 As shown in Eq. \ref{eq:SSQBC_VO_VIN}, the output-input relationship is exacly the one of a conventional BC squared. 
 
-\todo[color=c04,inline]{Add simulation results}
+\subsection{Simulation results}
+
+Again, to confirm the calculations, the circuit was simulated in SIMULINK. The parameters used for the CTLBC are as follows:
+
+\begin{table}[H]
+\begin{center}
+\caption {Simulation parameters for CTLBC} \label{tab:CTLBC} 
+\begin{tabular}{|l|l|}
+\cline{1-2}
+\textbf{Parameter} & \textbf{Value}  \\ \cline{1-2}
+Input Voltage $V_{in}$          &      10V   \\ \cline{1-2}
+Load(R)   & 125$\Omega$           \\ \cline{1-2}
+Capacitance(C)          &       220$\mu$F     \\ \cline{1-2}
+Inductance(L)          &      150$\mu$F      \\ \cline{1-2}
+Duty cycle(D)          &     0.6       \\ \cline{1-2}
+Switching Frequency($F_S$)          &      50KhZ      \\ \cline{1-2}
+\end{tabular}
+\end{center}
+\end{table}
+
+The whole topology was modelled within the software, with the listed values (Model can be seen on Figure.\ref{fig:Model_CTLBC}). Components were ,again, assumed ideal, internal resistance and voltage drops are neglected during the simulation. 
+
+\begin{figure} [H]
+   \centering
+   \includegraphics[width=0.8\textwidth]{figures/bSwitchedInductor/Model_SI.pdf}
+    \caption{Switched inductor boost converter SIMULINK Model}
+	\label{fig:Model_CTLBC}
+\end{figure}
+
+Expected output voltage $V_O$ is calculated using Eq. \ref{eq:SI_VO_VIN} to calculate the gain and multiplying it by $V_in$: 
+\begin{equation}
+	{V_o}= \frac{1}{(1-0.6)^2}10=62.5V
+	\label{eq:Simulation_CTLBC}
+\end{equation}
+
+The simulation showed output voltage levels similar to the expectations, as observed on Figure. \ref{fig:Simulation_SI}. Voltage converges at 62.5V. Further improvements to the waveform are possible, if the topology is researched further. 
+
 \begin{figure} [H]
    \centering
    \includegraphics[width=0.8\textwidth]{figures/cSingleSwitchQuadraticBC/Simulation_SSQBC.eps}

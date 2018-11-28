@@ -1111,10 +1111,10 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="45" y="121" size="1.27" layer="27" rot="R90" align="center"/>
 </element>
 <element name="U$1" library="placeholders" package="BOBBIN" value="JELL" x="2" y="180" smashed="yes" rot="R90">
-<attribute name="NAME" x="-0.319665625" y="179.892" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="2.380334375" y="182.292" size="1.27" layer="25" rot="R90"/>
 </element>
 <element name="U$2" library="placeholders" package="BOBBIN" value="JELL" x="2.1" y="73.2" smashed="yes" rot="R90">
-<attribute name="NAME" x="2.780334375" y="77.092" size="1.27" layer="25" rot="R90"/>
+<attribute name="NAME" x="2.480334375" y="75.592" size="1.27" layer="25" rot="R90"/>
 </element>
 <element name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="18" y="150" smashed="yes"/>
 <element name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" package="5,0-PAD" package3d_urn="urn:adsk.eagle:package:14288/1" value="MOUNT-PAD-ROUND5.0" x="35" y="110" smashed="yes"/>

@@ -13,7 +13,7 @@ folder = ['../Report/figures/' chapter '/'];
 if exist(folder,'dir')~=7
     mkdir(folder)
 end
-
+    
 %% DON'T CHANGE ANYTHING BELOW
 fileloc = [folder out];
 print('-f','-depsc',fileloc)

@@ -1,0 +1,187 @@
+\chapter{Discussion}\label{ch:Discussion}
+\todo[color=c07,inline]{testing the colors}
+%There exist many different approaches to designing a controller,
+%all of which have their advantages and disadvantages.
+%For this project we decided to use a very simple approach,
+%the Proportional Derivative Integral (PID) controller.
+%This chapter compares this to another possible option,
+%the state-space controller, explains both of them briefly
+%and argues for our choice.
+%
+%\section{PID control}\label{sec:PID}
+%A PID controller consists of three parts,
+%a proportional, integral and derivative part,
+%which it inherits its name from.
+%A mathematical representation can be given by one of the two equations in Equation \ref{eq:PID}.
+%
+%\begin{equation}
+%	  D_{cl}(s) = k_P + \frac{k_I}{s} + k_D s$$
+%	$$D_{cl}(s) = k_P ( \frac{T_I}{s} + T_D s)
+%	 \label{eq:PID}
+%\end{equation} \cite{Franklin2014}\\
+%These equations can be visualised in block diagrams, as shown in Figure \ref{fig:twoPID}.
+%%\begin{figure}[H]
+%%    \centering
+%%    \includegraphics[width=\textwidth]{figures/07controllerDesign/PID_explicit.pdf}
+%%    \caption{Comparison of two common PID designs}
+%%	\label{fig:twoPID}
+%%\end{figure}
+%
+%Figure \ref{fig:twoPID} also shows the typical placement of a PID-controller,
+%on the forward loop, behind the subtraction of the feedback and before the input to the plant.
+%
+%The gains $k_P$, $k_I$ and $k_D$ have to be tuned according to the dynamics of the plant
+%and the desired characteristics of the controller.
+%This tuning can be done manually, or methodically.
+%We chose to use the Ziegler-Nichols tuning method,
+%as described by Franklin et al. \cite{Franklin2014},
+%as this method promised results close to our requirements and was discussed in our courses.
+%
+%To use this method, some knowledge about the system is required.
+%If the system reacts stable to a step input,
+%the output measured can be used to tune $k_P$, $k_I$ and $k_D$
+%according to the Quarter Decay Method (QDM) \cite{Franklin2014}.
+%
+%In the case that the system has an unstable reaction,
+%the Ultimate Sensitivity Method (USM) should be used.
+%Here the $k_p$ is increased until the system becomes marginally stable.
+%\cite{Franklin2014}
+%
+%In both cases the output of the system is to be graphed over time
+%and from the corresponding graph some characteristic values can be read.
+%Because we are using the quarter decay method,
+%we won't discuss the ultimate sensitivity method any further.
+%
+%As mentioned before,
+%to use the QDM, we need a step response of the system.
+%The following section explains step response in more detail and shows our analysis.
+%
+%\subsection{Quarter Decay Tuning}\label{sub:quadec}
+%To obtain all needed data, the step response of the system
+%needs to be analysed.
+%
+%\subsubsection{Step Response}
+%The step response needs to be measured on the Open Loop (OL) system.
+%A block diagram of an OL setup can be seen in Figure \ref{fig:OL}.
+%
+%%\begin{figure}[H]
+%%    \centering
+%%    \includegraphics[width=0.75\textwidth]{figures/07controllerDesign/OLblock.pdf}
+%%    \caption{OL block diagram of a system}
+%%	 \label{fig:OL}
+%%\end{figure}
+%
+%The recorded output can be seen in Figure \ref{fig:stepin}.
+%The figure also shows two red lines, approximating the slope and the final value.
+%
+%%\begin{figure}[H]
+%%    \centering
+%%    \includegraphics[width=\textwidth]{figures/07controllerDesign/StepResponseLabeled.eps}
+%%    \caption{response to a step input with value 10}
+%%	\label{fig:stepin}
+%%\end{figure}
+%
+%From this graph we can approximate the slope $R$ and the Lag $L=t_d$.\\
+%Because we are scaling the $\omega P$ down by a factor of 10, so we can directly input a percentage,
+%we had to scale the aforementioned unit step up by a factor of 10,
+%in order to get usable results.
+%While encountering this problem, we also noticed, that the pumps don't spin at $\omega \leq 9\%$.
+%When using the corrected step input, we got the measurements shown in Figure \ref{fig:stepin}.
+%
+%Our analysis of figure \ref{fig:stepin} gives us the following values:
+%\\
+%\begin{tabular}{r c l l}
+%	$R$ 	& $=$ & $2.0236$ 	& \footnotesize{\textit{slope}}\\
+%	$t_d=L$	& $=$ & $0.75$ 		& \footnotesize{\textit{lag}}\\
+%\end{tabular}
+%
+%
+%\subsubsection{Tuning}
+%The QDM is tuning a P, PI or PID controller $D_c(s)$ with the formula shown in the second Equation \ref{eq:PID}.
+%The values of $k_P$, $T_I$ and $T_D$ are scalar gains,
+%tuned according to the characteristics obtained from figure \ref{fig:stepin}.
+%\\
+%\begin{center}
+%\begin{tabular}{l r c l l}
+%	Type of Controller	& \multicolumn{3}{ c }{Optimum Gain}\\
+%	\hline
+%	\multirow{1}{*}{P}	& $k_P$ & $=$ & $\nicefrac{1}{RL}$	\\
+%	\\
+%	\multirow{2}{*}{PI}	& $k_P$ & $=$ & $\nicefrac{0.9}{RL}$\\
+%						& $T_I$ & $=$ & $\nicefrac{L}{0.3}$	\\
+%	\\
+%	\multirow{3}{*}{PID}& $k_P$ & $=$ & $\nicefrac{1.2}{RL}$\\
+%						& $T_I$ & $=$ & $2L$				\\
+%						& $T_D$ & $=$ & $0.5L$ 				\\
+%\end{tabular}
+%\end{center}
+%Note that the parameters $T_I$ and $T_D$ are not mentioned for the first two controller types,
+%as they are to be set to 0.
+%
+%\subsubsection{Results}
+%We tested all three options of P, PI and PID control with the tuned parameters,
+%the results can be seen in Figure \ref{fig:PIDtest}.
+%Please note, that the P-controller with the calculated value did not achieve any results,
+%as the error was too small to start the pump.
+%To overcome this issue, we multiplied $k_P$ with 10.
+%This was solely done for the P-controller,
+%because the PI- and PID-controller gave proper results without this correction.
+%We expect this to be caused by the scaling factor before the input to the pumps,
+%as discussed in Subsection \ref{sub:quadec}.
+%
+%
+%%\begin{figure}[H]
+%%    \centering
+%%    \includegraphics[width=\textwidth]{figures/07controllerDesign/Ptest.eps}
+%%    \includegraphics[width=\textwidth]{figures/07controllerDesign/PItest.eps}
+%%    \includegraphics[width=\textwidth]{figures/07controllerDesign/PIDtest.eps}
+%%    \caption{Results from testing a P, PI and PID controller with ZN tuning}
+%%	\label{fig:PIDtest}
+%%\end{figure}
+%
+%As was expected, the P-controller settles the fastest,
+%at approximately 4 seconds,
+%while the PI and PID settle around 20 seconds.
+%The P-controller has a very big steady-state error though,
+%which doesn't fulfil our requirements.
+%The PI-controller does not have a steady-state error,
+%but the overshoot of approximately 25\% doesn't fulfil our requirements either.
+%Interestingly, the PID-controller also has an overshoot above our limits,
+%which we expect to be caused by the ZN tuning.
+%In the next step we tried manually tuning the $k_D$ coefficient,
+%to get an overshoot inside our requirements.
+%
+%\subsection{Manual Tuning}\label{sub:manualPID}
+%Building on top of the best candidate, the PID-controller,
+%we manually tuned the coefficients.
+%We came to the conclusion,
+%that the overshoot is happening, because the controller is too aggressive,
+%which is why we decided to decrease the $k_P$ coefficient to $0.2$.
+%Looking back at the second formula in Equation \ref{eq:PID},
+%we can see, that this will not affect the relations between the coefficients.
+%
+%\subsubsection{Results}
+%The results of the manual tuning can be seen in Figure \ref{fig:manualPID}.
+%
+%%\begin{figure}[H]
+%%    \centering
+%%    \includegraphics[width=\textwidth]{figures/07controllerDesign/manualPID.eps}
+%%    \caption{Results from ZN PID with $k_P = 0.2$}
+%%	\label{fig:manualPID}
+%%\end{figure}
+%Interesting to notice here is,
+%that the controller has a deadtime of approximately 4 seconds,
+%before its output affects the system.
+%
+%
+%One big disadvantage of PID tuning for this system is,
+%that it is not taking advantage of the existence of three pumps as  individual inputs.
+%The tuning in this chapter is based on using only a single pump,
+%but could easily be repeated for multiple pumps with equal input speed.
+%Based on research done by Pedersen and Yang \cite{YangMultiPump2008},
+%it seems that using multiple pumps could increase efficiency,
+%but it be most efficient to always spin all used pumps equally.
+%This is not possible with a single PID controller,
+%as it only outputs one speed to all connected pumps.
+%It could be possible to implement an additional logic,
+%switching between differently tuned controllers for different flow requirements.

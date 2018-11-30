@@ -5,51 +5,53 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Connection of solar panels to the grid\relax }}{5}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Conventional Boost Converter\relax }}{10}{figure.caption.20}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Conventional Boost Converter Switch ON\relax }}{10}{figure.caption.21}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Conventional Boost Converter\relax }}{10}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Conventional Boost Converter Switch OFF\relax }}{11}{figure.caption.22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Conventional Boost Converter Switch ON\relax }}{10}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces CBC Inductor Wave Forms\relax }}{12}{figure.caption.23}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Conventional Boost Converter Switch OFF\relax }}{11}{figure.caption.23}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces CBC Inductor Current Ripple\relax }}{12}{figure.caption.24}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces CBC Inductor Wave Forms\relax }}{12}{figure.caption.24}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Capacitor Voltage Ripple\relax }}{13}{figure.caption.25}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces CBC Inductor Current Ripple\relax }}{12}{figure.caption.25}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Simulation results\relax }}{16}{figure.caption.26}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Capacitor Voltage Ripple\relax }}{13}{figure.caption.26}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Switched inductor boost converter circuit\relax }}{17}{figure.caption.27}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Simulation results\relax }}{16}{figure.caption.27}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Switching states of the SIBC\relax }}{18}{figure.caption.29}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Switched inductor boost converter circuit\relax }}{17}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Switching states of the SIBC\relax }}{18}{figure.caption.30}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Switch ON}}}{18}{subfigure.9.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Switch OFF}}}{18}{subfigure.9.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Switched inductor boost converter SIMULINK Model\relax }}{19}{figure.caption.33}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Switched inductor boost converter SIMULINK Model\relax }}{19}{figure.caption.34}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Switched inductor boost output voltage\relax }}{20}{figure.caption.34}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Switched inductor boost output voltage\relax }}{20}{figure.caption.35}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Single Switch Quadratic Boost Converter circuit\relax }}{21}{figure.caption.35}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Single Switch Quadratic Boost Converter circuit\relax }}{21}{figure.caption.36}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Switching states of the SIBC\relax }}{21}{figure.caption.36}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Switching states of the SIBC\relax }}{21}{figure.caption.37}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Switch ON}}}{21}{subfigure.13.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Switch OFF}}}{21}{subfigure.13.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Switched inductor boost converter SIMULINK Model\relax }}{23}{figure.caption.40}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Switched inductor boost converter SIMULINK Model\relax }}{23}{figure.caption.41}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Single Switch Quadratic Boost Converter circuit\relax }}{24}{figure.caption.41}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Single Switch Quadratic Boost Converter circuit\relax }}{24}{figure.caption.42}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.16}{\ignorespaces Conventional Three Level Boost Converter circuit\relax }}{24}{figure.caption.42}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Conventional Three Level Boost Converter circuit\relax }}{24}{figure.caption.43}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.17}{\ignorespaces Switching states of the SIBC\relax }}{25}{figure.caption.43}
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Switching states of the SIBC\relax }}{25}{figure.caption.44}
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Switch S\textsubscript {1} ON, Switch S\textsubscript {2} ON}}}{25}{subfigure.17.1}
 \defcounter {refsection}{0}\relax 
@@ -59,21 +61,21 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subfigure}{\numberline {(d)}{\ignorespaces {Switch S\textsubscript {1} OFF, Switch S\textsubscript {2} OFF}}}{25}{subfigure.17.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.18}{\ignorespaces Detailed view of the Cockroft-Walton Output capacitor substitution\relax }}{27}{figure.caption.50}
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Detailed view of the Cockroft-Walton Output capacitor substitution\relax }}{27}{figure.caption.51}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Circuit on the output of the SKYPER 32R\relax }}{31}{figure.caption.55}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Circuit on the output of the SKYPER 32R\relax }}{31}{figure.caption.56}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Input boards for the SKYPER 32R\relax }}{32}{figure.caption.56}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Input boards for the SKYPER 32R\relax }}{32}{figure.caption.57}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces PCB Layout for a two stage 2NX Interleaved Boost Converter\relax }}{33}{figure.caption.58}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces PCB Layout for a two stage 2NX Interleaved Boost Converter\relax }}{33}{figure.caption.59}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Detailed view of copper traces with obtuse angles\relax }}{34}{figure.caption.59}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Detailed view of copper traces with obtuse angles\relax }}{34}{figure.caption.60}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces PCB Layout for a multi stage 2NX Interleaved Boost Converter\relax }}{34}{figure.caption.60}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces PCB Layout for a multi stage 2NX Interleaved Boost Converter\relax }}{34}{figure.caption.61}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Detailed view of the inductor connection\relax }}{35}{figure.caption.61}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Detailed view of the inductor connection\relax }}{35}{figure.caption.62}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

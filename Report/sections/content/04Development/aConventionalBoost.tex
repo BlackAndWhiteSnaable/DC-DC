@@ -103,7 +103,7 @@ The inductor current slope for the interval from 0 to DTs can be found as:
    \centering
    \includegraphics[width=\textwidth]{figures/aConventionalBoost/InductorCurrent.pdf}
     \caption{CBC Inductor Current Ripple}
-	\label{fig:InductorCurrent}
+	\label{fig:CBC_InductorCurrent}
 \end{figure}
 
 
@@ -127,7 +127,7 @@ The change of inductor current during the first subinterval is:
 	\label{eq:CBC_ICR3}
 \end{equation}
 
-The inductor should be chosen such that a desired ripple magnitude is optained.
+The inductor should be chosen such that a desired current ripple magnitude is optained.
 
 \subsection{Capacitor voltage ripple}\label{sec:CBC_CVR}
 
@@ -164,11 +164,10 @@ The capacitor should be chosen according to the desired voltage ripple.
 
 \subsection{Design Example}\label{sec:CBC_DE}
 
-If we consider a design for a boost converter that will have an output of 25V from a 10V source, with a continuous inductor current and an output voltage of less than one percent, we will have the following parameters:
-
-
+If we consider a design for a boost converter that will have an output of 25V from a 10V source, with a continuous inductor current and an output voltage of less than one percent, we will have the following parameters:\\
 V\textsubscript{in} = 10 V, V\textsubscript{out} = 25 V and D = 0.6. Also,
 a load resistor of 40 $\Omega$ and a  switching frequency of 25kHz are considered for the design.
+
 
 By the fact that the average power supplied by the source must be the same as the average power absorbed by the load resistor, the output power can be obtained by:
 
@@ -203,13 +202,15 @@ The maximum and minimum inductor current can be determined by:
 	\label{eq:CBC_CVR4}
 \end{equation}
 
-The induction current has to be continuous, so it has to be always positive. This means that I\textsubscript{L} has to be positive and the boundary between continuous and discontinuous inductor current is determined from: 
 
+The induction current has to be continuous, so it has to be always positive. This means that I\textsubscript{L} has to be positive and the boundary between continuous and discontinuous inductor current is determined from:\\
+\begin{equation}
+	I_{min} = 0 = \frac{V_{in}}{(1-D)^2R} - \frac{V_{in}DT_s}{2L}
+\end{equation}
 
-$I_{min} = 0 = \frac{V_{in}}{(1-D)^2R} - \frac{V_{in}DT_s}{2L}$
-
-
-or $\frac{V_{in}}{(1-D)^2R} = \frac{V_{in}DT_s}{2L} = \frac{V_{in}D}{2Lf}$
+\begin{equation}
+	\frac{V_{in}}{(1-D)^2R} = \frac{V_{in}DT_s}{2L} = \frac{V_{in}D}{2Lf}
+\end{equation}
 
 
 So, the minimum combination of inductance and switching frequency for continuous current is:
@@ -218,32 +219,29 @@ So, the minimum combination of inductance and switching frequency for continuous
 L_{min} = \frac{D(1-D)^2R}{2f} = \frac{0.6(1-0.6)^2 40}{2\cdot25000} = 76.8\mu F
 \end{equation}
 
-L = 120 $\mu$ F to provide a margin to ensure continuous current.
-Then, using equations... 
+
+L = 120 $\mu$F is selected to provide a margin to ensure continuous current.
+Then, using Equation~\ref{eq:CBC_CVR4}, we can find the average inductor current.
 
 \begin{equation}
 I_L = \frac{V_{in}}{(1-D)^2R} = \frac{10}{(1-0.6)^2(40)} = 1.56 A
-\end{equation}
-
-Then, from equation...
+\end{equation}\\
+Afterwards, the current ripple according to Figure~\ref{fig:CBC_InductorCurrent} is calculated using Equation~\ref{eq:CBC_CVR3}
 
 \begin{equation}
 \Delta i_L = \frac{V_{in}DT}{2L} = \frac{10\cdot 0.6}{2\cdot 100\cdot 10^{-6}\cdot 25000} = 1 A
-\end{equation}
-
+\end{equation}\\
 $I_{max} = 1.56 + 1 = 2.56 A$ , 
 $I_{min} = 1.56 - 1 = 0.56 A$
 
-Based on equation.. , the minimum capacitance required to limit the output voltage ripple to 1 percent is:
+
+Based on equation ~\ref{eq:CBC_CVR4}, the minimum capacitance required to limit the output voltage ripple to 1 percent is:
 
 \begin{equation}
 C_{min} = \frac{D}{R(\Delta V_o/V)f} = \frac{0.6}{40\cdot 0.01\cdot 25000 } = 60\mu F
-\end{equation}
-
-A capacitor of 80 $\mu$ F was chosen to provide a satisfactory margin.
-
-To validate the results, the converter was built on SIMULINK with the appropriate components and using an ideal switch as the active device. The results from the simulation are presented on figure.. and it can be observed that they match with the calculations. 
-
+\end{equation}\\
+A capacitor of 80 $\mu$ F was chosen to provide a satisfactory margin.\\
+To validate the results, the converter was built on SIMULINK with the appropriate components and using an ideal switch as the active device. The results from the simulation are presented on Figure~\ref{fig:CBC_SimResults} and it can be observed that they match with the calculations. 
 
 
 \begin{figure}[H]%
@@ -253,5 +251,5 @@ To validate the results, the converter was built on SIMULINK with the appropriat
     \qquad
     \subfloat{{\includegraphics[width=0.8\textwidth]{figures/aConventionalBoost/CBC_I_CtoI_out.eps} }}%  
     \caption{Simulation results}%
-     \label{fig:SI_States}% 
+     \label{fig:CBC_SimResults}% 
 \end{figure}

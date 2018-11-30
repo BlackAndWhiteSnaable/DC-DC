@@ -103,7 +103,7 @@ Again, to confirm the calculations, the circuit was simulated in SIMULINK. The p
 
 \begin{table}[H]
 \begin{center}
-\caption {Simulation parameters for CTLBC} \label{tab:CTLBC} 
+\caption {Simulation parameters for CTLBC} \label{tab:SSQBC} 
 \begin{tabular}{|l|l|}
 \cline{1-2}
 \textbf{Parameter} & \textbf{Value}  \\ \cline{1-2}
@@ -121,15 +121,15 @@ The whole topology was modelled within the software, with the listed values (Mod
 
 \begin{figure} [H]
    \centering
-   \includegraphics[width=0.8\textwidth]{figures/bSwitchedInductor/Model_SI.pdf}
+   \includegraphics[width=0.8\textwidth]{figures/cSingleSwitchQuadraticBC/Model_SSQBC.pdf}
     \caption{Switched inductor boost converter SIMULINK Model}
-	\label{fig:Model_CTLBC}
+	\label{fig:Model_SSQBC}
 \end{figure}
 
-Expected output voltage $V_O$ is calculated using Eq. \ref{eq:SI_VO_VIN} to calculate the gain and multiplying it by $V_in$: 
+Expected output voltage $V_O$ is calculated using Eq. \ref{eq:SI_VO_VIN} to calculate the gain and multiplying it by $V_{in}$: 
 \begin{equation}
 	{V_o}= \frac{1}{(1-0.6)^2}10=62.5V
-	\label{eq:Simulation_CTLBC}
+	\label{eq:Simulation_SSQBC}
 \end{equation}
 
 The simulation showed output voltage levels similar to the expectations, as observed on Figure. \ref{fig:Simulation_SI}. Voltage converges at 62.5V. Further improvements to the waveform are possible, if the topology is researched further. 

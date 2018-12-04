@@ -1,2 +1,68 @@
-\section{Multilevel BC}\label{ch:BCBIBC}
+\section{Nx Multilevel BC}\label{ch:NXMLBC}
+
 \todo[color=c04y,inline]{testing the colors}
+
+The Nx Multilevel Boost Converter (Figure: ??) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. 
+
+\subsection{Additions from Conventional BC}
+The first part of the converter is the conventional DC-DC boost converter described in Section??? . The difference between the two converters is that the output of the multilevel converter is $V_C$ multiplied by the number of levels N, so that a higher output - input voltage ratio can be achieved. The example on Figure??? is a three-level boost converter, which means that the output voltage will equal to $3V_{C1}$. 
+
+\subsection{Switching States}
+The switching modes are the same as a Conventional BC. Like the other topologies mentioned earlier, we assume that the size of all inductors and capacitors is the same. The corresponding circuits for ON and OFF states are displayed on Figure???
+
+\subsubsection{ON State}
+When the switch is ON, diodes $D_{P1}$, $D_{P3}$ and $D_{P5}$ are reverse-biased, while diodes $D_{P2}$ and $D_{P4}$ are forward biased. In that case we have:
+
+During the ON state, $L_p$ is charged by the voltage source. If the voltage across $C_{P1}$ is higher then $C_{P2}$, the capacitor $C_{P1}$ clamps $C_{P2}$ through $D_{P2}$. At the same time, if the voltage across $C_{P2}$ + $C_{P4}$ is smaller than $C_{P1}$ + $C_{P3}$, then the capacitor $C_{P1}$ and $C_{P3}$ clamp the voltage across $C_{P2}$ and $C_{P4}$ through $D_{P4}$ and $C_{P4}$ is clamped by $C_{P3}$. The equations for when the switch is in ON position are as follows:
+
+\begin{equation}
+	V_L = V_{in} 
+	\label{eq:ML_ON1}
+\end{equation} 
+
+\begin{equation}
+	V_{Cp1} = V_{Cp2} = V_{Cp3} = V_{Cp4}
+	\label{eq:ML_ON1}
+\end{equation} 
+
+\begin{equation}
+	V_{Cp1} + V_{Cp4} = V_{Cp1} + V_{Cp3}
+	\label{eq:ML_ON1}
+\end{equation} 
+
+\begin{equation}
+	V_o = V_{Cp1} + V_{Cp3} + V_{Cp5} = 3_V{Cp1}
+	\label{eq:ML_ON1}
+\end{equation}
+
+\subsubsection{OFF State}
+When the switch is open, the inductor is in discharge mode and is charging capacitor $C_{P1}$ through diode $D_{P1}$. At this time $V_{in}$, $V_{Lp}$ and $C_{P2}$ clamp the voltage across $C_{P1}$ and $C_{P3}$ through diode $D_{P3}$. In the same manner, the input voltage $V_{in}$, the inductor voltage $V_{Lp}$, the voltage across $C_{P2}$ and $C_{P4}$ clamp the voltage across $C_{P1}$, $C_{P3}$ and $C_{P5}$.
+
+The equations for the off state of the switch are as follows:
+
+\begin{equation}
+	V_L = V_{in} - V_{Cp1}
+	\label{eq:ML_ON1}
+\end{equation}
+
+\begin{equation}
+	V_{Cp1} + V_{Cp3} = V_{in} - V{L} + V_{Cp2}
+	\label{eq:ML_ON1}
+\end{equation}
+ 
+\begin{equation}
+	V_{Cp1} + V_{Cp3} + V_{Cp5} = V_{in} - V{L} + V_{Cp2} + V_{Cp4}
+	\label{eq:ML_ON1}
+\end{equation}
+
+\begin{equation}
+	V_{Cp1} + V_{Cp3} + V_{Cp5} = V_o
+	\label{eq:ML_ON1}
+\end{equation}
+
+To find the convertion ratio of this converter we can use the Inductor voltage-second balance as follows:
+
+\begin{equation}
+	V_{in}D + V_{in}(1-D) - V_{Cp1)(1-D) = 0
+	\label{eq:ML_ON1}
+\end{equation}

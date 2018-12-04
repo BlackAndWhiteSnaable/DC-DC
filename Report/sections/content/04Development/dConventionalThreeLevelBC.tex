@@ -12,11 +12,10 @@ In the CTLBC, a second switch is included, together with another capacitor to go
 	\label{fig:CTLBC}
 \end{figure}
 \subsection{Switching States}
-<<<<<<< Updated upstream
+
 As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal of the second switch by an of angle 90$^\circ$ degrees.
-=======
+
 As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal to the second switch by 90$^\circ$ degrees.
->>>>>>> Stashed changes
 In this case, there are four possible states, corresponding to all possible combinations between the switches. Not all of them occur for one given duty cycle value. 
 The equivalent circuits during the on and off stages are shown in Figure \ref{fig:CTLBC_States}. Here again we assume the capacitors are the same size and that the duty ratio applied to the two switches is the same. 
 \vspace{-5mm}
@@ -42,9 +41,9 @@ Here we have got a replica of the ON state of a conventional boost converter, as
 	V_{L}=V_{in}
 	\label{eq:CTLBC_KVL_ONON}
 \end{equation}
-<<<<<<< Updated upstream
+
 Another loop is formed with the two capacitor and the output. This loop can be observed over all the rest of the states as well. Again assuming the capacitors are the same size, the voltage would split equally across them and the loop can be expressed via KVL as: 
-=======
+
 Another loop is formed with the two capacitors and the output.This loop can be observed over all the rest of the states as well and can be expressed via KVL as: 
 >>>>>>> Stashed changes
 
@@ -75,9 +74,9 @@ With both switches open the circuit formed is equivalent to the OFF state in a c
 	\label{eq:CTLBC_KVL_OFFOFF}
 \end{equation}
 
-<<<<<<< Updated upstream
+
 To find an expression for the output-input gain of the topology, we refer back to the IVSB (Sec. \ref{sec:convertionRatio}) and formulate the expression that is valid for both switches since Eq. \ref{eq:CTLBC_KVL_ONOFF} and Eq. \ref{eq:CTLBC_KVL_OFFON} are identical:
-=======
+
 To find an expression for the output-input gain of the topology, we 
 have to observe two separate cases. First, when the duty cycle is above 0.5, state (d) never occurs as at any time one of the switches is on. We have an equal split of states (b) and (c) for a duration of $(1-D)T_S$, whit state (a) lasting for the rest of the cycle or $1-(1-D)=2(D-1)$.
 
@@ -85,7 +84,7 @@ The second case is when $D<0.5$. In that case state (a) never occurs, while stat
 Now we can refer back to the IVSB and build two separate equations for the two cases. 
 
 Case 1: 
->>>>>>> Stashed changes
+
 \begin{equation}
 	V_{L_a}(2D-1)+V_{L_b}(1-D)+V_{L_b}(1-D)=
 	\label{eq:CTLBC_IVSB}
@@ -102,12 +101,9 @@ Reforming this equation we get:
 	V_{in}=(V_{C_1} - V_{C_2})(1-D)
 	\label{eq:CTLBC_IVSB3}
 \end{equation}
-<<<<<<< Updated upstream
-Using the already derived expression for V\textsubscript{O} in Eq. \ref{eq:CTLBC_KVL_ONON2} we can directly form the output-input function: 
-=======
-Now we substitute from Eq.\ref{eq:CTLBC_KVL_ONON2}:
 
->>>>>>> Stashed changes
+Using the already derived expression for V\textsubscript{O} in Eq. \ref{eq:CTLBC_KVL_ONON2} we can directly form the output-input function: 
+
 \begin{equation}
 	V_{in}=(V_{O})(1-D)
 	\label{eq:CTLBC_IVSB4}

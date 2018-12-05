@@ -1,5 +1,8 @@
 \section{Components}\label{ch:CD}
-\todo[color=c04x,inline]{testing the colors}
-The Cockroft-Walton Boost Converter (CWBC) utilises passive components to multiply the output voltage of a CBC.
-To achieve this the CWBC employs a Cockroft-Walton Half-Wave Multiplicator (CWHWM) instead of the output capacitor.
-A general schematic of the CWHWM can be seen in Figure \ref{fig:CWHWM}.
+
+All the calculation in the report until this point were done assuming all components were ideal. Since it was concluded the 2Nx Multilevel BC is the topology that will be build in hardware, we will need to calculate the expected drops as well, to see if the real results are close to the simulations we have ran. 
+The same structure will be followed as the previous section, where a 3x non-inverting BC will be analysed and the calculations will be mirrored to achieve the 2Nx combination.
+
+The components considered significant are diodes and switches.Other research papers (REFRENCE SANJEE AND ROSAS CARO) assume the drops across the two are equal. Our goal is two separate the two to improve the accuracy of the model. Since the voltage drop is constant and can be measured (usually also denoted in specification sheets), the rest of the losses can be accounted to the switch.
+
+

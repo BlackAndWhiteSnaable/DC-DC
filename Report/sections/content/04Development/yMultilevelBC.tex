@@ -1,14 +1,32 @@
-\section{Nx Multilevel BC}\label{ch:NXMLBC}
+\section{Nx Multilevel BC}\label{ch:MBC}
 
 \todo[color=c04y,inline]{testing the colors}
 
-The Nx Multilevel Boost Converter (Figure: ??) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. 
+The Nx Multilevel Boost Converter (Figure~\ref{fig:MBC_3XFULL}) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. 
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/yMultilevel/3x_FULL.pdf}
+    \caption{Nx Multilevel Boost Converter}
+	\label{fig:MBC_3XFULL}
+\end{figure}
 
 \subsection{Additions from Conventional BC}
-The first part of the converter is the conventional DC-DC boost converter described in Section??? . The difference between the two converters is that the output of the multilevel converter is $V_C$ multiplied by the number of levels N, so that a higher output - input voltage ratio can be achieved. The example on Figure??? is a three-level boost converter, which means that the output voltage will equal to $3V_{C1}$. 
+The first part of the converter is the conventional DC-DC boost converter described in Chapter~\ref{ch:CBC}. The difference between the two converters is that the output of the multilevel converter is $V_C$ multiplied by the number of levels N, so that a higher output - input voltage ratio can be achieved. The example on Figure~\ref{fig:MBC_3XFULL} is a three-level boost converter, which means that the output voltage will equal to $3V_{C1}$. 
 
 \subsection{Switching States}
-The switching modes are the same as a Conventional BC. Like the other topologies mentioned earlier, we assume that the size of all inductors and capacitors is the same. The corresponding circuits for ON and OFF states are displayed on Figure???
+The switching modes are the same as a Conventional BC. Like the other topologies mentioned on the previous pages, we assume that the size of all inductors and capacitors is the same. The corresponding circuits for ON and OFF states are displayed on Figure~\ref{fig:MBC_States}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[Switch ON\label{MBC_ON}]
+    {{\includegraphics[width=0.45\textwidth]{figures/yMultiLevel/3x_ON.pdf} }}%
+    \qquad
+    \subfloat[Switch OFF\label{MBC_OFF}]{{\includegraphics[width=0.45\textwidth]{figures/yMultiLevel/3x_OFF.pdf} }}%  
+    \caption{Switching states of the MBC}%
+     \label{fig:MBC_States}% 
+\end{figure}
+
 
 \subsubsection{ON State}
 When the switch is ON, diodes $D_{P1}$, $D_{P3}$ and $D_{P5}$ are reverse-biased, while diodes $D_{P2}$ and $D_{P4}$ are forward biased. In that case we have:
@@ -17,22 +35,22 @@ During the ON state, $L_p$ is charged by the voltage source. If the voltage acro
 
 \begin{equation}
 	V_L = V_{in} 
-	\label{eq:ML_ON1}
+	\label{eq:MBC_ON1}
 \end{equation} 
 
 \begin{equation}
 	V_{Cp1} = V_{Cp2} = V_{Cp3} = V_{Cp4}
-	\label{eq:ML_ON1}
+	\label{eq:MBC_ON2}
 \end{equation} 
 
 \begin{equation}
 	V_{Cp1} + V_{Cp4} = V_{Cp1} + V_{Cp3}
-	\label{eq:ML_ON1}
+	\label{eq:MBC_ON3}
 \end{equation} 
 
 \begin{equation}
-	V_o = V_{Cp1} + V_{Cp3} + V_{Cp5} = 3_V{Cp1}
-	\label{eq:ML_ON1}
+	V_o = V_{Cp1} + V_{Cp3} + V_{Cp5} = 3V_{Cp1}
+	\label{eq:MBC_ON4}
 \end{equation}
 
 \subsubsection{OFF State}
@@ -42,27 +60,44 @@ The equations for the off state of the switch are as follows:
 
 \begin{equation}
 	V_L = V_{in} - V_{Cp1}
-	\label{eq:ML_ON1}
+	\label{eq:MBC_OFF1}
 \end{equation}
 
 \begin{equation}
 	V_{Cp1} + V_{Cp3} = V_{in} - V{L} + V_{Cp2}
-	\label{eq:ML_ON1}
+	\label{eq:MBC_OFF2}
 \end{equation}
  
 \begin{equation}
 	V_{Cp1} + V_{Cp3} + V_{Cp5} = V_{in} - V{L} + V_{Cp2} + V_{Cp4}
-	\label{eq:ML_ON1}
+	\label{eq:MBC_OFF3}
 \end{equation}
 
 \begin{equation}
 	V_{Cp1} + V_{Cp3} + V_{Cp5} = V_o
-	\label{eq:ML_ON1}
+	\label{eq:MBC_OFF4}
 \end{equation}
 
-To find the convertion ratio of this converter we can use the Inductor voltage-second balance as follows:
+\subsubsection{Conversion Ratio}
+
+To find the conversion ratio of this converter we can use the Inductor voltage-second balance as follows:
 
 \begin{equation}
-	V_{in}D + V_{in}(1-D) - V_{Cp1}(1-D)= 0
-	\label{eq:ML_ON1}
+	V_{in}D + V_{in}(1-D) - V_{Cp1}(1-D)= 0 
+	\Rightarrow
+	V_{in} = V_{Cp1}(1-D)
+	\label{eq:MBC_INVSB1}
 \end{equation}
+
+From Equations~\ref{eq:MBC_ON4} and~\ref{eq:MBC_INVSB1}, output-input voltage relationship is:
+\begin{equation}
+	\frac{V_o}{V_{in}} = \frac{3V_{Cp1}}{V_{Cp1}(1-D)} = \frac{3}{(1-D)}
+	\label{eq:MBC_INVSB2}
+\end{equation}
+
+\begin{equation}
+	\Rightarrow \frac{V_o}{V_{in}} = \frac{N}{(1-D)}
+	\label{eq:MBC_INVSB3}
+\end{equation}
+
+

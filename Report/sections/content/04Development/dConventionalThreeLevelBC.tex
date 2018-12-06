@@ -1,9 +1,12 @@
 \section{Conventional Three Level Boost Converter}\label{ch:TLBC}
 
-The conventional three level boost converter is the first variation of the conventional BC that includes not only passive components, but also an additional active component. This, opposite to all other topologies discussed,does not increase the ratio between output and input, as it will be proven in the this section, but provides lower stress, low inductor current ripple and low switching loss compared to the conventional BC. 
+The conventional three level boost converter is the first variation of the conventional BC that includes not only passive components, but also an additional active component. This, opposite to all other topologies discussed, does not increase the ratio between output and input, as it will be proven in the this section, but provides lower stress, low inductor current ripple and low switching loss compared to the conventional BC. 
 
 \subsection{Additions from Conventional BC}
-In the CTLBC, a second switch is included, together with another capacitor to go in parallel with it, An additional diode is included to allow both switches to conduct at the same time without causing damage to the circuit. The full schematic can be seen on Fig. \ref{fig:CTLBC}  
+In the CTLBC, a second switch is included, together with another capacitor to go in parallel with it. An additional diode is included to not discharge the capacitor C\textsubscript{2} when S\textsubscript{2} is conducting.
+The full schematic can be seen on Fig. \ref{fig:CTLBC}.  
+
+%In the CTLBC, a second switch is included, together with another capacitor to go in parallel with it. An additional diode is included to no allow both switches to conduct at the same time without causing damage to the circuit. The full schematic can be seen on Fig. \ref{fig:CTLBC}.  
 
 \begin{figure} [H]
    \centering
@@ -13,9 +16,7 @@ In the CTLBC, a second switch is included, together with another capacitor to go
 \end{figure}
 \subsection{Switching States}
 
-As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal of the second switch by an of angle 90$^\circ$ degrees.
-
-As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal to the second switch by 90$^\circ$ degrees.
+As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal of the second switch by 90$^\circ$.
 In this case, there are four possible states, corresponding to all possible combinations between the switches. Not all of them occur for one given duty cycle value. 
 The equivalent circuits during the on and off stages are shown in Figure \ref{fig:CTLBC_States}. Here again we assume the capacitors are the same size and that the duty ratio applied to the two switches is the same. 
 \vspace{-5mm}
@@ -44,8 +45,7 @@ Here we have got a replica of the ON state of a conventional boost converter, as
 
 Another loop is formed with the two capacitor and the output. This loop can be observed over all the rest of the states as well. Again assuming the capacitors are the same size, the voltage would split equally across them and the loop can be expressed via KVL as: 
 
-Another loop is formed with the two capacitors and the output.This loop can be observed over all the rest of the states as well and can be expressed via KVL as: 
->>>>>>> Stashed changes
+Another loop is formed with the two capacitors and the output. This loop can be observed over all the rest of the states as well and can be expressed via KVL as: 
 
 \begin{equation}
 	V_O=V_{C_1}+V_{C_2}
@@ -78,7 +78,7 @@ With both switches open the circuit formed is equivalent to the OFF state in a c
 To find an expression for the output-input gain of the topology, we refer back to the IVSB (Sec. \ref{sec:convertionRatio}) and formulate the expression that is valid for both switches since Eq. \ref{eq:CTLBC_KVL_ONOFF} and Eq. \ref{eq:CTLBC_KVL_OFFON} are identical:
 
 To find an expression for the output-input gain of the topology, we 
-have to observe two separate cases. First, when the duty cycle is above 0.5, state (d) never occurs as at any time one of the switches is on. We have an equal split of states (b) and (c) for a duration of $(1-D)T_S$, whit state (a) lasting for the rest of the cycle or $1-(1-D)=2(D-1)$.
+have to observe two separate cases. First, when the duty cycle is above 0.5, state (d) never occurs as at any time one of the switches is on. We have an equal split of states (b) and (c) for a duration of $(1-D)T_S$, with state (a) lasting for the rest of the cycle or $1-(1-D)=2(D-1)$.
 
 The second case is when $D<0.5$. In that case state (a) never occurs, while states (b) and (c) last for the duty cycle duration $D$. State (d) lasts for the rest of the cycle or $(1-2D)$.
 Now we can refer back to the IVSB and build two separate equations for the two cases. 
@@ -86,7 +86,7 @@ Now we can refer back to the IVSB and build two separate equations for the two c
 Case 1: 
 
 \begin{equation}
-	V_{L_a}(2D-1)+V_{L_b}(1-D)+V_{L_b}(1-D)=
+	V_{L_a}(2D-1)+V_{L_b}(1-D)+V_{L_b}(1-D)=0
 	\label{eq:CTLBC_IVSB}
 \end{equation}
 Substituting the already derived expressions for V\textsubscript{L}:
@@ -98,7 +98,7 @@ Substituting the already derived expressions for V\textsubscript{L}:
 Reforming this equation we get: 
 
 \begin{equation}
-	V_{in}=(V_{C_1} - V_{C_2})(1-D)
+	V_{in}=(V_{C_1} + V_{C_2})(1-D)
 	\label{eq:CTLBC_IVSB3}
 \end{equation}
 
@@ -117,7 +117,7 @@ From here the output-input function is easily found:
 
 Case 2: 
 \begin{equation}
-	V_{L_d}(1-2D)+V_{L_b}D+V_{L_b}D=
+	V_{L_d}(1-2D)+V_{L_b}D+V_{L_b}D=0
 	\label{eq:CTLBC_CASE2}
 \end{equation}
 Substituting the already derived expressions for V\textsubscript{L}:
@@ -129,10 +129,10 @@ Substituting the already derived expressions for V\textsubscript{L}:
 Reforming this equation we get: 
 
 \begin{equation}
-	V_{in}=(V_{C_1} - V_{C_2})D+V_O(1-2D)
+	V_{in}=(V_{C_1} + V_{C_2})D+V_O(1-2D)
 	\label{eq:CTLBC_CASE2_3}
 \end{equation}
-Again, we substitute from Eq.\ref{eq:CTLBC_KVL_ONON2}:
+Again, we substitute from Eq. \ref{eq:CTLBC_KVL_ONON2}:
 
 \begin{equation}
 	V_{in}=V_{O}(1-D)
@@ -169,7 +169,7 @@ Switching Frequency($F_S$)          &      50KhZ      \\ \cline{1-2}
 \end{center}
 \end{table}
 
-The whole topology was modelled within the software, with the listed values (Model can be seen on Figure. \ref{fig:Model_CTLBC}). Components were assumed ideal, internal resistance and voltage drops are neglected during the simulation. 
+The whole topology was modelled within the software, with the listed values (Model can be seen on Figure \ref{fig:Model_CTLBC}). Components were assumed ideal, internal resistance and voltage drops are neglected during the simulation. 
 
 \begin{figure} [H]
    \centering
@@ -184,7 +184,7 @@ Expected output voltage $V_O$ is calculated using Eq. \ref{eq:CTLBC_CASE2_5} to 
 	\label{eq:Simulation_CTLBC}
 \end{equation}
 
-The simulation results show the system output is as expected, as observed on Figure. \ref {fig:Simulation_CTLBC}. Voltage levels converge at 25 V. The overshoot and ripple can be compared favourably to a conventional BC with the same parameters. 
+The simulation results show the system output is as expected, as observed on Figure \ref {fig:Simulation_CTLBC}. Voltage levels converge at 25 V. The overshoot and ripple can be compared favourably to a conventional BC with the same parameters. 
 
 
 \begin{figure} [H]

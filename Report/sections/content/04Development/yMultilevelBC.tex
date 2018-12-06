@@ -2,7 +2,17 @@
 
 \todo[color=c04y,inline]{testing the colors}
 
-The Nx Multilevel Boost Converter (Figure~\ref{fig:MBC_3XFULL}) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. 
+Adding Cockcroft Walton Multiplier explained in Chapter~\ref{ch:cock} with a Conventional Boost Converter (Chapter~\ref{ch:CBC}), we get the Non-inverting Nx Multilevel Boost Converter as shown on Figure~\ref{fig:MBC_CW_CBCtoNx}
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/yMultilevel/CW_CBCtoNx.pdf}
+    \caption{}
+	\label{fig:MBC_CW_CBCtoNx}
+\end{figure}
+
+
+The Non-inverting Nx Multilevel Boost Converter (Figure~\ref{fig:MBC_3XFULL}) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. 
 
 \begin{figure}[H]
    \centering
@@ -95,9 +105,50 @@ From Equations~\ref{eq:MBC_ON4} and~\ref{eq:MBC_INVSB1}, output-input voltage re
 	\label{eq:MBC_INVSB2}
 \end{equation}
 
+From here, we can generalize the conversion ratio for a Nx Multilevel Boost Converter as:
 \begin{equation}
-	\Rightarrow \frac{V_o}{V_{in}} = \frac{N}{(1-D)}
+	\frac{V_o}{V_{in}} = \frac{N}{(1-D)}
 	\label{eq:MBC_INVSB3}
 \end{equation}
 
+\subsubsection{Simulation results}
+
+To confirm the calculations, the circuit was simulated in SIMULINK, using the following parameters: 
+
+\begin{table}[H]
+\begin{center}
+\caption {Simulation parameters for MBC} \label{tab:MBC} 
+\begin{tabular}{|l|l|}
+\cline{1-2}
+\textbf{Parameter} & \textbf{Value}  \\ \cline{1-2}
+Input Voltage $V_{in}$          &      10V   \\ \cline{1-2}
+Load(R)   & 225$\Omega$           \\ \cline{1-2}
+Capacitance(C)          &       220$\mu$F     \\ \cline{1-2}
+Inductance(L)          &      150$\mu$F      \\ \cline{1-2}
+Duty cycle(D)          &     0.6       \\ \cline{1-2}
+Switching Frequency($F_S$)          &      50kHz      \\ \cline{1-2}
+\end{tabular}
+\end{center}
+\end{table}
+
+The  topology was modelled with the listed values Figure.\ref{fig:MBC_Sim}. As the previous topologies presented, the components were assumed ideal.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/yMultilevel/MCB_Simulation.pdf}
+    \caption{Nx Multilevel Boost Converter Simulation}
+	\label{fig:MBC_Sim}
+\end{figure}
+
+For the three level boost converter, the voltage gain for 0.6 duty cycle is 7.5. Running the simulation, we get the corresponding result of 75V as observed on 
+Figure~\ref{fig:MBC_SimResults}
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/yMultilevel/Non-invertingNx.eps}
+    \caption{Nx Multilevel Boost Converter Simulation Results}
+	\label{fig:MBC_SimResults}
+\end{figure}
+
+\subsubsection{Inverting Nx Multilevel BC}
 

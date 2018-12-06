@@ -5,20 +5,101 @@ The same structure will be followed as the previous section, where a 3x non-inve
 
 The components considered significant are diodes and switches.Other research papers (REFERENCE SANJEE AND ROSAS CARO) assume the drops across the two are equal. Our goal is two separate the two to improve the accuracy of the model. Since the voltage drop is constant and can be measured (usually also denoted in specification sheets), the rest of the losses can be accounted to the switch.
 
-\subsection{3x Non-inverting}
+\subsubsection{3x Non-inverting}
+
+First, the relationship between the components will be derived afterwards we will be able to link it to the input output relationship.
 
 \begin{figure}[H]%
     \centering
-    \subfloat[Switch S\textsubscript{1} ON, Switch S\textsubscript{2} ON\label{CTLBC_ONON}]
-    {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/Three_levelONON.pdf} }}%
+    \subfloat[Loop 1]
+    {{\includegraphics[width=0.45\textwidth]{figures/zComponentDrops/DROPS_LOOP1.pdf} \label{fig:DROPS_LOOP1}}}%
     \qquad
-    \subfloat[Switch S\textsubscript{1} ON, Switch S\textsubscript{2} OFF\label{CTLBC_ONOFF}]{{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/Three_levelONOFF.pdf} }}%  
+    \subfloat[Loop 2]{{\includegraphics[width=0.45\textwidth]{figures/zComponentDrops/DROPS_LOOP2.pdf} \label{fig:DROPS_LOOP2}}}%  
    \qquad
-        \subfloat[Switch S\textsubscript{1} OFF, Switch S\textsubscript{2} ON\label{CTLBC_OFFON}]
-    {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/Three_levelOFFON.pdf} }}%
+        \subfloat[Loop 3]
+    {{\includegraphics[width=0.45\textwidth]{figures/zComponentDrops/DROPS_LOOP3.pdf} \label{fig:DROPS_LOOP3}}}%
     \qquad
-    \subfloat[Switch S\textsubscript{1} OFF, Switch S\textsubscript{2} OFF\label{CTLBC_OFFOFF}]{{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/Three_levelOFFOFF.pdf} }}%  
-    \caption{Switching states of the SIBC}%
-     \label{fig:CTLBC_States}% 
+    \subfloat[Loop 4]{{\includegraphics[width=0.45\textwidth]{figures/zComponentDrops/DROPS_LOOP4.pdf} \label{fig:DROPS_LOOP4}}}%  
+    \caption{Loops required to calculate the voltage drops}%
+     \label{fig:DROPS_LOOPS}% 
      
 \end{figure}
+
+Starting with the loop marked of Fig. \ref{fig:DROPS_LOOP1}, we follow the lines and every time one of the components we considered significant is passed through, the expected voltage drop ($V_D$ or $V_{Sw}$) is subtracted.
+
+So the KVL equation is as follows: 
+\begin{equation}
+	V_{Cp1} = V_{Cp2}-V_{Sw}-V_D
+	\label{eq:LOOP1}
+\end{equation}
+
+Now the switch is turned off and the loop marked on Fig. \ref{fig:DROPS_LOOP2} can be expressed via KVL: 
+\begin{equation}
+	V_{Cp3} = V_{Cp2}-2V_D=V_{Cp1}-3V_D-V_{Sw}
+	\label{eq:LOOP2}
+\end{equation}
+After another turn of the switch we can build the expression for the loop marked on figure Fig. \ref{fig:DROPS_LOOP3}:
+\begin{equation}
+	V_{Cp3}+V_{Cp1}-V_{Sw}-V_{Cp2}-V_{Cp3}-V_D=0
+	\label{eq:LOOP3_1}
+\end{equation}
+With the help of Eq. \ref{eq:LOOP1} the term is reduced to:
+\begin{equation}
+	V_{Cp3} = V_{Cp4}
+	\label{eq:LOOP3_2}
+\end{equation}
+
+Lastly, in the loop of Fig. \ref{eq:LOOP4} with the switch in OFF state:
+\begin{equation}
+	V_{Cp5}+V_{Cp3}-V_{Cp4}-V_{Cp2}-2V_D = 0
+	\label{eq:LOOP4_1}
+\end{equation}
+In Eq. \ref{eq:LOOP3_2} it was already concluded $V_{Cp3}$ and $V_{Cp4}$ are eqaual. Consequently: 
+\begin{equation}
+	V_{Cp2}-2V_D = V_{Cp5}
+	\label{eq:LOOP4_2}
+\end{equation}
+Referring back to Eq. \ref{eq:LOOP1} and Eq. \ref{eq:LOOP2}: 
+$V_{Cp4}$ are eqaual. Consequently: 
+\begin{equation}
+	V_{Cp5}=V_{Cp1}-3V_D-V_{Sw} =V_{Cp3} 
+	\label{eq:LOOP4_3}
+\end{equation}
+If we extend this circuit to the general Nx non-inverting BC,voltages over the capacitors after $C_{p1}$ on the output side will be equal to the term calculated for $V_{Cp3}$ and  $V_{Cp5}$. Generalised we can express the voltage across the $C_{p(2N-1)}$ capacitor as: 
+\begin{equation}
+	V_{Cp(2N-1)}= V_{Cp1}-3V_D-V_{Sw} 
+	\label{eq:C_2N-1}
+\end{equation}
+
+As already proven in Section \ref{ch:MBC_} the output voltage can be generalised as the sum of the voltages across all the output side capacitors: 
+\begin{equation}
+	V_{O}= NV_{Cp1}-3(N-1)V_D-(N-1)V_{Sw} 
+	\label{eq:DROPS_V_O}
+\end{equation}
+
+Now all all we need to define is as expression for $V_{Cp1}$ including the voltage drops. To do achieve that, we look back to Figure. \ref{fig:MBC_3XFULL}. The first level of the circuit is basically a conventional boost converter, therefore we will looked deeper into how the diode and switch influence the output of a conventional BC. 
+
+\subsubsection{Conventional boost converter}
+
+To avoid doing the whole deriviation a second time, referring back to Eq. \ref{eq:CBC_SWON1} and Eq. \ref{eq:CBC_SWOFF1} and add the switch and diode drop respectively. Consequently combining the two using the IVSB, we easily get an expression for the output voltage: 
+
+\begin{equation}
+	V_{O}= \frac{V_{in}-V_{Sw}D}{1-D}-V_D
+	\label{eq:DROPS_CONV}
+\end{equation}
+
+The output voltage of a conventional BC can be substitute with the voltage across the first capacitor in the Nx Multilevel BC, this turns Eq. \ref{eq:DROPS_V_O} into: 
+
+\begin{equation}
+	V_{O}= N( \frac{V_{in}-V_{Sw}D}{1-D}-V_D)-3(N-1)V_D-(N-1)V_{Sw} 
+	\label{eq:DROPS_NX_FINAL}
+\end{equation}
+
+Finally, we need to get back to the initial goal and calculate the formula for the output of a 2Nx multilevel BC. 
+
+Using the same reasoning as in Sec. REFER TO 2NX the inverting part of the full topology is just a mirror version of the non-inverting and can be assumed identical apart from the sign of the potential difference. when combined the two are just the non-inverting converter multiplied by two. Therefore the expression for $V_{O}$ is: 
+
+\begin{equation}
+	V_{O}= 2(N( \frac{V_{in}-V_{Sw}D}{1-D}-V_D)-3(N-1)V_D-(N-1)V_{Sw})
+	\label{eq:DROPS_2INX_FINAL}
+\end{equation}

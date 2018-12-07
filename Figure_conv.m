@@ -26,10 +26,10 @@ subplot(4,1,3)
 plot(Diode.Diode_voltage,'Color',[1,0,0])
 axis([0.37724 0.377282 -30 5]) 
 %%Set title, labels, legend labels
-title('$D_V$','Interpreter', 'latex','fontsize',12)
+title('$V_D$','Interpreter', 'latex','fontsize',12)
 xlabel('Time[$s$]', 'Interpreter', 'latex','fontsize',12);
 ylabel('Voltage[$V$]', 'Interpreter', 'latex','fontsize',12);
-leg = legend('D_V');
+leg = legend('V_D');
 
 
 %Change Name of variable of whatever you set it in Simulink
@@ -37,8 +37,8 @@ subplot(4,1,4)
 plot(Diode.Diode_current,'Color',[1,0,0])
 axis([0.37724 0.377282 -0.5 3])
 %%Set title, labels, legend labels
-title('$D_I$','Interpreter', 'latex','fontsize',12)
+title('$I_D$','Interpreter', 'latex','fontsize',12)
 xlabel('Time[$s$]', 'Interpreter', 'latex','fontsize',12);
 ylabel('Current[$I$]', 'Interpreter', 'latex','fontsize',12);
-leg = legend('D_I');
+leg = legend('I_D');
 

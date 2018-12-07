@@ -241,8 +241,35 @@ Based on equation ~\ref{eq:CBC_CVR4}, the minimum capacitance required to limit 
 C_{min} = \frac{D}{R(\Delta V_o/V)f} = \frac{0.6}{40\cdot 0.01\cdot 25000 } = 60\mu F
 \end{equation}\\
 A capacitor of 80 $\mu$ F was chosen to provide a satisfactory margin.\\
-To validate the results, the converter was built on SIMULINK with the appropriate components and using an ideal switch as the active device. The results from the simulation are presented on Figure~\ref{fig:CBC_SimResults} and it can be observed that they match with the calculations. 
 
+To confirm the calculations, the circuit was built in SIMULINK, using the calculated parameters presented on Table~\ref{tab:CBC}.
+
+\begin{table}[H]
+\begin{center}
+\caption {Simulation parameters for CBC} \label{tab:CBC} 
+\begin{tabular}{|l|l|}
+\cline{1-2}
+\textbf{Parameter} & \textbf{Value}  \\ \cline{1-2}
+Input Voltage $V_{in}$          &      10V   \\ \cline{1-2}
+Load(R)   & 40$\Omega$           \\ \cline{1-2}
+Capacitance(C)          &       80$\mu$F     \\ \cline{1-2}
+Inductance(L)          &      120$\mu$F      \\ \cline{1-2}
+Duty cycle(D)          &     0.6       \\ \cline{1-2}
+Switching Frequency($F_S$)          &      25kHz      \\ \cline{1-2}
+\end{tabular}
+\end{center}
+\end{table}
+
+The simulation presented on Figure~\ref{fig:CBC_Sim} is using an ideal switch for the active device.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/aConventionalBoost/CBCpic.pdf}
+    \caption{Conventional Boost Converter}
+	\label{fig:CBC_Sim}
+\end{figure}
+
+The results from the simulation are presented on Figure~\ref{fig:CBC_SimResults} and it can be observed that they match with the calculations. 
 
 \begin{figure}[H]%
     \centering

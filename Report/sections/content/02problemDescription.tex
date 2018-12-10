@@ -1,17 +1,18 @@
-\chapter{Problem Description}\label{ch:probdesc}
-\todo[color=c02,inline]{Problem Description}
-Boosting DC power
-cheap
-size
+\chapter{Problem Analysis}\label{ch:probdesc}
 
-\section{Solar and Stuff}
-While plants using fossil fuels or nuclear power are outputting high voltage AC directly into the grid the renewable sources need to raised to high voltage before they can feed their energy into the grid.
+
+
+\section{Photovoltaic power}
+While plants using fossil fuels or nuclear power are outputting high voltage AC directly into the grid, the renewable sources need to be boosted to high voltage, before they can feed their energy into the grid. 
 Especially Solar panels produce very low power DC-voltage. \todo[color=c01]{ref}
 % https://panasonic.net/ecosolutions/solar/product/product_detail/index.html
 
 The setup to supply the energy to the grid can be seen in Figure \ref{fig:SolarConverters}.
-The changing voltage coming from the panel is stepped up by a boost converter to the internal DC voltage level. 
-Then the inverter converts it to AC that goes to the transformer and into the distribution grid.
+There are three stages between converting solar to electric power and inputting that power into the grid. 
+First, the low voltage DC coming in from the panel needs to be boosted, before an inverter makes it alternating. Finally  an AC-AC converter 
+
+This three steps involve complicated circuitry, large costs and significant power losses. 
+This remains one of the big reasons why solar power is not as cost efficient as other sources that do not require such conversion.
 
 \begin{figure}[H]
    \centering
@@ -21,6 +22,7 @@ Then the inverter converts it to AC that goes to the transformer and into the di
 \end{figure}
 
 \section{Problem Description}
+This project will focus on trying to improve the first stage or the DC-DC converter. 
 The challenge for the boost converter is that the difference is very big.
 A typical output of a solar panel is up to 60V DC while the low voltage grid is already 400V AC.
 By connecting more panels in series a higher output voltage can be achieved but the power of individual panels can't be used as efficiently.
@@ -30,3 +32,5 @@ At least cascaded converters are needed to reach the higher internal voltage lev
 But they still have to always run on high duty cycles to reach the demanded conversion ratios.
 Advanced topologies have higher conversion ratios that may be useful for connecting solar panels.
 In general new topologies for boost converters can have advantages over the conventional boost converters when it comes to compactness, efficiency and durability.
+
+ 

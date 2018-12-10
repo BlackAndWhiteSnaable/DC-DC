@@ -8,7 +8,7 @@ axis([0.37724 0.377282 -1 2.5])
 %%Set title, labels, legend labels
 title('$I_c$','Interpreter', 'latex','fontsize',12)
 xlabel('Time[$s$]', 'Interpreter', 'latex','fontsize',12);
-ylabel('Current[$V$]', 'Interpreter', 'latex','fontsize',12);
+ylabel('Current[$A$]', 'Interpreter', 'latex','fontsize',12);
 leg = legend('I_C');
 
 %Change Name of variable of whatever you set it in Simulink
@@ -18,7 +18,7 @@ axis([0.37724 0.377282 24.1 24.4])
 %%Set title, labels, legend labels
 title('$V_C$','Interpreter', 'latex','fontsize',12)
 xlabel('Time[$s$]', 'Interpreter', 'latex','fontsize',12);
-ylabel('Current[$V$]', 'Interpreter', 'latex','fontsize',12);
+ylabel('Voltage[$V$]', 'Interpreter', 'latex','fontsize',12);
 leg = legend('V_C = V_o');
 
 %Change Name of variable of whatever you set it in Simulink
@@ -28,6 +28,6 @@ axis([0.37724 0.377282 0.602 0.61])
 %%Set title, labels, legend labels
 title('$I_o$','Interpreter', 'latex','fontsize',12)
 xlabel('Time[$s$]', 'Interpreter', 'latex','fontsize',12);
-ylabel('Voltage[$V$]', 'Interpreter', 'latex','fontsize',12);
+ylabel('Current[$A$]', 'Interpreter', 'latex','fontsize',12);
 leg = legend('I_o');
 

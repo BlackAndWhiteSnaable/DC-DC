@@ -1,4 +1,4 @@
-\section{Nx Multilevel BC}\label{ch:MBC}
+\section{Non-inverting Nx Multilevel BC}\label{ch:MBC}
 
 \todo[color=c04y,inline]{testing the colors}
 
@@ -7,7 +7,7 @@ Adding Cockcroft Walton Multiplier explained in Chapter~\ref{ch:cock} with a Con
 \begin{figure}[H]
    \centering
    \includegraphics[width=\textwidth]{figures/yMultilevel/CW_CBCtoNx.pdf}
-    \caption{}
+   \caption{Inverting Nx MBC Diagram}
 	\label{fig:MBC_CW_CBCtoNx}
 \end{figure}
 
@@ -88,7 +88,7 @@ The equations for the off state of the switch are as follows:
 	\label{eq:MBC_OFF4}
 \end{equation}
 
-\subsubsection{Conversion Ratio}
+\subsection{Conversion Ratio}
 
 To find the conversion ratio of this converter we can use the Inductor voltage-second balance as follows:
 
@@ -111,7 +111,7 @@ From here, we can generalize the conversion ratio for a Nx Multilevel Boost Conv
 	\label{eq:MBC_INVSB3}
 \end{equation}
 
-\subsubsection{Simulation results}
+\subsection{Simulation results}
 
 To confirm the calculations, the circuit was simulated in SIMULINK, using the following parameters: 
 
@@ -150,5 +150,23 @@ Figure~\ref{fig:MBC_SimResults}
 	\label{fig:MBC_SimResults}
 \end{figure}
 
-\subsubsection{Inverting Nx Multilevel BC}
+\section{Inverting Nx Multilevel BC}\label{ch:IMBC}
+
+The Inverting Nx Multilevel Boost Converter can be achieved similar to the non-inverting one, but this time the Cockroft Walton Multiplier is substracted as shown on Figure~\ref{fig:MBC_CW_CBCtoINx}
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/yMultilevel/InvertingNxDiagram.pdf}
+    \caption{Inverting Nx MBC Diagram}
+	\label{fig:MBC_CW_CBCtoINx}
+\end{figure}
+
+The switching states equations and the conversion ratio are not derived as they are the same as the non-inverting Nx Multilevel Boost Converter. The main difference between the two converters is that additional diode and a capacitor are added as well as the diodes are reversed, so that the output voltage becomes with a negative sign as shown on Figure~\ref{fig:MBC_InvertingNx}.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/yMultilevel/InvertingMBCforReport2.pdf}
+    \caption{Inverting Nx MBC Schematic}
+	\label{fig:MBC_InvertingNx}
+\end{figure}
 

@@ -1,5 +1,4 @@
 \section{Component Specifications}\label{ch:compSpec}
-\todo[color=c05a,inline]{testing the colors}
 
 \subsection{MOSFETs}
 Compared to IGBTs MOSFETs are better for applications with high current pulses and high frequencies. Because the simulations had shown high peak currents over the switch the MOSFET was chosen.
@@ -10,10 +9,17 @@ That means it is able to work efficiently in high frequency power applications w
 The MOSFET is rated for switching voltages up to 1200V with a maximum current of 19A.
 For switching a gate voltage of 14V is required and a negative input of -5V to -10V as a low input is recommended for fast switching.
 
+% https://www.wolfspeed.com/media/downloads/169/C2M0160120D.pdf
+\todo[color=c05a,inline]{Ref}
+
 \subsection{Diodes}
 The used diode is the STTH6012 from STMicroelectronics.
 The ultra fast soft recovery characteristics makes it very efficient in high frequency pulse operation.
 With a rating of 1200V repetitive peak reverse voltage and a maximum forward current of 60A the diode seems oversized but for experimental work they were used.
+
+% https://www.st.com/resource/en/datasheet/stth6012.pdf
+\todo[color=c05a,inline]{Ref}
+
 
 \subsection{Capacitors}
 The chosen capacitors are standard sizes of $2.2 \mu F$ capacity with a voltage rating to 450V.

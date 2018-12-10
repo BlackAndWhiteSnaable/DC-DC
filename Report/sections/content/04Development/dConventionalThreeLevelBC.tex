@@ -16,8 +16,31 @@ The full schematic can be seen on Fig. \ref{fig:CTLBC}.
 \end{figure}
 \subsection{Switching States}
 
-As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal of the second switch by 90$^\circ$.
+As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal of the second switch by 180$^\circ$.
+An easy way of generating the signals can be seen in Figure \ref{fig:PWMS}. The analog value is compared to a carrier and to the inverted carrier. The resulting signals for 60\% can be seen in Figure \ref{fig:PWM12}
 In this case, there are four possible states, corresponding to all possible combinations between the switches. Not all of them occur for one given duty cycle value. 
+
+\begin{figure} [H]
+   \centering
+   \includegraphics[width=0.6\textwidth]{figures/dConventionalThreeLevelBC/PWMGeneration.pdf}
+    \caption{Generation of the signals for two switches}
+	\label{fig:PWMS}
+\end{figure}
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[PWM for switch 1\label{PWM1}]
+    {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/PWM1.eps} }}%
+    \subfloat[PWM for switch 2\label{PWM2}]
+    {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/PWM2.eps} }}%
+    \caption{Switching pattern for 60\%}%
+     \label{fig:PWM12}% 
+     
+\end{figure}
+
+
+
+
 The equivalent circuits during the on and off stages are shown in Figure \ref{fig:CTLBC_States}. Here again we assume the capacitors are the same size and that the duty ratio applied to the two switches is the same. 
 \vspace{-5mm}
 \begin{figure}[H]%

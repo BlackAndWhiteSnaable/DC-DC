@@ -1,6 +1,6 @@
 \section{Single Switch Quadratic Boost Converter}\label{ch:SSQBC}
 
-The single switch quadratic boost converter is another variation of the already covered conventional boost converter. Like the SIBC, it only adds passive components to the circuit to achieve higher ration between output and input voltage. 
+The single switch quadratic boost converter is another variation of the already covered conventional boost converter. Like the SIBC, it only adds passive components to the circuit to achieve higher ratio between output and input voltage. 
 
 \subsection{Additions from Conventional BC}
 In the SSQBC,
@@ -31,7 +31,7 @@ The equivalent circuits during the on and off stages are shown in Figure \ref{fi
 While the switch is ON, diodes D\textsubscript{2} and D\textsubscript{3} are forward biased and diode D\textsubscript{1} is reverse biased.
 This allows in voltage source to charge the inductor L\textsubscript{1} and for capacitor C\textsubscript{1} to discharge over L\textsubscript{2}, as seen in Figure \ref{SSQBC_ON}.
 \\*
-In this case, we can use KVL to build the eqations for inductor voltages: 
+In this case, we can use KVL to build the equations for inductor voltages: 
 
 \begin{equation}
 	V_{L_1}=V_{in}
@@ -44,8 +44,8 @@ In this case, we can use KVL to build the eqations for inductor voltages:
 \end{equation}
 
 \subsubsection{OFF State}
-While the switch is OFF, the complete opposite happens, where only D\textsubscript{2} remains reverse biased, as seen on Figure \ref{SSQBC_OFF}.
-In a configuration like this two loop are formed on the two sides of C\textsubscript{1}. Again using KVL the following eqations areas seen on Figure \ref{SSQBC_OFF} formed for the inductor voltages:
+While the switch is OFF, the complete opposite happens, where only D\textsubscript{3} remains reverse biased, as seen on Figure \ref{SSQBC_OFF}.
+In a configuration like this two loops are formed on the two sides of C\textsubscript{1}. Again, using KVL, the following eqations as seen on Figure \ref{SSQBC_OFF} are formed for the inductor voltages:
 
 \begin{equation}
 	V_{L_1}=V_{in}-V_{C_1}
@@ -57,7 +57,7 @@ In a configuration like this two loop are formed on the two sides of C\textsubsc
 	\label{eq:SSQBC_KVL_OFF2}
 \end{equation}
 
-Again using the Inductor voltage-second balance, we can find the output-input relationship, only this time we form two separate equations for the two inductors. 
+Afterwards, using the Inductor voltage-second balance, we can find the output-input relationship, only this time we form two separate equations for the two inductors. 
 
 \begin{equation}
 	V_{L_1(ON)}D+V_{L_1(OFF)}(1-D)=0
@@ -117,7 +117,7 @@ Switching Frequency($F_S$)          &      50kHz      \\ \cline{1-2}
 \end{center}
 \end{table}
 
-The whole topology was modelled within the software, with the listed values (Model can be seen on Figure.\ref{fig:Model_CTLBC}). Components were, again, assumed ideal, internal resistance and voltage drops are neglected during the simulation. 
+The whole topology was modelled within the software, with the listed values (Model can be seen on Figure.\ref{fig:Model_SSQBC}). Components were, again, assumed ideal, internal resistance and voltage drops are neglected during the simulation. 
 
 \begin{figure} [H]
    \centering
@@ -126,17 +126,17 @@ The whole topology was modelled within the software, with the listed values (Mod
 	\label{fig:Model_SSQBC}
 \end{figure}
 
-Expected output voltage $V_O$ is calculated using Eq. \ref{eq:SI_VO_VIN} to calculate the gain and multiplying it by $V_{in}$: 
+Expected output voltage $V_O$ is calculated using Eq. \ref{eq:SSQBC_VO_VIN} to calculate the gain and multiplying it by $V_{in}$: 
 \begin{equation}
 	{V_o}= \frac{1}{(1-0.6)^2}10=62.5V
 	\label{eq:Simulation_SSQBC}
 \end{equation}
 
-The simulation showed output voltage levels similar to the expectations, as observed on Figure. \ref{fig:Simulation_SI}. Voltage converges at 62.5V. Further improvements to the waveform are possible, if the topology is researched further. 
+The simulation showed output voltage levels similar to the expectations, as observed on Figure \ref{fig:SSQBC_Model}. Voltage converges at 62.5V. Further improvements to the waveform are possible, if the topology is researched further. 
 
 \begin{figure} [H]
    \centering
    \includegraphics[width=0.8\textwidth]{figures/cSingleSwitchQuadraticBC/Simulation_SSQBC.eps}
     \caption{Single Switch Quadratic Boost Converter circuit}
-	\label{fig:SSQBC}
+	\label{fig:SSQBC_Model}
 \end{figure}

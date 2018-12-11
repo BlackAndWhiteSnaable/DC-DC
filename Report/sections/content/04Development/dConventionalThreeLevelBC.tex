@@ -27,6 +27,7 @@ In this case, there are four possible states, corresponding to all possible comb
 	\label{fig:PWMS}
 \end{figure}
 
+\iffalse
 \begin{figure}[H]%
     \centering
     \subfloat[PWM for switch 1\label{PWM1}]
@@ -34,11 +35,22 @@ In this case, there are four possible states, corresponding to all possible comb
     \subfloat[PWM for switch 2\label{PWM2}]
     {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/PWM2.eps} }}%
     \caption{Switching pattern for 60\%}%
+     \label{fig:PWM12}%      
+\end{figure}
+\fi
+
+\begin{figure}[H]%
+    \centering
+    %\subfloat[Switch ON\label{SI_ON}]
+    {{\includegraphics[width=0.55\textwidth]{figures/dConventionalThreeLevelBC/PWM1.eps} }}%
+    \qquad
+    \subfloat{{\includegraphics[width=0.55\textwidth]{figures/dConventionalThreeLevelBC/PWM2.eps} }}%  
+    \caption{Switching pattern for 60\%}%
      \label{fig:PWM12}% 
-     
 \end{figure}
 
-\todo[color=c04d]{Figure in appendix on top of each other} 
+\todo[color=c04d]{Figure in appendix on top of each other}
+\todo[color=c04d]{No need anymore, ho-ho-ho} 
 
 The equivalent circuits during the on and off stages are shown in Figure \ref{fig:CTLBC_States}. Here again we assume the capacitors are the same size and that the duty ratio applied to the two switches is the same. 
 \vspace{-5mm}

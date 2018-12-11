@@ -3,7 +3,7 @@
 All the calculation in the report until this point were done assuming all components were ideal. Since it was concluded the 2Nx Multilevel BC is the topology that will be build in hardware, we will need to calculate the expected drops as well, to see if the real results are close to the simulations we have ran. 
 The same structure will be followed as the previous section, where a 3x non-inverting BC will be analysed and the calculations will be mirrored to achieve the 2Nx combination.
 
-The components considered significant are diodes and switches.Other research papers (REFERENCE SANJEE AND ROSAS CARO) assume the drops across the two are equal. Our goal is two separate the two to improve the accuracy of the model. Since the voltage drop is constant and can be measured (usually also denoted in specification sheets), the rest of the losses can be accounted to the switch.
+The components considered significant are diodes and switches.Other research papers (\cite{Padmanaban2015,Rosas-Caro2008}) assume the drops across the two are equal. Our goal is two separate the two to improve the accuracy of the model. Since the voltage drop is constant and can be measured (usually also denoted in specification sheets), the rest of the losses can be accounted to the switch.
 
 \subsubsection{3x Non-inverting}
 
@@ -29,7 +29,7 @@ Starting with the loop marked of Fig. \ref{fig:DROPS_LOOP1}, we follow the lines
 
 So the KVL equation is as follows: 
 \begin{equation}
-	V_{Cp1} = V_{Cp2}-V_{Sw}-V_D
+	V_{Cp2} = V_{Cp1}-V_{Sw}-V_D
 	\label{eq:LOOP1}
 \end{equation}
 
@@ -84,14 +84,14 @@ Now all all we need to define is as expression for $V_{Cp1}$ including the volta
 
 \subsubsection{Conventional boost converter}
 
-To avoid doing the whole deriviation a second time, referring back to Eq. \ref{eq:CBC_SWON1} and Eq. \ref{eq:CBC_SWOFF1} and add the switch and diode drop respectively. Consequently combining the two using the IVSB, we easily get an expression for the output voltage: 
+To avoid doing the whole deriviation a second time, referring back to Eq. \ref{eq:CBC_SWON1} and Eq. \ref{eq:CBC_SWOFF1} and add the switch and diode drop respectively. Consequently combining the two using the IVSB, we easily get an expression for the output voltage \cite{BoostSwi93:online}
 
 \begin{equation}
 	V_{O}= \frac{V_{in}-V_{Sw}D}{1-D}-V_D
 	\label{eq:DROPS_CONV}
 \end{equation}
 
-The output voltage of a conventional BC can be substitute with the voltage across the first capacitor in the Nx Multilevel BC, this turns Eq. \ref{eq:DROPS_V_O} into: 
+The output voltage of a conventional BC can be substitute with the voltage across the first capacitor in the Nx Multilevel BC, this turns Eq. \ref{eq:DROPS_V_TOP} into: 
 
 \begin{equation}
 	V_{O}= N( \frac{V_{in}-V_{Sw}D}{1-D}-V_D)-(N-1)V_D-(N-1)V_{Sw} 
@@ -101,7 +101,7 @@ The output voltage of a conventional BC can be substitute with the voltage acros
 Finally, we need to get back to the initial goal and calculate the formula for the output of a 2Nx multilevel BC. 
 In contrast to Sec. REFER TO 2NX the inverting part of the full topology isn't just a mirror version of the non-inverting. The main difference is that the conventional BC gain falls on Cp' from Fig. \ref{fig:MBC_2NxSchematic}. Therefore one more pair of drops will occur on the output side, as all the voltages across all capacitors apart from the initial ones are equal. In conclusion the output voltage on the bottom side of the converter is:
 \begin{equation}
-	V_{Bot}= NV_{Cp2}-NV_D-NV_{Sw} 
+	V_{Bot}= N(\frac{V_{in}-V_{Sw}D}{1-D}-V_D)-NV_D-NV_{Sw} 
 	\label{eq:DROPS_V_BOT}
 \end{equation}
 
@@ -111,3 +111,53 @@ Consequently, combining the two halves of the converter:
 	V_{O}=V_{Top}+V_{Bot}=2N( \frac{V_{in}-V_{Sw}D}{1-D}-V_D)-(2N-1)V_D-(2N-1)V_{Sw}
 	\label{eq:DROPS_2INX_FINAL}
 \end{equation}
+
+\subsubsection{Simulation}
+In order to verify that the calculated drops are correct,
+the topology was built in LTSpice this time. 
+Again, the same parameters for the components were used as the other topologies as observed on Table~\ref{tab:MBC_2Nx}. For the switch and diode models were taken from the producers databases. The exact MOSFET and diode are discussed further in the next sections, while their drops were approximated form the simulations. The full simulation circuit is included in the Appendix. 
+
+\begin{table}[H]
+\begin{center}
+\caption {Simulation parameters for MBC} \label{tab:MBC_2Nx} 
+\begin{tabular}{|l|l|}
+\cline{1-2}
+\textbf{Parameter} & \textbf{Value}  \\ \cline{1-2}
+Input Voltage $V_{in}$          &      10V   \\ \cline{1-2}
+Load(R)   & 225$\Omega$           \\ \cline{1-2}
+Capacitance(C)          &       220$\mu$F     \\ \cline{1-2}
+Inductance(L)          &      150$\mu$F      \\ \cline{1-2}
+Duty cycle(D)          &     0.6       \\ \cline{1-2}
+Switching Frequency($F_S$)          &      50kHz      \\ \cline{1-2}
+Diode drop ($V_D$)          &     1V       \\ \cline{1-2}
+MOSFET drop ($V_{Sw}$)          &     0.6V       \\ \cline{1-2}
+\end{tabular}
+\end{center}
+\end{table}
+
+The expected results with the given value are: 
+\begin{equation}
+	V_{Top}= N( \frac{V_{in}-V_{Sw}D}{1-D}-V_D)-(N-1)V_D-(N-1)V_{Sw}= 66.1V
+	\label{eq:DROPS_NX_SIM}
+\end{equation}
+
+\begin{equation}
+	V_{Bot}= N(\frac{V_{in}-V_{Sw}D}{1-D}-V_D)-NV_D-NV_{Sw}= 64,5V
+	\label{eq:DROPS_V_BOT_SIM}
+\end{equation}
+
+\begin{equation}
+	V_{O}=2N(\frac{V_{in}-V_{Sw}D}{1-D}-V_D)-(2N-1)V_D-(2N-1)V_{Sw}= 134.2V
+	\label{eq:DROPS_2INX_FINAL_SIM}
+\end{equation}
+
+
+The simulated wave forms can be seen on Fig \ref{fig:MBC_2NxSimResult_DROPS}. The results are off from the calculated ones, as the component models introduce some non linearities that involve temperature, which is not part of the scope. However, the relative error is less than 3\% on all values. 
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=\textwidth]{figures/zComponentDrops/compare_LTSpice.eps}
+    \caption{6x Interleaved BC Simulations results with included components}
+	\label{fig:MBC_2NxSimResult_DROPS}
+\end{figure}
+

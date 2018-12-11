@@ -1,22 +1,31 @@
-\section{Cockroft Walton}\label{ch:cock}
-\todo[color=c04x,inline]{testing the colors}
-The Cockroft-Walton Multiplier (CWM) utilises passive components to multiply a fluctuating voltage input.
+\section{Cockcroft Walton}\label{ch:cock}
+\todo[color=c04x]{testing the colors}
+The Cockcroft-Walton Multiplier (CWM) utilises passive components to multiply a fluctuating voltage input.
 The input voltage does not need to be a pure AC wave,
-but also works with any DC shift.
+but also works with any DC shift,
+as only the peak to peak amplitude is important for its function.\\
 A schematic of the CWM can be seen in Figure \ref{fig:CWM}.
 
 \begin{figure}[H]
    \centering
    \includegraphics[width=0.6\textwidth]{figures/xCockroftWalton/CockroftWalton.pdf}
-    \caption{Schematic of the Cockroft-Walton Multiplier}
+    \caption{Schematic of the Cockcroft-Walton Multiplier}
 	\label{fig:CWM}
 \end{figure}
 
 %\subsection{Additions from Conventional BC}
-The figure shows a three stage CWM,
-with the third stage marked with a blue box.
+The figure shows a two stage CWM,
+with a third stage added (inside blue box).
 Since all stages are equal and just appended to the previous,
-more stages can be added instead of the dotted lines.
+more stages can be added at the dotted lines.
+
+As mentioned before,
+the CWM works on alternating input.
+The Diodes in the middle row alternate between positive and reverse bias with each half wave.
+Figure \ref{fig:CockBothWave} shows the circuit equivalents after removing the diodes in reverse bias for each half wave.
+Subfigure \ref{sfig:1neg} shows the equivalent circuit with all capacitors discharged.
+The following subfigures show the development of the circuit,
+if the capacitors are to charge fully during one half wave.
 
 %\subsection{Analysis of Individual Stage}
 \begin{figure}[H]%
@@ -39,9 +48,8 @@ more stages can be added instead of the dotted lines.
     \label{fig:CockBothWave}% 
 \end{figure}
 
-Figure \ref{fig:CockBothWave} shows the relevant parts of the CWM circuit at alternating input polarity.
 When the upper terminal is negative with respect to ground,
-the top capacitors (uneven names) are charged (Subfigures \ref{sfig:1neg} \& \ref{sfig:3neg}).
+the top capacitors (uneven numbers) are charged (Subfigures \ref{sfig:1neg} \& \ref{sfig:3neg}).
 When the upper terminal is positive with respect to ground,
 the bottom capacitors are charged (Subfigures \ref{sfig:2pos} \& \ref{sfig:4pos}).
 
@@ -53,5 +61,23 @@ Every diode $D_n$ where $n > 1$ is forward biased under the condition shown in E
 	\label{eq:DiodeOnCW}
 \end{equation}
 
-$C_1$ is charged directly by the input voltage
-Equation \ref{eq:DiodeOnCW} therefore also states the voltage across an individual stage dependent on the previous stage,
+$D_1$ is always forward biased when the input voltage is on the negative half wave,
+as it doesn't depend on a previous capacitor.
+Therefore $C_1$ is charged directly by the input voltage.
+
+As Equation \ref{eq:DiodeOnCW} states the forward bias condition of the diodes,
+and holds until both capacitors are equally charged,
+it can be expected that every capacitor $C_n$ will eventually acquire the same potential as $C_{n-1}$.
+We proved this through simulation,
+and Figure \ref{fig:capsV} shows the results.
+
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.6\textwidth]{figures/xCockroftWalton/capsV.eps}
+    \caption{Voltages across Capacitors of a 2 Stage CWM}
+	\label{fig:capsV}
+\end{figure}
+
+\todo[color=c04x]{put figure in appendix}
+

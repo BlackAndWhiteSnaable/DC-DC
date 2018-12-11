@@ -55,13 +55,14 @@ Switching Frequency($F_S$)          &      50kHz      \\ \cline{1-2}
 \end{center}
 \end{table}
 
-For a 6 level Boost Converter with a duty cycle of 0.6, the expected voltage output gain is
+For a 6 level Boost Converter with a duty cycle of 0.6, the expected voltage output gain based on Equation \ref{eq:MBC_2NxCR} is:
 
 \begin{equation}
-	\frac{2\cdot N}{1-D} = \frac{6}{1-D}  = 15
+	V_o = \frac{2\cdot N}{1-D}V_{in} = \frac{6}{1-D}  = 15V_{in}
 \end{equation}
 
-We can see that the simulation result verifies the calculated conversion ratio on Figure~\ref{fig:MBC_2NxSimResult}. 
+We can see that the simulation result verifies the calculated conversion ratio on Figure~\ref{fig:MBC_2NxSimResult}.\\
+Overall, based on the different converter gains at different duty cycles on Table \ref{tab:2NX_Overall}, which is also illustrated graphically on Figure \ref{fig:2Nx_Overall_Graph}, we can conclude that the 2Nx Interleaved Boost Converter provides highest voltage gain at the required duty cycle of 0.6. The fact that the gain can be further increased by adding another level/s, makes the converter most favorable to satisfy the set requirements at Section \ref{sec:req}. 
 
 \begin{figure}[H]
    \centering
@@ -75,5 +76,21 @@ We can see that the simulation result verifies the calculated conversion ratio o
    \centering
    \includegraphics[width=\textwidth]{figures/gains.eps}
     \caption{2Nx Interleaved Boost Converter Voltage Output}
-	\label{fig:MBC_2NxSimResult}
+	\label{fig:2Nx_Overall_Graph}
 \end{figure}
+
+\begin{table}[H]
+\begin{center}
+\caption {Voltage Gain of Converters at Various Duty Cycle} \label{tab:2NX_Overall} 
+\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|}
+\hline
+\textbf{Converter type} & \textbf{0.1} & \textbf{0.2} & \textbf{0.3} & \textbf{0.4} & \textbf{0.5} & \textbf{0.6} & \textbf{0.7} & \textbf{0.8} & \textbf{0.9} \\ \hline
+Conventional BC        &      1.11   &      1.25   &   1.43   &      1.67   &      2.00    &      2.50  &      3.33   &     5.00  &   10.00 \\ \hline
+Switched Inductor(SI) BC   & 1.22      &      1.50   &      1.86   &      2.33   &     3.00    &     4.00    &      5.67     &    9.00   &      19.00\\ \hline
+Single Switch Quadratic BC          &       1.23     &      1.56      &      2.04   &      2.78   &      4.00   &      6.25   &      11.11   &      25.00   &      100.00 \\ \hline
+Conv. Three Level BC          & 1.11   &      1.25   &   1.43   &      1.67   &      2.00    &      2.50  &      3.33   &     5.00  &   10.00\\ \hline
+3x Multilevel BC         &     3.33       &      3.75   &     4.285   &      5   &      6   &      7.5   &      10   &      20   &      30   \\ \hline
+6x Interleaved BC         &     6.66       &      7.5   &      8.57   &      10   &      12   &      15   &      20   &      30   &      60   \\ \hline
+\end{tabular}
+\end{center}
+\end{table}

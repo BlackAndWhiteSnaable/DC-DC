@@ -2,16 +2,15 @@
 
 As the global interest in renewable energy increases,
 the interest in photo voltaic (PV) arrays grows as well. 
-Solar power is a growing source of renewable energy on a global scale \cite{solglob}. \todo[color=c01]{ref}
-% http://www.ren21.net/wp-content/uploads/2017/06/170607_GSR_2017_Highlights.pdf
+Solar power is a growing source of renewable energy on a global scale \cite{Timetosh94:online}
 This can be indicated by the growing interest power companies show in building PV parks. 
-%\cite{solpowcomp}. \todo[color=c01]{find source}
+\cite{GSR2018:online}
 
 When generating power with PV arrays,
-the initial output is a DC power of varying voltage levels. \todo[color=c01]{find source}
+the initial output is a DC power of varying voltage levels. 
 To be able to input the generated power into the stable AC-grid,
 without creating disturbances,
-the same voltage and frequency as the grid needs to be output. \todo[color=c01]{find source}
+the same voltage and frequency as the grid needs to be output. 
 
 \begin{figure}[H]
    \centering
@@ -19,7 +18,6 @@ the same voltage and frequency as the grid needs to be output. \todo[color=c01]{
     \caption{12.8 MW Utility Project - the World's Largest Bifacial PV Installation in Eastern US \cite{Sunpreme29:online}}
 	\label{fig:SolarPark}
 \end{figure}
-\todo[color=c01]{https://www.prnewswire.com/news-releases/sunpreme-deploys-the-worlds-largest-bifacial-pv-installation-for-a-128-mw-utility-project-in-eastern-us-300325989.html}
 Commonly this is achieved by two devices,
 a DC-DC boost converter (BC) to normalize the voltage
 and an DC-AC inverter to generate AC power with the necessary frequency.
@@ -27,11 +25,11 @@ and an DC-AC inverter to generate AC power with the necessary frequency.
 In this project we have a look at DC-DC boost converters.
 The first part of the project is understanding and simulating common topologies.
 The second part is understanding, simulating and building a new topology,
-the 2NX Interleaved Boost Converter. \todo[color=c01]{Sanjee's paper is the source}
+the 2NX Interleaved Boost Converter. \cite{Bhaskar2016}
 
 
 \section*{Reading Guide}
 For readers without an understanding of DC-DC converters,
-it is recommended to read the Chapters \ref{ch:basicI}-\ref{ch:basicII}, \todo[color=c01]{ref basic knowledge chapters}
-before reading the Chapters \ref{ch:more_advancedI}-\ref{ch:more_advancedII}. \todo[color=c01]{ref advanced chapters}
+it is recommended to read Chapter \ref{ch:CBC},
+before reading the Chapters \ref{ch:SIBC}-\ref{ch:2Nx}
 as these require a deeper understanding.

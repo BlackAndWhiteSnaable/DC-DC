@@ -1,24 +1,13 @@
 \section{Problem Definition}\label{sec:probdesc}
 The goal of this report is to compare different DC-DC boost converter topologies and choose the one most suitable for PV appliances. The chosen circuit should be tested in both simulations and hardware. The comparison of the results to the requirements that will be set in Sections \ref{sec:req} will determine weather the project is a success. 
 
-%Boosting DC power
-%cheap
-%size
-
-
 \section{Requirements}\label{sec:req}
 The BC developed at the end of this project should cover the following requirements: 
-
 \subsubsection{High gain at realistic duty cycles}
 The duty cycle of the BC is usually limited between 0.1 and 0.9, so the desired gain should be observed relatively far away from the breakpoints. As an example for this report 0.6 will be the general case value. 
-
-
 \subsubsection{Fault tolerance}
 The circuit should also be reliable, as the waste of power would involve even higher costs. Therefore the circuit needs to be reliable and maintain atleast partial functionality, if a non-crucial component fails 
-
-
 \subsubsection{Low device count}
 The most important part of a converter is the switching device, no matter what the type or characteristics of the device. It caries a big part of the cost of the whole converter. 
-
 \subsubsection{Low passive component count}
 Passive components are usually far cheaper and easily accessible, but on the other hand also stack up quickly as we try to increase the gain. Both this and the previous requirement are relative to the gain delivered by the topology, as what we look for is efficiency.

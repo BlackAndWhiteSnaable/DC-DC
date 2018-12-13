@@ -2,7 +2,7 @@
 
 The conventional three level boost converter is the first variation of the conventional BC that includes not only passive components, but also an additional active component. 
 This, opposite to all other topologies discussed, does not increase the ratio between output and input, as it will be proven in the this section, but provides lower stress, low inductor current ripple and low switching loss compared to the conventional BC. \cite{Tran2017}
-
+\vspace{-4mm}
 \subsection{Additions from Conventional BC}
 In the CTLBC, a second switch is included, together with another capacitor to go in parallel with it. 
 An additional diode is included to not discharge the capacitor C\textsubscript{2} when S\textsubscript{2} is conducting.
@@ -10,10 +10,11 @@ The full schematic can be seen on Fig. \ref{fig:CTLBC}.
 
 \begin{figure} [H]
    \centering
-   \includegraphics[width=0.6\textwidth]{figures/dConventionalThreeLevelBC/Three_level.pdf}
+   \includegraphics[width=0.55\textwidth]{figures/dConventionalThreeLevelBC/Three_level.pdf}
     \caption{Conventional Three Level Boost Converter circuit}
 	\label{fig:CTLBC}
 \end{figure}
+\vspace{-8mm}
 \subsection{Switching States}
 
 As there are two switches in this topology, a different switching pattern is required in comparison to the Conventional BC. The pattern of choice is shifting the signal of the second switch by 180$^\circ$.
@@ -22,31 +23,20 @@ In this case, there are four possible states, corresponding to all possible comb
 
 \begin{figure} [H]
    \centering
-   \includegraphics[width=0.6\textwidth]{figures/dConventionalThreeLevelBC/PWMGeneration.pdf}
+   \includegraphics[width=0.5\textwidth]{figures/dConventionalThreeLevelBC/PWMGeneration.pdf}
     \caption{Generation of the signals for two switches}
 	\label{fig:PWMS}
 \end{figure}
 
-\iffalse
 \begin{figure}[H]%
     \centering
-    \subfloat[PWM for switch 1\label{PWM1}]
-    {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/PWM1.eps} }}%
-    \subfloat[PWM for switch 2\label{PWM2}]
-    {{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/PWM2.eps} }}%
-    \caption{Switching pattern for 60\%}%
-     \label{fig:PWM12}%      
-\end{figure}
-\fi
-
-\begin{figure}[H]%
-    \centering
-    {{\includegraphics[width=\textwidth]{figures/dConventionalThreeLevelBC/PWMCompare.pdf} }}%
+    {{\includegraphics[width=0.9\textwidth]{figures/dConventionalThreeLevelBC/PWMCompare.pdf} }}%
     \caption{Switching pattern for 60\%}%
      \label{fig:PWM12}% 
 \end{figure}
+\vspace{-4mm}
 The equivalent circuits during the on and off stages are shown in Figure \ref{fig:CTLBC_States}. Here again we assume the capacitors are the same size and that the duty ratio applied to the two switches is the same. 
-\vspace{-5mm}
+\vspace{-8mm}
 \begin{figure}[H]%
     \centering
     \subfloat[Switch S\textsubscript{1} ON, Switch S\textsubscript{2} ON\label{CTLBC_ONON}]
@@ -59,9 +49,9 @@ The equivalent circuits during the on and off stages are shown in Figure \ref{fi
     \qquad
     \subfloat[Switch S\textsubscript{1} OFF, Switch S\textsubscript{2} OFF\label{CTLBC_OFFOFF}]{{\includegraphics[width=0.45\textwidth]{figures/dConventionalThreeLevelBC/Three_levelOFFOFF.pdf} }}%  
     \caption{Switching states of the SIBC}%
-     \label{fig:CTLBC_States}% 
-     
+     \label{fig:CTLBC_States}%    
 \end{figure}
+\vspace{-6mm}
 \subsubsection{Switch S\textsubscript{1} ON, Switch S\textsubscript{2} ON State}
 Here we have got a replica of the ON state of a conventional boost converter, as both switches conduct and both diodes are reverse biased. (Can be seen on Figure \ref{CTLBC_ONON}) A loop is formed with the inductor and the power supply. We use KVL to express the voltage over the inductor as: 
 
@@ -200,8 +190,8 @@ The whole topology was modelled within the software, with the listed values (Mod
 
 \begin{figure} [H]
    \centering
-   \includegraphics[width=0.8\textwidth]{figures/dConventionalThreeLevelBC/Model_CTLBC.pdf}
-    \caption{Switched inductor boost converter SIMULINK Model}
+   \includegraphics[width=0.9\textwidth]{figures/dConventionalThreeLevelBC/Model_CTLBC.pdf}
+    \caption{Conventional three level boost converter SIMULINK Model}
 	\label{fig:Model_CTLBC}
 \end{figure}
 
@@ -217,6 +207,6 @@ The simulation results show the system output is as expected, as observed on Fig
 \begin{figure} [H]
    \centering
    \includegraphics[width=0.8\textwidth]{figures/dConventionalThreeLevelBC/Simulation_CTLBC.eps}
-    \caption{Switched inductor boost output voltage}
+    \caption{Conventional three level boost converter output voltage}
 	\label{fig:Simulation_CTLBC}
 \end{figure}

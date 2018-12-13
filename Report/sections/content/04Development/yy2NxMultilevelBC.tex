@@ -1,7 +1,5 @@
 \section{2Nx Interleaved Boost Converter}\label{ch:2Nx}
 
-\todo[color=c04y,inline]{testing the colors}
-
 The final topology presented is the 2Nx Interleaved Boost Converter, which can be achieved by adding a Non-inverting Nx Multilevel BC with a negative Inverting Nx Multilevel BC as presented on Figure~\ref{fig:MBC_2NxDiagram}
 
 \begin{figure}[H]
@@ -19,7 +17,7 @@ The corresponding schematic of the Non-inverting 2Nx Interleaved Boost Converter
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=\textwidth]{figures/yMultilevel/2Nx_full.pdf}
+   \includegraphics[width=0.8\textwidth]{figures/yMultilevel/2Nx_full.pdf}
     \caption{2Nx Interleaved Boost Converter Schematic}
 	\label{fig:MBC_2NxSchematic}
 \end{figure}
@@ -35,7 +33,7 @@ As the 2Nx Interleaved Boost Converter is a combination of Non-inverting and Inv
 
 
 
-For a 6 level Boost Converter with a duty cycle of 0.6, the expected voltage output gain based on Equation \ref{eq:MBC_2NxCR} \subsubsection{Simulation}
+\subsubsection{Simulation}
 
 In order to verify that the conversion ratio is correct,
 the topology was built on Simulink. 
@@ -55,22 +53,21 @@ Duty cycle(D)          &     0.6       \\ \cline{1-2}
 Switching Frequency($f$)          &      50kHz      \\ \cline{1-2}
 \end{tabular}
 \end{center}
-\end{table}is:
-
+\end{table} 
+\vspace{-8mm}
+For a 6 level Boost Converter with a duty cycle of 0.6, the expected voltage output gain based on Equation \ref{eq:MBC_2NxCR} is:
 \begin{equation}
 	V_o = \frac{2\cdot N}{1-D}V_{in} = \frac{6}{1-D}  = 15V_{in}=150V
 \end{equation}
-
-
 We can see that the simulation result verifies the calculated conversion ratio on Figure~\ref{fig:MBC_2NxSimResult}.\\
-
+\vspace{-8mm}
 \begin{figure}[H]
    \centering
-   \includegraphics[width=\textwidth]{figures/yy2NxMultilevelBC/2Nx_SimResults.eps}
+   \includegraphics[width=0.7\textwidth]{figures/yy2NxMultilevelBC/2Nx_SimResults.eps}
     \caption{2Nx Interleaved Boost Converter Voltage Output}
 	\label{fig:MBC_2NxSimResult}
 \end{figure}
-
+\clearpage
 
 \section{Comparison verdict}\label{ch:VERD}
 

@@ -1,5 +1,23 @@
 \chapter{Perspective}\label{ch:perspective}
 %\todo[color=c09,inline]{testing the colors}
+
+\subsubsection{SKYPER board:}
+Because of the fact that the SKYPER driver board wasn't able to run two MOSFETs with a duty cycle of more than 50\%, we had to use two boards for testing the converter. This board is more suited to drive IGBT bridge circuits and does not allow both outputs to be ON at the same time. That adds the requirement for a second board, which further increases the price and complexity of the circuit.
+So an improvement for future tests would be to use an appropriate board that can support two switches at the same time. That would also save additional costs.
+
+\subsubsection{Capacitors:}
+As the capacitors used for testing were not with sufficient capacitance, the output voltage has more ripple as expected. This means that higher capacitance rated capacitors should be used for future tests in order to achieve sufficient ripple.
+
+\subsubsection{Inductors:}
+As already discussed in Section ???Discussion, the inductors that were used
+were not the ones that were intended for the prototype as planned based on the LTSpice simulations in Sec???. Even though the final voltage output was satisfying, sufficiently rated and same size inductors should be used for optimal results.
+
+\subsubsection{Additional Levels:}
+Future tests can be performed with adding additional levels of the topology to achieve higher voltage output. That way, observations can be made on how much the circuit can be extended before component losses compromise the efficiency. 
+
+\subsubsection{Control:}
+For real life applications, a control system must be designed to achieve constant power output of the PV system. Future development in this area would require more detailed model of the system including differential dependencies between the components, input and output. That would allow more detailed overview of other characteristics of the system such as ripple, switching losses, etc...
+
 %In this chapter we discuss the initially stated requirements
 %and compare them with the results achieved.
 %We will also have a look at future work opportunities,

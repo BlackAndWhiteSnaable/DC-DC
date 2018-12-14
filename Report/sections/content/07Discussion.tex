@@ -9,22 +9,22 @@
 % - voltage drops
 % ? efficiency
 
-The first advantage of the converter is the high conversion ratio that is very interesting for applications as PV arrays. The results from simulation and testing have shown that it is able to reach the high conversion ratios of up to X.
-\todo[color=c07,inline]{Results?}
+The first advantage of the converter is the high conversion ratio that is very interesting for applications as PV arrays. As the results from simulation had shown before that the high conversion ratios are possible conversion ratios of over 22 have been reached in testing of the hardware.
 
 
 The other big advantage of this converter is the linear dependency of the duty cycle to the voltage output. The task for controllers for solar panels is to extract the maximum energy which is a difficult task on its own. 
 By using a linear converter the controller can track this optimal point easier as the additional non-linearity is not added to the system.
 
 
-With the PWM pattern applied to two switches the two inductors charge after each other each cycle with minimum overlap in this topology. 
-That means the ripple on in and output will be reduced. This equalling of the load is very good for the solar panels as its lifetime can be shorted by ripple. % https://publik.tuwien.ac.at/files/PubDat_210330.pdf
+With a PWM pattern with minimum overlap applied to the MOSFETs the two inductors charge after each other, reducing the current ripple on the input. This equalling of the load is very good for the solar panels as its lifetime can be shorted by ripple. % https://publik.tuwien.ac.at/files/PubDat_210330.pdf
+\todo[color=c07,inline]{Ref}
+An other option is to run both MOSFETs on the same PWM signal.
+Then the ripple top and bottom half of the circuit will cancel each other out, reducing the ripple on the load. 
 
-An other advantage of heaving two converters combined in one the other could still run if the other half is having a fault. 
+An other advantage of heaving two converters combined in one the other could still run if the other half is having a fault.
 If it would be implemented in the controller the converter set up in a remote PV array would continue operating after detecting that components have failed. 
 The conversion ratio would be limited to half of the original but on high sun intensity it would be still functional until the converter is getting replaced.
 
 
 Disadvantage of the converter is that it needs more components, increasing the cost and the risk of failure.
-
 Also the Cockroft-Walton Multiplier is using a lot of diodes that cause a lot of voltage drops on the output.

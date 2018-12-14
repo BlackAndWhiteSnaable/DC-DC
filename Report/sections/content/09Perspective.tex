@@ -1,23 +1,26 @@
 \chapter{Perspective}\label{ch:perspective}
 
-In this we'll discuss how the results of this project and be improved on, which of its flaws can be resolved or at least improved on and what further developments would largely benefit the outcome of future work on this topic. 
+In this we'll discuss how the results of this project and be improved on, 
+which of its flaws can be resolved or at least improved on and what further developments would largely benefit the outcome of future work on this topic. 
 
 \subsubsection{SKYPER board:}
 Because of the fact that the SKYPER driver board wasn't able to run two MOSFETs with a duty cycle of more than 50\%, we had to use two boards for testing the converter. This board is more suited to drive IGBT bridge circuits and does not allow both outputs to be ON at the same time. That adds the requirement for a second board, which further increases the price and complexity of the circuit.
 So an improvement for future tests would be to use an appropriate board that can support two switches at the same time. That would also save additional costs.
 
 \subsubsection{Capacitors:}
-The capacitors used that were tested with were not the desired size due to supply issues. This caused boost limitations and increased ripple.
-Even though the results were confirmed by a simulation with the used components, a series of tests with component better suited for this will have a more reliable proof of the viability of the topology. Those would theoretically show bigger boost, smaller ripple, higher stability and overall improvement in the performance of the circuit.
-
-\subsubsection{Inductors:}
-As already discussed in Section \ref{ch:Discussion}, the inductors that were used
-were not the ones that were initially intended for the prototype and confirmed based on the LTSpice and Simulink simulations in Sec \ref{ch:2Nx} and \ref{ch:DROPS}. Even though the final voltage output was similar to the expected and wave forms were matching the simulations, testing with fully identical inductors should be priority during future development. 
+The capacitors used that were tested with were not the desired size due to supply issues.
+This caused boost limitations and increased ripple.
+Even though the results were confirmed by a simulation with the used components, a series of tests with component better suited for this will have a more reliable proof of the viability of the topology.
+Those would theoretically show bigger boost, smaller ripple, higher stability and overall improvement in the performance of the circuit.
+The most crucial improvement that can be made is indeed the size of the capacitors, which during the tests was about a 100 times smaller than desired.
+\clearpage
 
 \subsubsection{Additional Levels:}
 Future tests can be performed with adding additional levels of the topology to achieve higher voltage output.
 That way, observations can be made on how much the circuit can be extended before component losses compromise the efficiency.
 This would also allow high power tests, that would be tailored more towards real life situations where a whole PV park needs to be operated by one of those DC-DC converters.
+As the results confirmed the number of levels that can de added is limited by the voltage decay occurring the higher/lower in the circuit we go,
+but that limit should still be tested for various applications. 
 
 \subsubsection{Control:}
 For real life applications, a control system must be designed to achieve constant power output of the PV system. Future development in this area would require more detailed model of the system including differential dependencies between the components, input and output. That would allow more detailed overview of other characteristics of the system such as ripple, switching losses, etc...

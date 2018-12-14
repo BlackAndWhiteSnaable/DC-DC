@@ -1,6 +1,8 @@
+\vspace{-8mm}
 \section{Component Specifications}\label{ch:compSpec}
-
-\subsection{MOSFETs}
+\vspace{-2mm}
+\subsection{MOSFET}
+\vspace{-2mm}
 Compared to IGBTs MOSFETs are better for applications with high current pulses and high frequencies.\cite{igbtelec63:online}
 
 Because the simulations had shown high peak currents over the switch the MOSFET was chosen.
@@ -10,15 +12,16 @@ That means it is able to work efficiently in high frequency power applications w
 
 The MOSFET is rated for switching voltages up to 1200V with a maximum current of 19A.
 For switching a gate voltage of 14V is required and a negative input of -5V to -10V as a low input is recommended for fast switching.\cite{CreeC2M082:online}
-\vspace{-8mm}
+\vspace{-4mm}
 \subsection{Diodes}
+\vspace{-2mm}
 The used diode is the STTH6012 from STMicroelectronics.
 The ultra fast soft recovery characteristics makes it very efficient in high frequency pulse operation.
 With a rating of 1200V repetitive peak reverse voltage and a maximum forward current of 60A the diode seems oversized but for experimental work they were used.\cite{ST}
 \vspace{-4mm}
 \subsection{Capacitors}
+\vspace{-2mm}
 The chosen capacitors are standard sizes of $2.2 \mu F$ capacity with a voltage rating of up to 450V. This was not the desired capacitor size, but logistic issues prevented us from using the $220 \mu F$ capacitor that were used during all of the theoretical work.
 \vspace{-4mm}
 \subsection{Inductors}
-The initial plan was to custom wind inductors on a bobbin to achieve desired inductance, but due to delivery issue spare cores were used for the purpose. The cores were not completely identical and the winding was done by hand, so perfect equality between then cannot be assured. However tests show that their properties are close enough to not compromise the reliability of the results. 
-\todo[color=c05a,inline]{Add inductor size}
+The initial plan was to custom wind inductors on a bobbin to achieve desired inductance, but due to delivery issues a pair of factory winded inductors with inductance of 66$\mu L$ were connected in series on each side of the circuit. The equivalent inductance of 132$\mu L$ is close enough to the simulation parameters not to compromise the testing.

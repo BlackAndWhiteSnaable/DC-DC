@@ -1,8 +1,6 @@
 \section{Non-inverting Nx Multilevel BC}\label{ch:MBC}
 
-\todo[color=c04y,inline]{testing the colors}
-
-Adding Cockcroft Walton Multiplier explained in Chapter~\ref{ch:cock} with a Conventional Boost Converter (Chapter~\ref{ch:CBC}), we get the Non-inverting Nx Multilevel Boost Converter as shown on Figure~\ref{fig:MBC_CW_CBCtoNx}
+Adding Cockcroft Walton Multiplier explained in Chapter~\ref{ch:cock} with a Conventional Boost Converter (Chapter~\ref{ch:CBC}), we get the Non-inverting Nx Multilevel Boost Converter as shown on Figure~\ref{fig:MBC_CW_CBCtoNx}. \cite{Bhaskar2016}
 
 \begin{figure}[H]
    \centering
@@ -12,20 +10,20 @@ Adding Cockcroft Walton Multiplier explained in Chapter~\ref{ch:cock} with a Con
 \end{figure}
 
 
-The Non-inverting Nx Multilevel Boost Converter (Figure~\ref{fig:MBC_3XFULL}) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. 
+The Non-inverting Nx Multilevel Boost Converter (Figure~\ref{fig:MBC_3XFULL}) is based on one switching device, 2N - 1 diodes and 2N - 1 capacitors, where N indicates the level number of the converter and can be extended by adding capacitors and diodes while the main circuit is not required to be changed. \cite{Rosas-Caro2008}
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=\textwidth]{figures/yMultilevel/3x_FULL.pdf}
+   \includegraphics[width=0.9\textwidth]{figures/yMultilevel/3x_FULL.pdf}
     \caption{Nx Multilevel Boost Converter}
 	\label{fig:MBC_3XFULL}
 \end{figure}
 
 \subsection{Additions from Conventional BC}
-The first part of the converter is the conventional DC-DC boost converter described in Chapter~\ref{ch:CBC}. The difference between the two converters is that the output of the multilevel converter is $V_C$ multiplied by the number of levels N, so that a higher output - input voltage ratio can be achieved. The example on Figure~\ref{fig:MBC_3XFULL} is a three-level boost converter, which means that the output voltage will equal to $3V_{C1}$. 
+The first part of the converter is the conventional DC-DC boost converter described in Chapter~\ref{ch:CBC}. The difference between the two converters is that the output of the multilevel converter is $V_C$ multiplied by the number of levels N, so that a higher output - input voltage ratio can be achieved. The example on Figure~\ref{fig:MBC_3XFULL} is a three-level converter, which means that the output voltage will equal to $3V_{Cp1}$. 
 
 \subsection{Switching States}
-The switching modes are the same as a Conventional BC. Like the other topologies mentioned on the previous pages, we assume that the size of all inductors and capacitors is the same. The corresponding circuits for ON and OFF states are displayed on Figure~\ref{fig:MBC_States}
+The switching modes are the same as a Conventional BC. Like the other topologies mentioned on the previous pages, we assume that the size of all inductors and capacitors is the same. The corresponding circuits for ON and OFF states are displayed on Figure~\ref{fig:MBC_States} and they are based on \cite{Rosas-Caro2008}.
 
 \begin{figure}[H]%
     \centering
@@ -39,7 +37,6 @@ The switching modes are the same as a Conventional BC. Like the other topologies
 
 
 \subsubsection{ON State}
-When the switch is ON, diodes $D_{P1}$, $D_{P3}$ and $D_{P5}$ are reverse-biased, while diodes $D_{P2}$ and $D_{P4}$ are forward biased. In that case we have:
 
 During the ON state, $L_p$ is charged by the voltage source. If the voltage across $C_{P1}$ is higher then $C_{P2}$, the capacitor $C_{P1}$ clamps $C_{P2}$ through $D_{P2}$. At the same time, if the voltage across $C_{P2}$ + $C_{P4}$ is smaller than $C_{P1}$ + $C_{P3}$, then the capacitor $C_{P1}$ and $C_{P3}$ clamp the voltage across $C_{P2}$ and $C_{P4}$ through $D_{P4}$ and $C_{P4}$ is clamped by $C_{P3}$. The equations for when the switch is in ON position are as follows:
 
@@ -66,6 +63,7 @@ During the ON state, $L_p$ is charged by the voltage source. If the voltage acro
 \subsubsection{OFF State}
 When the switch is open, the inductor is in discharge mode and is charging capacitor $C_{P1}$ through diode $D_{P1}$. At this time $V_{in}$, $V_{Lp}$ and $C_{P2}$ clamp the voltage across $C_{P1}$ and $C_{P3}$ through diode $D_{P3}$. In the same manner, the input voltage $V_{in}$, the inductor voltage $V_{Lp}$, the voltage across $C_{P2}$ and $C_{P4}$ clamp the voltage across $C_{P1}$, $C_{P3}$ and $C_{P5}$.
 
+\vspace{15mm}
 The equations for the off state of the switch are as follows:
 
 \begin{equation}
@@ -126,46 +124,46 @@ Load(R)   & 225$\Omega$           \\ \cline{1-2}
 Capacitance(C)          &       220$\mu$F     \\ \cline{1-2}
 Inductance(L)          &      150$\mu$F      \\ \cline{1-2}
 Duty cycle(D)          &     0.6       \\ \cline{1-2}
-Switching Frequency($F_S$)          &      50kHz      \\ \cline{1-2}
+Switching Frequency($f$)          &      50kHz      \\ \cline{1-2}
 \end{tabular}
 \end{center}
 \end{table}
-
+\vspace{-6mm}
 The  topology was modelled with the listed values Figure.\ref{fig:MBC_Sim}. As the previous topologies presented, the components were assumed ideal.
-
+\vspace{-4mm}
 \begin{figure}[H]
    \centering
    \includegraphics[width=\textwidth]{figures/yMultilevel/MCB_Simulation.pdf}
+   \vspace{-4mm}
     \caption{Nx Multilevel Boost Converter Simulation}
 	\label{fig:MBC_Sim}
 \end{figure}
-
-For the three level boost converter, the voltage gain for 0.6 duty cycle is 7.5. Running the simulation, we get the corresponding result of 75V as observed on 
-Figure~\ref{fig:MBC_SimResults}
-
+\vspace{-4mm}
+For the three level boost converter, the voltage gain for 0.6 duty cycle is 7.5. Running the simulation, we get the corresponding result of 75V as observed on Figure~\ref{fig:MBC_SimResults}.
+\vspace{-2mm}
 \begin{figure}[H]
    \centering
-   \includegraphics[width=\textwidth]{figures/yMultilevel/Non-invertingNx.eps}
+   \includegraphics[width=0.8\textwidth]{figures/yMultilevel/Non-invertingNx.eps}
     \caption{Nx Multilevel Boost Converter Simulation Results}
 	\label{fig:MBC_SimResults}
 \end{figure}
 
 \section{Inverting Nx Multilevel BC}\label{ch:IMBC}
 
-The Inverting Nx Multilevel Boost Converter can be achieved similar to the non-inverting one, but this time the Cockroft Walton Multiplier is substracted as shown on Figure~\ref{fig:MBC_CW_CBCtoINx}
+The Inverting Nx Multilevel Boost Converter can be achieved similar to the non-inverting one, but this time the Cockcroft Walton Multiplier is substracted as shown on Figure~\ref{fig:MBC_CW_CBCtoINx}. \cite{Bhaskar2016}
 
 \begin{figure}[H]
    \centering
-   \includegraphics[width=\textwidth]{figures/yMultilevel/InvertingNxDiagram.pdf}
+   \includegraphics[width=0.8\textwidth]{figures/yMultilevel/InvertingNxDiagram.pdf}
     \caption{Inverting Nx MBC Diagram}
 	\label{fig:MBC_CW_CBCtoINx}
 \end{figure}
-
+\vspace{-4mm}
 The switching states equations and the conversion ratio are not derived as they are the same as the non-inverting Nx Multilevel Boost Converter. The main difference between the two converters is that additional diode and a capacitor are added as well as the diodes are reversed, so that the output voltage becomes with a negative sign as shown on Figure~\ref{fig:MBC_InvertingNx}.
-
+\vspace{-4mm}
 \begin{figure}[H]
    \centering
-   \includegraphics[width=\textwidth]{figures/yMultilevel/InvertingMBCforReport2.pdf}
+   \includegraphics[width=0.7\textwidth]{figures/yMultilevel/InvertingMBCforReport2.pdf}
     \caption{Inverting Nx MBC Schematic}
 	\label{fig:MBC_InvertingNx}
 \end{figure}

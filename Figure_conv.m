@@ -39,6 +39,6 @@ axis([0.37724 0.377282 -0.5 3])
 %%Set title, labels, legend labels
 title('$I_D$','Interpreter', 'latex','fontsize',12)
 xlabel('Time[$s$]', 'Interpreter', 'latex','fontsize',12);
-ylabel('Current[$I$]', 'Interpreter', 'latex','fontsize',12);
+ylabel('Current[$A$]', 'Interpreter', 'latex','fontsize',12);
 leg = legend('I_D');
 

@@ -7,7 +7,7 @@ out = input('Name for the output file: ','s');
 
 % chapter for this to appear in
 chapter = input('Chapter name including number: ','s');
-folder = ['figures/' chapter '/'];
+folder = ['..Report/figures/' chapter '/'];
 
 %making sure the folder exists, to not get errors
 if exist(folder,'dir')~=7

@@ -1,12 +1,13 @@
 \section{Switched Inductor}\label{ch:SIBC}
 The Switched Inductor Boost Converter (SIBC) is a small alternation to the Conventional Boost Converter mentioned in Chapter \ref{ch:CBC}.
 It only adds passive components to an already known topology,
-which means the same switching scheme can be used.
+which means the same switching scheme can be used.\cite{Vaidya2017}
+\vspace{-3mm}
 \subsection{Additions from Conventional BC}
 In the SIBC,
 the single inductor from the Conventional BC gets replaced by two inductors and three diodes,
 connected as shown in Figure \ref{fig:SwitchedInductor}.
-
+\vspace{-3mm}
 \begin{figure} [H]
    \centering
    \includegraphics[width=0.6\textwidth]{figures/bSwitchedInductor/switched_inductor.pdf}
@@ -16,7 +17,7 @@ connected as shown in Figure \ref{fig:SwitchedInductor}.
 
 
 With this configuration,
-the inductors form two different topologies during the ON and OFF states. By reversing the biasing of the diodes the inductors are connected in parallel during ON state and series during OFF state.  \todo[color=c04b]{refer to figure maybe} 
+the inductors form two different topologies during the ON and OFF states. By reversing the biasing of the diodes the inductors are connected in parallel during ON state and series during OFF state. 
 
 
 \subsection{Switching States}
@@ -33,7 +34,7 @@ The equivalent circuits during the on and off stages are shown in Figure \ref{fi
     \caption{Switching states of the SIBC}%
      \label{fig:SI_States}% 
 \end{figure}
-
+\vspace{-8mm}
 \subsubsection{ON State}
 While the switch is ON, diodes D\textsubscript{1} and D\textsubscript{2} are forward biased and diode D\textsubscript{3} is reverse biased.
 This constructs a parallel connection between the inductors, as seen in Figure \ref{SI_ON}.
@@ -44,15 +45,16 @@ In this case, we can use KVL to build the equation:
 	V_L=V_{in}
 	\label{eq:SI_KVL_ON}
 \end{equation}
-
+\vspace{-10mm}
 \subsubsection{OFF State}
 While the switch is OFF, the complete opposite happens, where only D\textsubscript{2} remains forward biased and forms a series connections between the inductors (shown on Figure \ref{SI_OFF}).
 In a configuration like this we can assume equal split of the pottential across the inductors and using KVL construct the equation:
 \begin{equation}
 	V_{in}-2V_L-V_o=0
 	\label{eq:SI_KVL_OFF}
-\end{equation}\\
-Subsequetially reformed as:
+\end{equation}
+Subsequently reformed as:
+
 \begin{equation}
 	V_L=\frac{V_{in} - V_o}{2}
 	\label{eq:SI_KVL_OFF2}
@@ -92,7 +94,7 @@ Load(R)   & 225$\Omega$           \\ \cline{1-2}
 Capacitance(C)          &       220$\mu$F     \\ \cline{1-2}
 Inductance(L)          &      150$\mu$F      \\ \cline{1-2}
 Duty cycle(D)          &     0.6       \\ \cline{1-2}
-Switching Frequency($F_S$)          &      50kHz      \\ \cline{1-2}
+Switching Frequency($f$)          &      50kHz      \\ \cline{1-2}
 \end{tabular}
 \end{center}
 \end{table}
@@ -118,6 +120,7 @@ The simulation results show the system output is as expected, as observed on Fig
 \begin{figure} [H]
    \centering
    \includegraphics[width=0.8\textwidth]{figures/bSwitchedInductor/Simulation_SI.eps}
-    \caption{Switched inductor boost output voltage}
+    \caption{Switched inductor boost converter output voltage}
 	\label{fig:Simulation_SI}
 \end{figure}
+\vspace{-8mm}

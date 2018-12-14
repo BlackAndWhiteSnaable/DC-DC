@@ -15,7 +15,8 @@ For the load a rheostat was used, so that the load can be adjusted to the capabi
 	\label{fig:SETUP}
 \end{figure}
 
-To generate the PWM input, two wave generators were used, due to the easy synchronisation. The tools used for measurements were ... Oscilloscopes and ... multimeters, all available for us in the AAU Esbjerg laboratories. All the data presented in the next section has been captured in this devices, results comply with their accuracy.
+To generate the PWM input, two wave generators were used, due to the easy synchronisation. The tools used for measurements were ... Oscilloscopes and ... multimeters, all available for us in the AAU Esbjerg laboratories.
+All the data presented in the next section has been captured in these devices, results are limited to their accuracy.
 \todo {names of scopes} 
 \clearpage
 \vspace{-6mm}
@@ -69,7 +70,7 @@ The results show variable difference in favour of the calculated values. That is
    \includegraphics[width=\textwidth]{figures/06Testing/botcap60per.eps}
 	\end{center}
 	\vspace{-8mm}
-	\caption{$V_o$ at duty cycles between 0.25 and 0.8}
+	\caption{botcap60per}
 	\label{fig:V_OUT_ALL}
 \end{figure}
 \begin{figure}[H]
@@ -77,7 +78,100 @@ The results show variable difference in favour of the calculated values. That is
    \includegraphics[width=\textwidth]{figures/06Testing/botdio60per.eps}
 	\end{center}
 	\vspace{-8mm}
-	\caption{$V_o$ at duty cycles between 0.25 and 0.8}
+	\caption{botdio60per}
+	\label{fig:V_OUT_ALL}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=\textwidth]{figures/06Testing/botind60per.eps}
+	\end{center}
+	\vspace{-8mm}
+	\caption{botind60per}
+	\label{fig:V_OUT_ALL}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=\textwidth]{figures/06Testing/botswi60per.eps}
+	\end{center}
+	\vspace{-8mm}
+	\caption{botswi60per}
 	\label{fig:V_OUT_ALL}
 \end{figure}
 
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=\textwidth]{figures/06Testing/topcap60per.eps}
+	\end{center}
+	\vspace{-8mm}
+	\caption{topcap60per}
+	\label{fig:V_OUT_ALL}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=\textwidth]{figures/06Testing/topdio60per.eps}
+	\end{center}
+	\vspace{-8mm}
+	\caption{topdio60per}
+	\label{fig:V_OUT_ALL}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=\textwidth]{figures/06Testing/topind60per.eps}
+	\end{center}
+	\vspace{-8mm}
+	\caption{topind60per}
+	\label{fig:V_OUT_ALL}
+\end{figure}
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=\textwidth]{figures/06Testing/topswi60per.eps}
+	\end{center}
+	\vspace{-8mm}
+	\caption{topswi60per}
+	\label{fig:V_OUT_ALL}
+\end{figure}
+
+To measure the efficiency of the converter the power on the input and output was measured.
+This was done by taking the current from the source at a constant voltage and the current through the load, which size was known. So the powers and efficiency can be calculated.
+
+% Pin = Vin*Iin Pout = I^2*R
+\begin{equation}
+	P_{in}= V_{in} \times I_{in}
+	\label{eq:EfficiencyPin}
+\end{equation}
+
+\begin{equation}
+	P_{out}= I_{out}^2 \times R_{load}
+	\label{eq:EfficiencyPout}
+\end{equation}
+
+\begin{equation}
+	\eta = (\frac{P_{out}}{P_{in}})
+	\label{eq:Efficiency}
+\end{equation}
+
+
+The measured efficiency for different duty ratios can be found in the table below.
+
+\begin{table}[H]
+\begin{center}
+\caption {Efficiency of the converter} \label{tab:Efficiencyandpowers} 
+\vspace{-1mm}
+\begin{tabular}{|l|l|l|l|l|l|l|}
+\cline{1-7}
+Duty cycle & $V_{in}$ & $I_{in}$ & $I_{out}$ & $P_{in}$	& $P_{out}$ & Efficiency \\ \cline{1-7}
+0.25 &	10.00V &	0.215A &	0.021A &	2.15W &	1.11W &	51.77\% \\ \cline{1-7}
+0.30 &	10.00V &	0.266A &	0.024A &	2.66W &	1.44W &	54.14\% \\ \cline{1-7}
+0.35 &	10.00V &	0.318A &	0.027A &	3.18W &	1.82W &	57.31\% \\ \cline{1-7}
+0.40 &	10.00V &	0.368A &	0.029A &	3.68W &	2.10W &	57.13\% \\ \cline{1-7}
+0.45 &	10.00V &	0.409A &	0.031A &	4.09W &	2.40W &	58.74\% \\ \cline{1-7}
+0.50 &	10.00V &	0.480A &	0.034A &	4.80W &	2.89W &	60.21\% \\ \cline{1-7}
+0.55 &	10.00V &	0.587A &	0.038A &	5.87W &	3.61W &	61.50\% \\ \cline{1-7}
+0.60 &	10.00V &	0.759A &	0.043A &	7.59W &	4.62W &	60.90\% \\ \cline{1-7}
+0.65 &	10.00V &	1.000A &	0.050A &	10.00W &6.25W &	62.50\% \\ \cline{1-7}
+0.70 &	10.00V &	1.381A &	0.059A &	13.81W &8.70W &	63.02\% \\ \cline{1-7}
+0.75 &	10.00V &	2.092A &	0.073A &	20.92W &13.32W&	63.68\% \\ \cline{1-7}
+0.80 &	10.00V &	3.095A &	0.088A &	30.95W &19.36W&	62.55\% \\ \cline{1-7}
+\end{tabular}
+\end{center}
+\end{table}

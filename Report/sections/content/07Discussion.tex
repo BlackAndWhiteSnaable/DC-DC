@@ -1,5 +1,4 @@
 \chapter{Discussion}\label{ch:Discussion}
-\todo[color=c07,inline]{testing the colors}
 
 % + a lot of boost for solar
 % + Linear, good for control
@@ -18,22 +17,25 @@ By using a linear converter the controller can track this optimal point easier a
 
 With a PWM pattern with minimum overlap applied to the MOSFETs the two inductors charge after each other, reducing the current ripple on the input. This equalling of the load is very good for the solar panels as its lifetime can be shorted by ripple. % https://publik.tuwien.ac.at/files/PubDat_210330.pdf
 \todo[color=c07,inline]{Ref}
-An other option is to run both MOSFETs on the same PWM signal.
-Then the ripple top and bottom half of the circuit will cancel each other out, reducing the ripple on the load. 
+Another option is to run both MOSFETs on the same PWM signal.
+Then the voltage ripple of the top and bottom half of the circuit will cancel each other out, reducing the ripple on the load. 
 
-An other advantage of heaving two converters combined in one the other could still run if the other half is having a fault.
+Another advantage of heaving two converters combined in one, is that one half can have a fault and the second half still works.
 If it would be implemented in the controller the converter set up in a remote PV array would continue operating after detecting that components have failed. 
 The conversion ratio would be limited to half of the original but on high sun intensity it would be still functional until the converter is getting replaced.
 
 
 Disadvantage of the converter is that it needs more components, increasing the cost and the risk of failure.
-Also the Cockroft-Walton Multiplier is using a lot of diodes that cause a lot of voltage drops on the output.
+Also the Cockroft-Walton Multiplier is using a lot of diodes that cause big voltage drops on the output.
 
-In hardware testing the results where far of the theoretical values. The main reason for that is the selection of the components: 
-The inductor is limited to currents of 3A, limiting the input while the oversized diodes where made for higher currents and are not operating efficiently with these low currents.
-Also the capacitor C1 has had high thermal losses in testing.
+In hardware testing the results where far off of the theoretical values.
+The main reason for that is the selection of the components: 
+The inductor is limited to currents of 3A, limiting the input while the oversized diodes where made for higher currents and are not operating efficiently with the low currents we tested with.
+Also the capacitor C1 had high thermal losses in testing.
 
-When comparing the measurements of the efficiency of the topology to measurements on a conventional converter with the same components (L=135$\mu$H, C=2.2$\mu$F, R=2k$\Omega$, same MOSFET, same diode) in Figure \ref{fig:Efficiencycomparison} the results are very different.
+When comparing the measurements of this topology and a CBC with the same components (L=135$\mu$H, C=2.2$\mu$F, R=2k$\Omega$, same MOSFET, same diode)
+and looking at the efficiency the results are very different.
+A graph of measured efficiencies with interpolation can be seen in Figure \ref{fig:Efficiencycomparison}.
 While on the CBC loses a lot of its efficiency after duty cycles of 70\% the multi stage 2NX Interleaved Boost Converter reached even higher efficiency on higher duty cycles in the tests.
 
 \begin{figure}[H]

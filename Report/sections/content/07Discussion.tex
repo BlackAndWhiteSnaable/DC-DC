@@ -28,3 +28,19 @@ The conversion ratio would be limited to half of the original but on high sun in
 
 Disadvantage of the converter is that it needs more components, increasing the cost and the risk of failure.
 Also the Cockroft-Walton Multiplier is using a lot of diodes that cause a lot of voltage drops on the output.
+
+In hardware testing the results where far of the theoretical values. The main reason for that is the selection of the components: 
+The inductor is limited to currents of 3A, limiting the input while the oversized diodes where made for higher currents and are not operating efficiently with these low currents.
+Also the capacitor C1 has had high thermal losses in testing.
+
+When comparing the measurements of the efficiency of the topology to measurements on a conventional converter with the same components (L=135$\mu$H, C=2.2$\mu$F, R=2k$\Omega$, same MOSFET, same diode) in Figure \ref{fig:Efficiencycomparison} the results are very different.
+While on the CBC loses a lot of its efficiency after duty cycles of 70\% the multi stage 2NX Interleaved Boost Converter reached higher efficiency on higher duty cycles.
+
+\begin{figure}[H]
+	\begin{center}
+   \includegraphics[width=0.8\textwidth]{figures/Efficiencycomparison.eps}
+	\end{center}
+	\vspace{-4mm}
+	\caption{Comparison of efficiency with a conventional BC}
+	\label{fig:Efficiencycomparison}
+\end{figure}

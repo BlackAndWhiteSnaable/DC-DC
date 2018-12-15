@@ -9,11 +9,12 @@ To function the SKYPER board needs an external power supply of 15V,
 some decoupling capacitors and capacitors to filter high frequency pulses.
 These components are on the adaptor board also from Semikron.
 
-On the secondary side of the board the two potential free PWM signals with -8 to 15V are given out.\cite{SKYPER322:online}
+On the secondary side of the board the two potential free PWM signals with -7 to 15V are given out.\cite{SKYPER322:online}
 To adjust the switching properties of the device the output can be configured by changing the resistors $R_{on}$ and $R_{off}$.
 They limit the current when switching in the state, so the device will switch slower.
 Additionally external decoupling capacitors are needed. They are also on the adaptor board.
 The failure detection logic was not used for testing.
+A schematic of the secondary side of the SKYPER board can be seen in Figure \ref{fig:Skyper32out}.
 
 \begin{figure}[H]
    \centering
@@ -28,8 +29,10 @@ It compares the input signal to 1.5 Volts, so every input above will result in a
 all inputs below as low.
 This also allows to run it from a logic that only outputs 3V signals.
 
-In Figure \ref{fig:Skyper32in} you can see how the input coming from the control logic with a 5V PWM signal and 15V powersupply are connected to the amplification board.
-On there the signal gets raised to 15V PWM and the board also includes the pull-up resistor to read out the open collector error out pin of the SKYPER 32R. The board connects to the adaptor board that has the required capacitors and a pull up resistor for the error in. The adaptor board is connected to all the inputs to the SKYPER 32R.
+In Figure \ref{fig:Skyper32in} it can be seen how the input coming from the control logic with a 5V PWM signal and 15V power supply are connected to the amplification board.
+On there the signal gets raised to 15V PWM and the board also includes the pull-up resistor to read out the open collector error out pin of the SKYPER 32R.
+The board connects to the adaptor board that has the required capacitors and a pull up resistor for the error in.
+The adaptor board is connected to all the inputs of the SKYPER 32R.
 
 \begin{figure}[H]
    \centering
@@ -37,6 +40,6 @@ On there the signal gets raised to 15V PWM and the board also includes the pull-
     \caption{Input boards for the SKYPER 32R}
 	\label{fig:Skyper32in}
 \end{figure}
-The SKYPER board is intended for bridge IGBT bridge circuits and therefore has a function which switches both devices off, if the input tries to turn them both on.\cite{SKYPER322:online} Therefore a second identical circuit and board will be used to drive each of the MOSFETs.
+The SKYPER board is intended for IGBT bridge circuits and therefore has a function which switches both devices off, if the input tries to turn them both on.\cite{SKYPER322:online} Therefore a second identical circuit and board will be used to drive each of the MOSFETs.
 
 \clearpage

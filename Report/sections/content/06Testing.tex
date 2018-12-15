@@ -4,7 +4,8 @@
 All the components listed in Section \ref{ch:compSpec} were mounted on the PCB (can be seen on Fig. \ref{fig:SETUP}) and all the driver circuit were built to be connected to the full setup.
 Standard lab power supplies were used to deliver all the inputs needed to the op-amps, SKYPER boards and the input voltage of the circuit itself. 
 The maximum output current of the power supply is 3.2A.
-For the load a rheostat was used, so that the load can be adjusted to the capabilities of the power supply and the resistance it was set to for the tests was 2.5k$\Omega$ . 
+For the load a rheostat was used, so that the load can be adjusted to the capabilities of the power supply and the resistance it was set to for the tests was 2.5k$\Omega$. 
+The used frequency for the PWM was 50kHz. 
 
 \begin{figure}[H]
 	\begin{center}
@@ -34,7 +35,9 @@ The purpose of these tests is too see if the expected gain is matched and what p
 	\label{fig:V_OUT_ALL}
 \end{figure}
 \vspace{-4mm}
-All the output voltage waves can be seen on Fig. \ref{fig:V_OUT_ALL}. To put those values, they need to be compared to the expected values from the expressions we've already derived. All of the calculated and measured values can be seen in the Table \ref{tab:V_OUT_ALL}.
+All the output voltage waves can be seen on Fig. \ref{fig:V_OUT_ALL}. 
+Due to the small capacitor values the ripple is not reaching typical standards.
+To put those values, they need to be compared to the expected values from the expressions we've already derived. All of the calculated and measured values can be seen in the Table \ref{tab:V_OUT_ALL}.
 \vspace{-2mm}
 
 \begin{table}[H]
@@ -196,4 +199,4 @@ Duty cycle & $V_{in}$ & $I_{in}$ & $I_{out}$ & $P_{in}$	& $P_{out}$ & Efficiency
 
 \end{table}
 
-
+	

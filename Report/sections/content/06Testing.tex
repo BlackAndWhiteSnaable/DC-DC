@@ -22,7 +22,8 @@ All the data presented in the next section has been captured in these devices, r
 \vspace{-6mm}
 \section{Results}
 
-After the setup was complete the first test ran, to test the overall output voltage of the topology within the range of possible duty cycles. The purpose of this tests is too see if the expected gain is matched and what part of the differences are expected and what the unexpected ones can be justified by. 
+After the setup was complete the first test ran, to test the overall output voltage of the topology within the range of possible duty cycles.
+The purpose of these tests is too see if the expected gain is matched and what part of the differences are expected.
 \vspace{-4mm}
 
 \begin{figure}[H]
@@ -41,7 +42,7 @@ All the output voltage waves can be seen on Fig. \ref{fig:V_OUT_ALL}. To put tho
 \begin{center}
 \caption {Calculated and Measured output voltages} \label{tab:V_OUT_ALL} 
 \vspace{-1mm}
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|r|r|r|r|}
 \cline{1-4}
 Duty cycle & Calculated $V_o$ & Measured $V_o$& Difference \\ \cline{1-4}
 0.25&	63.9V & 52.6V & 11.3V \\ \cline{1-4}
@@ -61,75 +62,97 @@ Duty cycle & Calculated $V_o$ & Measured $V_o$& Difference \\ \cline{1-4}
 \end{center}
 \end{table}
 
-The diode drops for the calculations were taken from the measurements across the diode during the testing.
-
 The results show variable difference in favour of the calculated values. That is completely expected as all of the components apart from the diode and MOSFET were assumed ideal. Internal resistance and power consumption of all components can justify some of the losses. What is less expected is that there is no clear pattern in the decreases, which can be accounted to imperfect measurement or overall inconsistency in the tests and/or equipment. 
 
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botcap60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botcap60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botdio60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botdio60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botind60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botind60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botswi60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botswi60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
+To validate our simulation results,
+we tested the hardware in depth at a duty ratio $D = 0.6$.
+This is the standard we used throughout all simulations described in Chapter \ref{ch:dev}.
+We took all measurements possible with our board layout,
+which mostly allowed for voltage measurements between components.
+The only place where we could measure the current was at the inductors, input and output.
 
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topcap60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topcap60per}
-	\label{fig:V_OUT_ALL}
+Figure \ref{fig:bottopcharge} shows a comparison of the charging components.
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[Bottom Capacitor Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botcap60per.eps} \label{fig:botcap60per}}}%
+    \subfloat[Top Capacitor Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topcap60per.eps} \label{fig:topcap60per}}}%  
+   \qquad
+    \subfloat[Bottom Inductor Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botind60per.eps} \label{fig:botind60per}}}%
+    \subfloat[Top Inductor Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topind60per.eps} \label{fig:topind60per}}}%  
+    \caption{Bottom/Top Comparison of Charging Components}%
+     \label{fig:bottopcharge}%
 \end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topdio60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topdio60per}
-	\label{fig:V_OUT_ALL}
+\todo{put figures in appendix}
+
+To be noted is that the bottom (\ref{fig:botcap60per} \& \ref{fig:botind60per}) is an inverting NxBC,
+while the top is non inverting.
+Because of that the naming of the capacitors varies slightly.
+For simplicity,
+we will from now on only talk about the top measurements (visible on the right).
+
+It can be observed that the capacitor voltage $V_{C_1}$ is higher than the other voltages,
+as expected in Chapter \ref{ch:dev}.
+Also the voltage across this capacitor fits perfectly to the simulations,
+with a mean of $23.5 V$.
+The subsequent capacitors all have a falling voltage,
+compared to the previous,
+which suggests that our drop calculation is correct.
+The amount of drop between the stages is higher than in the simulations,
+which we expected,
+because we used ideal components to simulate capacitors and inductors.
+
+The repetitive charging and discharging heats both inductors and capacitors up,
+which was not included in the simulations.
+Also the internal resistance was neglected in the simulations.
+The drops between the stages,
+suggests a limited amount of stages to be beneficial.
+This is a commonly known problem with the Cockcroft-Walton Multiplier.
+
+
+Investigating the inductors current and voltage (\ref{fig:botind60per} \& \ref{fig:topind60per}),
+we can observe that the converter is in continuous conduction mode (CCM) at $D = 0.6$.
+There is even the option to go to a lower $D$,
+as the current doesn't reach $0 A$.
+The current is very low in total,
+because $R_L$ was chosen very big.
+
+The voltage across the inductors can be observed to have a range from $-10 V$ to $15V$.
+The negative offset is observed because the negative measuring point is directly connected to $V_{IN} +$
+The total range of the inductor voltage is $25V$, which is also the highest $C_{1}$ charges up to.
+
+
+
+
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[Bottom Diode Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botdio60per.eps} \label{fig:botdio60per}}}%
+    \subfloat[Top Diode Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topdio60per.eps} \label{fig:topcap60per}}}%  
+   \qquad
+    \subfloat[Bottom MOSFET Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botswi60per.eps} \label{fig:botind60per}}}%
+    \subfloat[Top MOSFET Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topswi60per.eps} \label{fig:topind60per}}}%  
+    \caption{Bottom/Top Comparison of Switching Components}%
+     \label{fig:bottopswitch}%
 \end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topind60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topind60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topswi60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topswi60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
+\todo{put figures in appendix}
+
+The plot on Figure \ref{fig:bottopswitch} show the voltages across the diodes and across the terminals of the MOSFET.
+The voltage levels over the diode confirm the statement already made about the capacitors - the voltage decreases over the higher levels of the circuit.
+Another significant observation is that the negative voltage level is relatively consistent over the circuit, which improves the validity of the calculations in Section. \ref{ch:DROPS}.
+
+The first conclusion we can draw from the MOSFET graphs is that the levels of $V{GS}$ confirm our switching circuit. 
+The fact that the level are equal to the ones coming from the SKYPER board and the duty cycle is as expected proves that. 
+The second major observation is that the stress over the switch $V{DS}$ during OFF state is equal to that of a CBC. 
+This means that the requirements for a MOSFET for this topology are the same as the ones for a CBC, while the gain is higher.
 
 To measure the efficiency of the converter the power on the input and output was measured.
 This was done by taking the current from the source at a constant voltage and the current through the load, which size was known. So the powers and efficiency can be calculated.

@@ -73,60 +73,69 @@ The results show variable difference in favour of the calculated values. That is
 	\caption{botcap60per}
 	\label{fig:V_OUT_ALL}
 \end{figure}
-\begin{figure}[H]
+\todo{put figures in appendix}
 	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botdio60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botdio60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botind60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botind60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botswi60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botswi60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
+To be noted is that the bottom (\ref{fig:botcap60per}) is an inverting NxBC,
+while the top is non inverting.
+Because of that the naming of the capacitors varies slightly.
+For simplicity,
+we will from now on only talk about the top measurements (visible on the right).
 
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topcap60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topcap60per}
-	\label{fig:V_OUT_ALL}
+It can be observed that the capacitor voltage $V_{C_1}$ is higher than the other voltages,
+as expected in Chapter \ref{ch:dev}.
+Also the voltage across this capacitor fits perfectly to the simulations,
+with a mean of $23.5 V$.
+The subsequent capacitors all have a falling voltage,
+compared to the previous,
+which suggests that our drop calculation is correct.
+The amount of drop between the stages is higher than in the simulations,
+which we expected,
+because we used ideal components to simulate capacitors and inductors.
+
+The repetitive charging and discharging heats both inductors and capacitors up,
+which was not included in the simulations.
+Also the internal resistance was neglected in the simulations.
+The drops between the stages,
+suggests a limited amount of stages to be beneficial.
+This is a commonly known problem with the Cockcroft-Walton Multiplier.
+
+
+Investigating the inductors current and voltage (\ref{fig:botind60per} \& \ref{fig:topind60per}),
+we can observe that the converter is in continuous conduction mode (CCM) at $D = 0.6$.
+There is even the option to go to a lower $D$,
+as the current doesn't reach $0 A$.
+The current is very low in total,
+because $R_L$ was chosen very big.
+
+The voltage across the inductors can be observed to have a range from $-10 V$ to $15V$.
+The negative offset is observed because the negative measuring point is directly connected to $V_{IN} +$
+The total range of the inductor voltage is $25V$, which is also the highest $C_{1}$ charges up to.
+
+
+
+
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[Bottom Diode Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botdio60per.eps} \label{fig:botdio60per}}}%
+    \subfloat[Top Diode Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topdio60per.eps} \label{fig:topcap60per}}}%  
+   \qquad
+    \subfloat[Bottom MOSFET Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botswi60per.eps} \label{fig:botind60per}}}%
+    \subfloat[Top MOSFET Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topswi60per.eps} \label{fig:topind60per}}}%  
+    \caption{Bottom/Top Comparison of Switching Components}%
+     \label{fig:bottopswitch}%
 \end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topdio60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topdio60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topind60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topind60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/topswi60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{topswi60per}
-	\label{fig:V_OUT_ALL}
-\end{figure}
+\todo{put figures in appendix}
+
+The plot on Figure \ref{fig:bottopswitch} show the voltages across the diodes and across the terminals of the MOSFET.
+The voltage levels over the diode confirm the statement already made about the capacitors - the voltage decreases over the higher levels of the circuit.
+Another significant observation is that the negative voltage level is relatively consistent over the circuit, which improves the validity of the calculations in Section. \ref{ch:DROPS}.
+
+The first conclusion we can draw from the MOSFET graphs is that the levels of $V{GS}$ confirm our switching circuit. 
+The fact that the level are equal to the ones coming from the SKYPER board and the duty cycle is as expected proves that. 
+The second major observation is that the stress over the switch $V{DS}$ during OFF state is equal to that of a CBC. 
+This means that the requirements for a MOSFET for this topology are the same as the ones for a CBC, while the gain is higher.

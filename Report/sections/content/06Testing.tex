@@ -22,7 +22,8 @@ All the data presented in the next section has been captured in these devices, r
 \vspace{-6mm}
 \section{Results}
 
-After the setup was complete the first test ran, to test the overall output voltage of the topology within the range of possible duty cycles. The purpose of this tests is too see if the expected gain is matched and what part of the differences are expected and what the unexpected ones can be justified by. 
+After the setup was complete the first test ran, to test the overall output voltage of the topology within the range of possible duty cycles.
+The purpose of these tests is too see if the expected gain is matched and what part of the differences are expected.
 \vspace{-4mm}
 
 \begin{figure}[H]
@@ -41,7 +42,7 @@ All the output voltage waves can be seen on Fig. \ref{fig:V_OUT_ALL}. To put tho
 \begin{center}
 \caption {Calculated and Measured output voltages} \label{tab:V_OUT_ALL} 
 \vspace{-1mm}
-\begin{tabular}{|l|l|l|l|}
+\begin{tabular}{|r|r|r|r|}
 \cline{1-4}
 Duty cycle & Calculated $V_o$ & Measured $V_o$& Difference \\ \cline{1-4}
 0.25&	63.9V & 52.6V & 11.3V \\ \cline{1-4}
@@ -68,7 +69,7 @@ we tested the hardware in depth at a duty ratio $D = 0.6$.
 This is the standard we used throughout all simulations described in Chapter \ref{ch:dev}.
 We took all measurements possible with our board layout,
 which mostly allowed for voltage measurements between components.
-The only place where we could measure the current was at the inductors.
+The only place where we could measure the current was at the inductors, input and output.
 
 Figure \ref{fig:bottopcharge} shows a comparison of the charging components.
 
@@ -88,7 +89,7 @@ Figure \ref{fig:bottopcharge} shows a comparison of the charging components.
 \end{figure}
 \todo{put figures in appendix}
 
-To be noted is that the bottom (\ref{fig:botcap60per}) is an inverting NxBC,
+To be noted is that the bottom (\ref{fig:botcap60per} \& \ref{fig:botind60per}) is an inverting NxBC,
 while the top is non inverting.
 Because of that the naming of the capacitors varies slightly.
 For simplicity,
@@ -156,7 +157,6 @@ This means that the requirements for a MOSFET for this topology are the same as 
 To measure the efficiency of the converter the power on the input and output was measured.
 This was done by taking the current from the source at a constant voltage and the current through the load, which size was known. So the powers and efficiency can be calculated.
 
-% Pin = Vin*Iin Pout = I^2*R
 \begin{equation}
 	P_{in}= V_{in} \times I_{in}
 	\label{eq:EfficiencyPin}
@@ -196,4 +196,8 @@ Duty cycle & $V_{in}$ & $I_{in}$ & $I_{out}$ & $P_{in}$	& $P_{out}$ & Efficiency
 0.80 &	10.00V &	3.095A &	0.088A &	30.95W &19.36W&	62.55\% \\ \cline{1-7}
 \end{tabular}
 \end{center}
+
 \end{table}
+
+\end{table}
+

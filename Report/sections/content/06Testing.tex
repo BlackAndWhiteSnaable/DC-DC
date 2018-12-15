@@ -61,20 +61,33 @@ Duty cycle & Calculated $V_o$ & Measured $V_o$& Difference \\ \cline{1-4}
 \end{center}
 \end{table}
 
-The diode drops for the calculations were taken from the measurements across the diode during the testing.
-
 The results show variable difference in favour of the calculated values. That is completely expected as all of the components apart from the diode and MOSFET were assumed ideal. Internal resistance and power consumption of all components can justify some of the losses. What is less expected is that there is no clear pattern in the decreases, which can be accounted to imperfect measurement or overall inconsistency in the tests and/or equipment. 
 
-\begin{figure}[H]
-	\begin{center}
-   \includegraphics[width=\textwidth]{figures/06Testing/botcap60per.eps}
-	\end{center}
-	\vspace{-8mm}
-	\caption{botcap60per}
-	\label{fig:V_OUT_ALL}
+To validate our simulation results,
+we tested the hardware in depth at a duty ratio $D = 0.6$.
+This is the standard we used throughout all simulations described in Chapter \ref{ch:dev}.
+We took all measurements possible with our board layout,
+which mostly allowed for voltage measurements between components.
+The only place where we could measure the current was at the inductors.
+
+Figure \ref{fig:bottopcharge} shows a comparison of the charging components.
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[Bottom Capacitor Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botcap60per.eps} \label{fig:botcap60per}}}%
+    \subfloat[Top Capacitor Voltages]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topcap60per.eps} \label{fig:topcap60per}}}%  
+   \qquad
+    \subfloat[Bottom Inductor Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/botind60per.eps} \label{fig:botind60per}}}%
+    \subfloat[Top Inductor Current/Voltage]
+    {{\includegraphics[width=0.5\textwidth]{figures/06Testing/topind60per.eps} \label{fig:topind60per}}}%  
+    \caption{Bottom/Top Comparison of Charging Components}%
+     \label{fig:bottopcharge}%
 \end{figure}
 \todo{put figures in appendix}
-	\begin{center}
+
 To be noted is that the bottom (\ref{fig:botcap60per}) is an inverting NxBC,
 while the top is non inverting.
 Because of that the naming of the capacitors varies slightly.

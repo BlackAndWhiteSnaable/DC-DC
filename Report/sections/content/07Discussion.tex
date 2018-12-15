@@ -15,8 +15,8 @@ The other big advantage of this converter is the linear dependency of the duty c
 By using a linear converter the controller can track this optimal point easier as the additional non-linearity is not added to the system.
 
 
-With a PWM pattern with minimum overlap applied to the MOSFETs the two inductors charge after each other, reducing the current ripple on the input. This equalling of the load is very good for the solar panels as its lifetime can be shorted by ripple. % https://publik.tuwien.ac.at/files/PubDat_210330.pdf
-\todo[color=c07,inline]{Ref}
+With a PWM pattern with minimum overlap applied to the MOSFETs the two inductors charge after each other, reducing the current ripple on the input. This equalling of the load is very good for the solar panels as its lifetime can be shorted by ripple. \cite{Joseph_isbn978-3-8007-3343-9} % https://publik.tuwien.ac.at/files/PubDat_210330.pdf
+%\todo[color=c07,inline]{Ref}
 Another option is to run both MOSFETs on the same PWM signal.
 Then the voltage ripple of the top and bottom half of the circuit will cancel each other out, reducing the ripple on the load. 
 
